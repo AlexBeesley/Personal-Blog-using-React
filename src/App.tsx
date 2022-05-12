@@ -1,4 +1,4 @@
-import "./App.css";
+import "./Styles/App.scss";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Pages/Home";
 import Dotnetandcsharp from "./Pages/dotnet-and-csharp";
