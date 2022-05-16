@@ -17,7 +17,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
+  width: 60%;
   min-width: 45rem;
   height: 2rem;
   font-size: 1.5rem;
@@ -77,11 +77,24 @@ a:hover {
   padding: 1.5rem;
   margin: 1.5rem;
   box-sizing: border-box;
+  p {
+  white-space: pre-line;
+  }
 }
 
 .card:hover {
   box-shadow:  20px 20px 60px #8986b4,
   -20px -20px 60px #e4dfff;
+}
+
+.card-expanded-toggle {
+  color: #00B1C4;
+  white-space: pre-line;
+}
+
+.card-expanded-toggle:hover {
+  color: #67FBD1;
+  cursor: pointer;
 }
 
 .col-1 {

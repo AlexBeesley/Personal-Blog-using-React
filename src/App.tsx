@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import Dotnetandcsharp from "./Pages/dotnet-and-csharp";
 import Htmlandcss from "./Pages/html-and-css";
 import Tprwcg from "./Pages/tpr-wcg";
+import Demo from "./Pages/Demo";
 import ErrorPage from "./Pages/ErrorPage";
 import React from "react";
 
@@ -16,12 +17,14 @@ export const App = () => {
           <Link className="navlink" to="/dotnet-and-csharp"> .NET and C# </Link>
           <Link className="navlink" to="/html-and-css"> HTML and CSS </Link>
           <Link className="navlink" to="/tpr-wcg"> TPR Web Change Group </Link>
+          <Link className="navlink" to="/demo"> Demo </Link>
         </div>
         <div className="nav-mobile">
           <Link className="navlink" to="/"> <i className="fa-solid fa-house-user"></i> </Link>
           <Link className="navlink" to="/dotnet-and-csharp"> <i className="fa-solid fa-code"></i> </Link>
           <Link className="navlink" to="/html-and-css"> <i className="fa-solid fa-file-code"></i> </Link>
           <Link className="navlink" to="/tpr-wcg"> <i className="fa-solid fa-briefcase"></i> </Link>
+          <Link className="navlink" to="/demo"> <i className="fa-solid fa-laptop-code"></i> </Link>
         </div>
       </nav>
       <Routes>
@@ -29,6 +32,7 @@ export const App = () => {
         <Route path="/dotnet-and-csharp" element={<Dotnetandcsharp />} /> 
         <Route path="/html-and-css" element={<Htmlandcss />} />
         <Route path="/tpr-wcg" element={<Tprwcg />} />
+        <Route path="/demo" element={<Demo />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <footer>
