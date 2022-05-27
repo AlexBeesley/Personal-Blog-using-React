@@ -34,7 +34,7 @@ function Home() {
           for The Pensions Regulator. I am a self-taught programmer and I
           have a passion for learning new technologies and languages. I am
           currently learning C# and JavaScript. I am also a student at the
-          University of Brighton, studing Computer Science with Artificial
+          University of Brighton, studying Computer Science with Artificial
           Intelligence."
           paragraph2="[more about me here]"
           expandable={false} />
