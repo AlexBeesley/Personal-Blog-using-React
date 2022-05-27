@@ -1,5 +1,6 @@
 import React from "react";
-import { Card } from '../Components/card';
+import Styles from "../Styles/main.module.scss";
+import { Card } from '../Components/Cards/card';
 
 function Home() {
   return (
@@ -9,8 +10,8 @@ function Home() {
         I'm a full-stack developer with a passion for learning and a love for
         the web.
       </p>
-      <div className="row">
-        <div className="col-1">
+      <div className={Styles.row}>
+        <div className={Styles.col1}>
         < Card 
           title="Overview"
           paragraph1="This is Single-Page Application (SPA) that I built using React.js and TypeScript.
@@ -25,7 +26,7 @@ function Home() {
           TypeScript code is transpiled to JavaScript before it is then compiled and run."
           expandable={false} />
         </div>
-        <div className="col-2">
+        <div className={Styles.col2}>
         < Card 
           title="About me"
           paragraph1="I am a 21-year-old .NET Developer Intern for The Pensions
@@ -38,7 +39,7 @@ function Home() {
           paragraph2="[more about me here]"
           expandable={false} />
         </div>
-        <div className="col-3">
+        <div className={Styles.col3}>
         </div>
       </div>
     </div>

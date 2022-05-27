@@ -1,3 +1,4 @@
+import Styles from "./card.module.scss";
 import { FunctionComponent, useState } from "react";
 
 type CardProps = {
@@ -16,11 +17,11 @@ export const Card: FunctionComponent<CardProps> = ({ title, paragraph1, paragrap
   var text = paragraph1 + "\n" + (paragraph2 ? paragraph2 : "") + "\n" + (paragraph3 ? paragraph3 : "");
   if (expandable) {
     return (
-      <article className="card">
+      <article className={Styles.card}>
         <h1>{title}</h1>
         <p>
           {isReadMore ? text.slice(0, 180) + "..." : text}
-          <span onClick={toggleExpanded} className="card-expanded-toggle">
+          <span onClick={toggleExpanded} className={Styles.expanded}>
             {isReadMore ? " \nRead more" : " \nRead less"}
           </span>
         </p>
@@ -29,7 +30,7 @@ export const Card: FunctionComponent<CardProps> = ({ title, paragraph1, paragrap
   }
 
   return (
-    <article className="card">
+    <article className={Styles.card}>
       <h1>{title}</h1>
       <p>{paragraph1}</p>
       <p>{paragraph2}</p>

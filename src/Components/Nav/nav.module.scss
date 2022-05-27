@@ -1,0 +1,25 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    min-width: 45rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navlink {
+    color: #00B1C4;
+    text-decoration: none;
+  }
+  
+  .navlink:hover {
+    color: #67FBD1;
+  }
+
+@media only screen and (max-width: 80rem) {
+  nav {
+    display: none;
+  }
+}

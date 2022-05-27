@@ -1,6 +1,6 @@
 import React from "react";
-import { Card } from "../Components/card";
-import { CodeBox } from "../Components/codebox";
+import { Card } from "../Components/Cards/card";
+import { CodeBox } from "../Components/CodeBox/codebox";
 
 function Dotnetandcsharp() {
   return (

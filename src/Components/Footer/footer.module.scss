@@ -1,0 +1,23 @@
+footer {
+    position: fixed;
+    bottom: 0;
+  }
+
+.iconContainer {
+  position: fixed;
+  bottom: 0;
+  right: 10%;
+  padding-bottom: 1%;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: #00B1C4;
+  padding: .5rem;
+}
+
+a:hover {
+  color: #67FBD1;
+}
