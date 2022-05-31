@@ -1,8 +1,10 @@
+@import '../../Styles/variables.module.scss';
+
 .card {
     border-radius: 50px;
-    background: #B6B2F0;
-    box-shadow:  20px 20px 60px #9b97cc,
-                 -20px -20px 60px #d1cdff;
+    background: var(--background);
+    box-shadow:  20px 20px 60px var(--shadow),
+                 -20px -20px 60px var(--highlight);
     padding: 1.5rem;
     margin: 1.5rem;
     box-sizing: border-box;
@@ -12,16 +14,16 @@
   }
   
   .card:hover {
-    box-shadow:  20px 20px 60px #8986b4,
-    -20px -20px 60px #e4dfff;
+    box-shadow:  20px 20px 60px var(--shadow-focus),
+    -20px -20px 60px var(--highlight-focus);
   }
   
   .expanded {
-    color: #00B1C4;
+    color: var(--Tertiary);
     white-space: pre-line;
   }
   
   .expanded:hover {
-    color: #67FBD1;
+    color: var(--Accent);
     cursor: pointer;
   }

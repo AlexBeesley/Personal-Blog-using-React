@@ -7,12 +7,14 @@ import Tprwcg from "./Pages/tpr-wcg";
 import Demo from "./Pages/Demo";
 import ErrorPage from "./Pages/ErrorPage";
 import Nav from "./Components/Nav/nav";
+import DarkModeToggle from "./Components/DarkMode/darkmodetoggle";
 import Footer from "./Components/Footer/footer";
 
 export const App = () => {
   return (
     <Router>
       <Nav/>
+      <DarkModeToggle/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dotnet-and-csharp" element={<Dotnetandcsharp />} /> 

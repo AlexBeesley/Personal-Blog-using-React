@@ -1,3 +1,5 @@
+@import '../../Styles/variables.module.scss';
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -6,14 +8,18 @@ nav {
   height: 2rem;
   font-size: 2.5rem;
   font-weight: bold;
-  }
+}
   
 .navicon {
   display: none;
 }
 
+.navicon:hover {
+  color: var(--Accent);
+}
+
 .navlink {
-  color: #00B1C4;
+  color: var(--Tertiary);
   text-decoration: none;
   align-items: center;
   width: 100%;
@@ -24,23 +30,25 @@ nav {
 }
 
 .navlink:hover {
-  color: #67FBD1;
+  color: var(--Accent);
 }
 
-@media only screen and (max-width: 60rem) {
+@media only screen and (max-width: 80rem) {
+  nav{
+    all: unset;
+  }
+
   .navlink {
     display: none;
   }
 
   .navicon {
     display: inline;
-    justify-content: space-between;
-    color: #00B1C4;
-    text-decoration: none;
     align-items: center;
+    padding-right: 5%;
     width: 100%;
     height: 2rem;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     font-weight: bold;
   }
 }
