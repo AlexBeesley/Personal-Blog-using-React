@@ -1,40 +1,35 @@
-import React from "react";
 import { Card } from "../Components/Cards/card";
 import { CodeBox } from "../Components/CodeBox/codebox";
 
 function Dotnetandcsharp() {
   return (
     <div>
-      <h1>About</h1>
-      <p>this is the About Page</p>
+      <h1>.NET and C#</h1>
       < Card 
           title="Example Code"
           paragraph1="Here is some example code."
-          expandable={false} />
-      < CodeBox 
-          code={`
-          public static class FriendlyURLs
-          {
-              public static string ToStringFromGuid(this string guidStr)
-              {
-                  Guid guid = new Guid(guidStr);
-                  return Convert.ToBase64String(guid.ToByteArray())
-                      .Replace("/", "-")
-                      .Replace("+", "_")
-                      .Replace("=", string.Empty);
-              }
-      
-              public static string ToGuidFromString(this string Str)
-              {
-                  var base64Str = Convert.FromBase64String(Str
-                      .Replace("-", "/")
-                      .Replace("_", "+") + "==");
-                  return new Guid(base64Str).ToString();
-              }
-          }`}
-          language="csharp" />
+          expandable={false} >
+        <CodeBox
+            language="HTML">{demo1()}</CodeBox>
+      </Card>
     </div>
   );
+}
+
+const demo1 = () => {
+    return (
+      <>
+        &lt;html&gt;<br/>
+        &lt;body&gt;<br/>
+        <br/>
+        &lt;h1&gt;Testing an HTML Syntax Highlighter&lt;/h2&gt;<br/>
+        &lt;p&gt;Hello world!&lt;/p&gt;<br/>
+        &lt;a href="https://www.w3schools.com"&gt;Back to School&lt;/a&gt;<br/>
+        <br/>
+        &lt;/body&gt;<br/>
+        &lt;/html&gt;<br/>
+      </>
+    );
 }
 
 export default Dotnetandcsharp;

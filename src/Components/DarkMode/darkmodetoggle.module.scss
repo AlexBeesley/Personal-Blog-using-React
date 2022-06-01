@@ -2,35 +2,18 @@
     position: absolute;
     top: 1.5rem;
     right: 10%;
-    cursor: pointer;
+}
+
+/* From uiverse.io by @ke1221 */
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  i {
+    font-size: 1.75rem;
+    color: var(--light);
   }
-  
-  .toggle {
-    isolation: isolate;
-    position: relative;
-    height: 30px;
-    width: 60px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: -8px -4px 8px 0px #a4adc9, 8px 4px 12px 0px #a4adc9,
-      4px 4px 4px 0px #7a8095 inset, -4px -4px 4px 0px #7a8095 inset;
+  i:hover {
+    color: var(--light-hover);
   }
-  
-  .toggleState {
-    display: none;
-  }
-  
-  .indicator {
-    height: 100%;
-    width: 200%;
-    background: #55e2c4;
-    border-radius: 15px;
-    transform: translate3d(-75%, 0, 0);
-    transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
-    box-shadow: -8px -4px 8px 0px #a4adc9, 8px 4px 12px 0px #7a8095;
-  }
-  
-  .toggle-state:checked ~ .indicator {
-    transform: translate3d(25%, 0, 0);
-    background: #06221d;
-  }
+ }

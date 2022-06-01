@@ -7,9 +7,10 @@ type CardProps = {
     paragraph2?: string
     paragraph3?: string
     expandable: boolean
+    children?: React.ReactNode
   }
 
-export const Card: FunctionComponent<CardProps> = ({ title, paragraph1, paragraph2, paragraph3, expandable }) => {
+export const Card: FunctionComponent<CardProps> = ({ title, paragraph1, paragraph2, paragraph3, expandable, children }) => {
   const [isReadMore, setIsReadMore] = useState(true);
   const toggleExpanded = () => {
       setIsReadMore(!isReadMore);
@@ -19,6 +20,7 @@ export const Card: FunctionComponent<CardProps> = ({ title, paragraph1, paragrap
     return (
       <article className={Styles.card}>
         <h1>{title}</h1>
+        {children}
         <p>
           {isReadMore ? text.slice(0, 180) + "..." : text}
           <span onClick={toggleExpanded} className={Styles.expanded}>
@@ -32,6 +34,7 @@ export const Card: FunctionComponent<CardProps> = ({ title, paragraph1, paragrap
   return (
     <article className={Styles.card}>
       <h1>{title}</h1>
+      {children}
       <p>{paragraph1}</p>
       <p>{paragraph2}</p>
       <p>{paragraph3}</p>

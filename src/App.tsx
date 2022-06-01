@@ -12,6 +12,7 @@ import Footer from "./Components/Footer/footer";
 
 export const App = () => {
   return (
+    
     <Router>
       <Nav/>
       <DarkModeToggle/>

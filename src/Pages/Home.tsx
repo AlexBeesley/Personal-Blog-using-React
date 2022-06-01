@@ -24,7 +24,8 @@ function Home() {
           paragraph3="Typescript is a superset of JavaScript, and is used to write more robust, maintainable code. 
           As it allows for srongly typed code, it is a powerful tool for building large-scale applications. Note, all 
           TypeScript code is transpiled to JavaScript before it is then compiled and run."
-          expandable={false} />
+          expandable={false} >
+          </Card>
         </div>
         <div className={Styles.col2}>
         < Card 

@@ -1,15 +1,21 @@
+import Styles from "./codebox.module.scss";
 import { FunctionComponent } from "react";
 
-type CodeBoxProps = {
-    code: string
-    language: ["csharp", "html", "css"]
-  }
 
-export const CodeBox: FunctionComponent<CodeBoxProps> = ({ code, language }) => {
+type CodeBoxProps = {
+  children: React.ReactNode;
+  language: string
+}
+
+export const CodeBox: FunctionComponent<CodeBoxProps> = ({ children, language }) => {  
   return (
-    <div className="codebox">
-      <p>{code}</p>
+    <>
+      <div className={Styles.codebox}>
+        <code className="prettyprint">
+          {children}
+        </code>
+      </div>
       <p>Language: {language}</p>
-    </div>
+    </>
     );
 }

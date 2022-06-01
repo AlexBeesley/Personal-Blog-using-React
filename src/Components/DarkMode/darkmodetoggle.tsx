@@ -1,20 +1,17 @@
 import Styles from "./darkmodetoggle.module.scss";
-import { FunctionComponent, useState } from "react";
 
 export default function DarkModeToggle () {
-  const [isChecked, setIsChecked] = useState(false);
-
   return (
-    <label className={Styles.darkmodetoggle}>
-      <div className={Styles.toggle}>
-          <input className={Styles.toggleState} type="checkbox" name="check" value="check" onClick={toggleDarkMode} />
-          <div className={Styles.indicator} title="Toggle dark mode"></div>
-      </div>
-    </label>
-    );
+    <div className={Styles.darkmodetoggle}>
+      <button className={Styles.button} onClick={toggleDarkMode}>
+        <i className="fa-solid fa-lightbulb"></i>
+      </button>
+    </div>
+  );
+
 }
 
-let toggle = true;
+let toggle = false;
 
 export function toggleDarkMode() {
   if (toggle) {
@@ -28,6 +25,8 @@ export function toggleDarkMode() {
     root.style.setProperty('--highlight', '#005961');
     root.style.setProperty('--shadow-focus', '#025961');
     root.style.setProperty('--highlight-focus', '#036c75');
+    root.style.setProperty('--light', '#ffffff5d');
+    root.style.setProperty('--light-hover', '#F9F871');
     toggle = false;
   }
   else {
@@ -41,6 +40,8 @@ export function toggleDarkMode() {
     root.style.setProperty('--highlight', '#d1cdff');
     root.style.setProperty('--shadow-focus', '#8986b4');
     root.style.setProperty('--highlight-focus', '#e4dfff');
+    root.style.setProperty('--light', '#ffffff');
+    root.style.setProperty('--light-hover', '#F9F871');
     toggle = true;
   }
 }
