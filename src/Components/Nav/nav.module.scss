@@ -4,8 +4,24 @@ nav {
   align-items: center;
   width: 100%;
   height: 2rem;
+  padding-bottom: 2rem;
   font-size: 2.5rem;
   font-weight: bold;
+}
+
+.activelink {
+  color: var(--Secondary);
+  text-decoration: none;
+  align-items: center;
+  width: 100%;
+  min-width: 45rem;
+  height: 2rem;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.activeicon {
+  display: none;
 }
   
 .navicon {
@@ -34,6 +50,21 @@ nav {
 @media only screen and (max-width: 80rem) {
   nav{
     all: unset;
+    display: block;
+    padding-bottom: 2rem;
+  }
+  .activelink {
+    display: none;
+  }
+  .activeicon {
+    color: var(--Secondary);
+    display: inline;
+    align-items: center;
+    padding-right: 5%;
+    width: 100%;
+    height: 2rem;
+    font-size: 1.75rem;
+    font-weight: bold;
   }
 
   .navlink {
