@@ -22,20 +22,24 @@ a:hover {
   color: var(--Accent);
 }
 
-// @media only screen and (max-width: 80rem) {
-//   footer {
-//     position: relative;
-//   }
+@media only screen and (max-width: 100rem) {
+  .push {
+    min-height: calc(100vh - 15rem);
+  }
+  
+  footer {
+    position: relative;
+  }
 
-//   .iconContainer {
-//     all: unset;
-//     position: absolute;
-//     bottom: 0%;
-//     right: 0%;
-//     font-size: 1.5rem;
-//     font-weight: bold;
-//   }
-// }
+  .iconContainer {
+    all: unset;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
 
 @media only screen and (max-width: 40rem) {
   footer {

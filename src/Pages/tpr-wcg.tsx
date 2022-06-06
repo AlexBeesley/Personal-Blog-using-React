@@ -3,8 +3,8 @@ import React from "react";
 function Tprwcg() {
   return (
     <div>
-      <h1>Profile</h1>
-      <p>this is the profile page.</p>
+      <h1>DEVOPS</h1>
+      <p>tALK ABOUT DEVOPS INSTEAD!!</p>
     </div>
   );
 }

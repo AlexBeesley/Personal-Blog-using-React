@@ -1,6 +1,7 @@
 @import 'variables.module.scss';
 
 body {
+  height: 100%;
   color: var(--Primary);
   background-color: var(--background);
   font-family: var(--font-family);
@@ -26,14 +27,7 @@ h3 {
 }
 
 .col2 {
-  width: 33.33%;
-  float: left;
-  padding: 0.5rem;
-  box-sizing: border-box;
-}
-
-.col3 {
-  width: 33.33%;
+  width: 66.66%;
   float: left;
   padding: 0.5rem;
   box-sizing: border-box;
@@ -51,24 +45,11 @@ h3 {
 @media only screen and (max-width: 100rem) {
   body {
     overflow-y: unset;
-    padding-left: 10%;
-    padding-right: 10%;
-  }
-
-  .col1, .col2, .col3 {
-    width: 50%;
-  }
-}
-
-
-@media only screen and (max-width: 80rem) {
-  body {
-    overflow-y: unset;
     padding-left: 5%;
     padding-right: 5%;
   }
 
-  .col1, .col2, .col3 {
+  .col1, .col2 {
     width: 100%;
   }
 }
