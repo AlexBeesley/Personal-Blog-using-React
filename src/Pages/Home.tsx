@@ -5,10 +5,10 @@ function Home() {
   return (
     <div>
       <h1>Alexander Beesley</h1>
-      <p>
+      <h3>
         I'm a full-stack developer with a passion for learning and a love for
         the web.
-      </p>
+      </h3>
       <div className={Styles.row}>
         <div className={Styles.col1}>
           <Card

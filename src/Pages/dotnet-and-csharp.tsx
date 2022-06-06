@@ -1,10 +1,12 @@
+import Style from '../Styles/dotnet-and-csharp.module.scss';
 import { Card } from "../Components/Cards/card";
 import { CodeBox } from "../Components/CodeBox/codebox";
 
 function Dotnetandcsharp() {
   return (
     <div>
-      <h1>.NET and C#</h1>
+      <h1 className={Style.mobileHeading}>.NET and C#</h1>
+      <h3>Learning Blog documenting my programming experience with .NET with C#</h3>
       < Card 
           title="Example Code"
           paragraph1="Here is some example code."

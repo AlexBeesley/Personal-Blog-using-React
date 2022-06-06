@@ -1,6 +1,6 @@
 import React from "react";
 
-function Tprwcg() {
+export default function DevOps() {
   return (
     <div>
       <h1>DEVOPS</h1>
@@ -8,5 +8,3 @@ function Tprwcg() {
     </div>
   );
 }
-
-export default Tprwcg;
