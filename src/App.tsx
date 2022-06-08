@@ -17,12 +17,12 @@ export const App = () => {
       <Nav/>
       <DarkModeToggle/>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/dotnet-and-csharp" element={<Dotnetandcsharp />} /> 
-        <Route path="/html-and-css" element={<Htmlandcss />} />
-        <Route path="/devops" element={<DevOps />} />
-        <Route path="/demo" element={<Demo />} />
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="Personal-Blog-using-React/" element={<Home />} />
+        <Route path="Personal-Blog-using-React/dotnet-and-csharp" element={<Dotnetandcsharp />} /> 
+        <Route path="Personal-Blog-using-React/html-and-css" element={<Htmlandcss />} />
+        <Route path="Personal-Blog-using-React/devops" element={<DevOps />} />
+        <Route path="Personal-Blog-using-React/demo" element={<Demo />} />
+        <Route path="Personal-Blog-using-React/*" element={<ErrorPage />} />
       </Routes>
       <Footer/>
     </BrowserRouter>
