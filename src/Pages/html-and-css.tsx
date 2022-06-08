@@ -20,16 +20,13 @@ export default function Htmlandcss() {
 
 const demo1 = () => {
     return (
-      <>
-        &lt;html&gt;<br/>
-        &lt;body&gt;<br/>
-        <br/>
-        &lt;h1&gt;Testing an HTML Syntax Highlighter&lt;/h2&gt;<br/>
-        &lt;p&gt;Hello world!&lt;/p&gt;<br/>
-        &lt;a href="https://www.w3schools.com"&gt;Back to School&lt;/a&gt;<br/>
-        <br/>
-        &lt;/body&gt;<br/>
-        &lt;/html&gt;<br/>
-      </>
+`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>`
     );
 }

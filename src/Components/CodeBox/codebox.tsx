@@ -1,26 +1,21 @@
 import Styles from "./codebox.module.scss";
 import { FunctionComponent } from "react";
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { monoBlue } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 type CodeBoxProps = {
-  children: React.ReactNode;
+  children: string;
+  language: string;
 }
 
-export const CodeBox: FunctionComponent<CodeBoxProps> = ({ children }) => {
-  Loader();
+export const CodeBox: FunctionComponent<CodeBoxProps> = ({ children, language }) => {
   return (
     <>
       <div className={Styles.codebox}>
-        <code className="prettyprint">
+        <SyntaxHighlighter className={Styles.highlighter} language={language} style={monoBlue}>
           {children}
-        </code>
+        </SyntaxHighlighter>
       </div>
     </>
     );
-}
-
-function Loader() {
-  const script = document.createElement("script");
-  script.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
-  script.async = true;
-  document.body.appendChild(script);
 }

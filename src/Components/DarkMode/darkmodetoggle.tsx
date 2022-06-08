@@ -11,7 +11,7 @@ export default function DarkModeToggle () {
 
 }
 
-let toggle = false;
+let toggle = true;
 
 export function toggleDarkMode() {
   if (toggle) {

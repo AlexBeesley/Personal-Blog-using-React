@@ -13,8 +13,8 @@ export default function Nav () {
 
           <NavLink className={({ isActive }) => (isActive ? Styles.activeicon : Styles.navicon)} to="/"> <i className="fa-solid fa-house-user"></i> </NavLink>
           <NavLink className={({ isActive }) => (isActive ? Styles.activeicon : Styles.navicon)} to="/dotnet-and-csharp"> <i className="fa-solid fa-code"></i> </NavLink>
-          <NavLink className={({ isActive }) => (isActive ? Styles.activeicon : Styles.navicon)} to="/html-and-css"> <i className="fa-solid fa-file-code"></i> </NavLink>
-          <NavLink className={({ isActive }) => (isActive ? Styles.activeicon : Styles.navicon)} to="/devops"> <i className="fa-solid fa-briefcase"></i> </NavLink>
+          <NavLink className={({ isActive }) => (isActive ? Styles.activeicon : Styles.navicon)} to="/html-and-css"> <i className="fa-brands fa-html5"></i> </NavLink>
+          <NavLink className={({ isActive }) => (isActive ? Styles.activeicon : Styles.navicon)} to="/devops"> <i className="fa-solid fa-code-branch"></i> </NavLink>
           <NavLink className={({ isActive }) => (isActive ? Styles.activeicon : Styles.navicon)} to="/demo"> <i className="fa-solid fa-laptop-code"></i> </NavLink>
         </div>
       </nav>
