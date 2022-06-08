@@ -1,13 +1,12 @@
 import Styles from "./codebox.module.scss";
 import { FunctionComponent } from "react";
 
-
 type CodeBoxProps = {
   children: React.ReactNode;
-  language: string
 }
 
-export const CodeBox: FunctionComponent<CodeBoxProps> = ({ children, language }) => {  
+export const CodeBox: FunctionComponent<CodeBoxProps> = ({ children }) => {
+  Loader();
   return (
     <>
       <div className={Styles.codebox}>
@@ -15,7 +14,13 @@ export const CodeBox: FunctionComponent<CodeBoxProps> = ({ children, language })
           {children}
         </code>
       </div>
-      <p>Language: {language}</p>
     </>
     );
+}
+
+function Loader() {
+  const script = document.createElement("script");
+  script.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
+  script.async = true;
+  document.body.appendChild(script);
 }

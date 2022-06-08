@@ -11,8 +11,7 @@ function Dotnetandcsharp() {
           title="Example Code"
           paragraph1="Here is some example code."
           expandable={false} >
-        <CodeBox
-            language="HTML">{demo1()}</CodeBox>
+        <CodeBox>{demo1()}</CodeBox>
       </Card>
     </div>
   );
@@ -35,3 +34,7 @@ const demo1 = () => {
 }
 
 export default Dotnetandcsharp;
+function loadScriptHandler() {
+  throw new Error('Function not implemented.');
+}
+
