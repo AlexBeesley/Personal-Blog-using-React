@@ -1,8 +1,11 @@
 {
+  "homepage" : "http://DABeesleyTPR.github.io/Personal-Blog-using-React",
   "name": "react-typescript-webpack-starter",
   "version": "1.0.0",
   "description": "A starter template for React with Typescript using Webpack 5",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "webpack serve --config webpack/webpack.config.js --env env=dev",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
@@ -19,6 +22,7 @@
   "author": "Vishwas",
   "license": "MIT",
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "react": "^17.0.1",
     "react-code-prettify": "^0.0.1",
     "react-dom": "^17.0.1",

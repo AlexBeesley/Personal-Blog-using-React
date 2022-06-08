@@ -12,7 +12,7 @@ function Home() {
       <div className={Styles.row}>
         <div className={Styles.col1}>
           <Card
-            title="Overview"
+            title="Overview on GitHub!!!"
             paragraph1="This is Single-Page Application (SPA) that I built using React.js and TypeScript. With Visual 
             Studio Code as my IDE, I have built this application from scratch, using the latest React version and 
             TypeScript features with Webpack, Babble and Eslint integration."
