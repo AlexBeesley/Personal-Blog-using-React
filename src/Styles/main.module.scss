@@ -8,7 +8,6 @@ body {
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 1rem;
-  overflow: hidden;
 }
 
 h1 {
@@ -36,6 +35,11 @@ h2, h3 {
   padding: 0.5rem;
   box-sizing: border-box;
 }
+
+.push {
+  min-height: calc(100vh - 17rem);
+}
+
 
 #error-page {
   display: flex;

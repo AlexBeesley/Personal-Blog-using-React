@@ -12,8 +12,8 @@ import Footer from "./Components/Footer/footer";
 
 export const App = () => {
   return (
-    
-    <BrowserRouter basename="/Personal-Blog-using-React">
+    // <BrowserRouter basename="/Personal-Blog-using-React"> // Use this for GitHub Pages Development
+    <BrowserRouter>
       <Nav/>
       <DarkModeToggle/>
       <Routes>

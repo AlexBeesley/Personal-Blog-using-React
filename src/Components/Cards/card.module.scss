@@ -4,16 +4,28 @@
     box-shadow:  20px 20px 60px var(--shadow),
                  -20px -20px 60px var(--highlight);
     padding: 1.5rem;
-    margin: 1.5rem;
+    margin: 1rem;   
+    margin-bottom: 2rem;
     box-sizing: border-box;
     p {
     white-space: pre-line;
     }
   }
-  
-  .card:hover {
-    box-shadow:  20px 20px 60px var(--shadow-focus),
-    -20px -20px 60px var(--highlight-focus);
+
+.blogpost {
+    border-radius: 50px;
+    background: var(--background);
+    box-shadow:  20px 20px 60px var(--shadow),
+                 -20px -20px 60px var(--highlight);
+    padding: 1.5rem;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 2.5rem;
+    max-width: 80rem;    
+    box-sizing: border-box;
+    p {
+    white-space: pre-line;
+    }
   }
   
   .expanded {
@@ -25,3 +37,10 @@
     color: var(--Accent);
     cursor: pointer;
   }
+
+  @media only screen and (max-width: 100rem) {
+    .blogpost {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

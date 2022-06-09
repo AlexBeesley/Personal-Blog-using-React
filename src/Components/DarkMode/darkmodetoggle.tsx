@@ -23,8 +23,6 @@ export function toggleDarkMode() {
     root.style.setProperty('--background', '#003236');
     root.style.setProperty('--shadow', '#002426');
     root.style.setProperty('--highlight', '#004146');
-    root.style.setProperty('--shadow-focus', '#003236');
-    root.style.setProperty('--highlight-focus', '#003236');
     root.style.setProperty('--light', '#ffffff5d');
     root.style.setProperty('--light-hover', '#F9F871');
     toggle = false;
@@ -38,8 +36,6 @@ export function toggleDarkMode() {
     root.style.setProperty('--background', '#B6B2F0');
     root.style.setProperty('--shadow', '#9b97cc');
     root.style.setProperty('--highlight', '#d1cdff');
-    root.style.setProperty('--shadow-focus', '#B6B2F0');
-    root.style.setProperty('--highlight-focus', '#B6B2F0');
     root.style.setProperty('--light', '#ffffff');
     root.style.setProperty('--light-hover', '#F9F871');
     toggle = true;

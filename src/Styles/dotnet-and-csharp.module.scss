@@ -2,6 +2,16 @@
     display: none;
   }
 
+.inlineLink {
+    padding: 0;
+}
+
+.inlineCode {
+    font-size: 1rem;
+    color: #0048ab;
+    background-color: var(--codebox)
+}
+
 @media only screen and (max-width: 80rem) {
     .mobileHeading {
         display: block;
