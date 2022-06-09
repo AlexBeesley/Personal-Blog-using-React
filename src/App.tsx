@@ -13,7 +13,7 @@ import Footer from "./Components/Footer/footer";
 export const App = () => {
   return (
     
-    <BrowserRouter>
+    <BrowserRouter basename="/Personal-Blog-using-React">
       <Nav/>
       <DarkModeToggle/>
       <Routes>
