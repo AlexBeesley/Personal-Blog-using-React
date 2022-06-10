@@ -18,7 +18,7 @@ export const Card: FunctionComponent<CardProps> = ({ title, blogpost, children }
   }
   return (
     <article className={Styles.card}>
-      <h1>{title}</h1>
+      <h2>{title}</h2>
       {children}
     </article>
     );
