@@ -37,7 +37,7 @@ h2, h3 {
 }
 
 .push {
-  min-height: calc(100vh - 17rem);
+  min-height: calc(100vh - 19rem);
 }
 
 
@@ -47,6 +47,20 @@ h2, h3 {
   align-items: center;
   color: red;
   font-size: 2.5rem;
+}
+
+.stickyContainer {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background: var(--background);
+  box-shadow:  0 40px 20px -20px var(--shadow);
+  padding: 1.5rem;
+  scroll-padding-block-end: 2rem;
 }
 
 /* responsivity */

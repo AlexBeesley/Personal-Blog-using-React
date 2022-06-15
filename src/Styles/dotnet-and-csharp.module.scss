@@ -1,3 +1,7 @@
+.padding {
+    padding: 1rem;
+}
+
 .mobileHeading {
     display: none;
   }
@@ -13,7 +17,7 @@
 }
 
 img {
-    width: 100%;
+    max-width: 80%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -29,5 +33,9 @@ p.caption {
 @media only screen and (max-width: 80rem) {
     .mobileHeading {
         display: block;
+    }
+
+    .padding {
+        display: none;
     }
 }

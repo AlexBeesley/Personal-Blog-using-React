@@ -1,4 +1,4 @@
-import "./Styles/main.module.scss";
+import Styles from "./Styles/main.module.scss";
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./Pages/Home";
 import Dotnetandcsharp from "./Pages/dotnet-and-csharp";
@@ -14,8 +14,10 @@ export const App = () => {
   return (
     // <BrowserRouter basename="/Personal-Blog-using-React"> // Use this for GitHub Pages Development
     <BrowserRouter>
-      <Nav/>
-      <DarkModeToggle/>
+      <div className={Styles.stickyContainer}>
+        <Nav/>
+        <DarkModeToggle/>
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dotnet-and-csharp" element={<Dotnetandcsharp />} /> 

@@ -6,6 +6,7 @@ export default function Dotnetandcsharp() {
   return (
     <div>
       <h1 className={Style.mobileHeading}>.NET and C#</h1>
+      <div className={Style.padding}/>
       <Card title="Overview" blogpost={true}>
         <p>
           This blog section covers my{' '}
