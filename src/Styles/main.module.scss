@@ -55,12 +55,14 @@ h2, h3 {
   top: 0;
   left: 0;
   z-index: 1;
+  padding: 1.5rem;
+  margin-top: -1.5rem;
+  background-color: var(--background);
+  border-top: solid 1rem var(--background);
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
-  background: var(--background);
-  box-shadow:  0 40px 20px -20px var(--shadow);
-  padding: 1.5rem;
-  scroll-padding-block-end: 2rem;
+  box-shadow:  20px 20px 60px var(--shadow),
+  -20px -20px 60px var(--highlight);
 }
 
 /* responsivity */

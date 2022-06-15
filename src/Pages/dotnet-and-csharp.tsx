@@ -1,13 +1,18 @@
 import Style from '../Styles/dotnet-and-csharp.module.scss';
 import { Card } from "../Components/Cards/card";
 import { CodeBox } from "../Components/CodeBox/codebox";
+import { PageContents } from "../Components/PageContents/pagecontents";
 
 export default function Dotnetandcsharp() {
+    const links = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'];
+    const titles = ['Overview', 'Implementing a Repository Class', 'Adding Service Logic', 'Dependency Injection', 'Adding a RESTful API', 'Logging using Log4net'];
   return (
     <div>
       <h1 className={Style.mobileHeading}>.NET and C#</h1>
+      <PageContents titles={titles} links={links} />
       <div className={Style.padding}/>
-      <Card title="Overview" blogpost={true}>
+      <a className={Style.anchor} id={links[0]}/>
+      <Card title={titles[0]} blogpost={true}>
         <p>
           This blog section covers my{' '}
           <a
@@ -66,7 +71,8 @@ export default function Dotnetandcsharp() {
           support for persistent data access, within the same solution.
         </p>
       </Card>
-      <Card title="Implementing a Repository Class" blogpost={true}>
+      <a className={Style.anchor} id={links[1]}/>
+      <Card title={titles[1]} blogpost={true}>
         <p>
           Following the SOLID principles, a Repository Class is used to perform
           basic CRUD (Create, Read, Update and Delete) functionality used
@@ -128,7 +134,8 @@ export default function Dotnetandcsharp() {
           within the functions as required.
         </p>
       </Card>
-      <Card title="Adding Service Logic" blogpost={true}>
+      <a className={Style.anchor} id={links[2]}/>
+      <Card title={titles[2]} blogpost={true}>
         <p>
           Now that we have a basic Repository Class, we need a service, to the
           class library, to compute the tax and payment calculation. This is the
@@ -144,7 +151,8 @@ export default function Dotnetandcsharp() {
           Repository class is called here.
         </p>
       </Card>
-      <Card title="Dependency Injection" blogpost={true}>
+      <a className={Style.anchor} id={links[3]}/>
+      <Card title={titles[3]} blogpost={true}>
         <p>
           In .NET, Dependencies, which allow classes to interact with each
           other, are managed via using statements, then initialised with either
@@ -177,7 +185,8 @@ export default function Dotnetandcsharp() {
           in the constructor.
         </p>
       </Card>
-      <Card title={'Adding a RESTful API'} blogpost={true}>
+      <a className={Style.anchor} id={links[4]}/>
+      <Card title={titles[4]} blogpost={true}>
         <p>
           A RESTful (Representational State Transfer) application programming
           interface provides access to the Pay Calculator service to third
@@ -288,7 +297,8 @@ export default function Dotnetandcsharp() {
           the employee has been updated successfully.
         </p>
       </Card>
-      <Card title="Logging using Log4net" blogpost={true}>
+      <a className={Style.anchor} id={links[5]}/>
+      <Card title={titles[5]} blogpost={true}>
         <p>
           Logging within the context of an API gives multiple benefits.{' '}
           <a

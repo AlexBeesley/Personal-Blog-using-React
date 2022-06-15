@@ -4,16 +4,16 @@ import { FunctionComponent, useState } from "react";
 type CardProps = {
     title: string,
     blogpost?: boolean,
-    children?: React.ReactNode
+    children?: React.ReactNode,
   }
 
 export const Card: FunctionComponent<CardProps> = ({ title, blogpost, children }) => {
   if (blogpost) {
     return (
-      <div className={Styles.blogpost}>
+      <article className={Styles.blogpost}>
         <h2>{title}</h2>
         {children}
-      </div>
+      </article>
     );
   }
   return (
