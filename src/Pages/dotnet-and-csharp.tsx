@@ -2,6 +2,7 @@ import Style from '../Styles/dotnet-and-csharp.module.scss';
 import { Card } from "../Components/Cards/card";
 import { CodeBox } from "../Components/CodeBox/codebox";
 import { PageContents } from "../Components/PageContents/pagecontents";
+import img1 from "../Images/SwaggerExample.PNG";
 
 export default function Dotnetandcsharp() {
     const links = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'];
@@ -257,7 +258,7 @@ export default function Dotnetandcsharp() {
           library dummy data based on the repository being assigned to the{' '}
           <code className={Style.inlineCode}>IRepository</code> interface.
         </p>
-        <img src="src\Images\SwaggerExample.PNG" />
+        <img src={img1} />
         <p className={Style.caption}>
           A screenshot of the swagger interface, a tool used for local
           development of ASP.NET APIs, showing the get response for temporary
