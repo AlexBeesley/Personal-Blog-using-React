@@ -1,5 +1,6 @@
 import Styles from "./Styles/main.module.scss";
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import Home from "./Pages/Home";
 import Dotnetandcsharp from "./Pages/dotnet-and-csharp";
 import Htmlandcss from "./Pages/html-and-css";
@@ -9,7 +10,6 @@ import ErrorPage from "./Pages/ErrorPage";
 import Nav from "./Components/Nav/nav";
 import DarkModeToggle from "./Components/DarkMode/darkmodetoggle";
 import Footer from "./Components/Footer/footer";
-import { Helmet } from "react-helmet";
 import icon from "./Images/icon.png";
 
 export const App = () => {
