@@ -3,7 +3,7 @@ import { Card } from "../Components/Cards/card";
 import { CodeBox } from "../Components/CodeBox/codebox";
 import { PageContents } from "../Components/PageContents/pagecontents";
 import img1 from "../Images/SwaggerExample.png";
-import img2 from "../Images/LogOutput.png";
+import img2 from "../Images/LogOutput.PNG";
 
 export default function Dotnetandcsharp() {
     const links = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'];
