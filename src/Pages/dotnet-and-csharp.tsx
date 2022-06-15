@@ -3,6 +3,7 @@ import { Card } from "../Components/Cards/card";
 import { CodeBox } from "../Components/CodeBox/codebox";
 import { PageContents } from "../Components/PageContents/pagecontents";
 import img1 from "../Images/SwaggerExample.png";
+import img2 from "../Images/LogOutput.png";
 
 export default function Dotnetandcsharp() {
     const links = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'];
@@ -332,7 +333,7 @@ export default function Dotnetandcsharp() {
         </p>
         <CodeBox language={'csharp'}>{post5f1()}</CodeBox>
         <p>And here is the terminal output</p>
-        <img src="src\Images\LogOutput.PNG" />
+        <img src={img2} />
         <p className={Style.caption}>
           The API terminal view showing log4net in action, complete with
           colour coded log levelling.
