@@ -9,10 +9,15 @@ import ErrorPage from "./Pages/ErrorPage";
 import Nav from "./Components/Nav/nav";
 import DarkModeToggle from "./Components/DarkMode/darkmodetoggle";
 import Footer from "./Components/Footer/footer";
+import { Helmet } from "react-helmet";
+import icon from "./Images/icon.png";
 
 export const App = () => {
   return (
     <BrowserRouter>
+      <Helmet>
+        <link rel="icon" href={icon} />
+      </Helmet>
       <div className={Styles.stickyContainer}>
         <Nav/>
         <DarkModeToggle/>
