@@ -4,16 +4,27 @@ import { CodeBox } from "../Components/CodeBox/codebox";
 import { PageContents } from "../Components/PageContents/pagecontents";
 import img1 from "../Images/SwaggerExample.png";
 import img2 from "../Images/LogOutput.PNG";
+import img3 from "../Images/MVC.PNG";
+import img4 from "../Images/tests.PNG";
 
 export default function Dotnetandcsharp() {
-    const links = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'];
-    const titles = ['Overview', 'Implementing a Repository Class', 'Adding Service Logic', 'Dependency Injection', 'Adding a RESTful API', 'Logging using Log4net'];
+    const links = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8'];
+    const titles = [
+      'Overview',
+      'Implementing a Repository Class',
+      'Adding Service Logic',
+      'Dependency Injection',
+      'Adding a RESTful API',
+      'Logging using Log4net',
+      'Creating a MVC',
+      'Testing with NUnit and Moq'
+    ]
   return (
     <div>
       <h1 className={Style.mobileHeading}>.NET and C#</h1>
       <PageContents titles={titles} links={links} />
-      <div className={Style.padding}/>
-      <a className={Style.anchor} id={links[0]}/>
+      <div className={Style.padding} />
+      <a className={Style.anchor} id={links[0]} />
       <Card title={titles[0]} blogpost={true}>
         <p>
           This blog section covers my{' '}
@@ -26,7 +37,7 @@ export default function Dotnetandcsharp() {
           >
             Pay Calculator
           </a>{' '}
-          application which holds date for two different types of employees,
+          application which holds data for two different types of employees,
           permanent employees with a salary and bonus and temporary employees
           with a day rate and the number of weeks worked stored in a database.
           This was built in{' '}
@@ -73,7 +84,7 @@ export default function Dotnetandcsharp() {
           support for persistent data access, within the same solution.
         </p>
       </Card>
-      <a className={Style.anchor} id={links[1]}/>
+      <a className={Style.anchor} id={links[1]} />
       <Card title={titles[1]} blogpost={true}>
         <p>
           Following the SOLID principles, a Repository Class is used to perform
@@ -136,7 +147,7 @@ export default function Dotnetandcsharp() {
           within the functions as required.
         </p>
       </Card>
-      <a className={Style.anchor} id={links[2]}/>
+      <a className={Style.anchor} id={links[2]} />
       <Card title={titles[2]} blogpost={true}>
         <p>
           Now that we have a basic Repository Class, we need a service, to the
@@ -153,7 +164,7 @@ export default function Dotnetandcsharp() {
           Repository class is called here.
         </p>
       </Card>
-      <a className={Style.anchor} id={links[3]}/>
+      <a className={Style.anchor} id={links[3]} />
       <Card title={titles[3]} blogpost={true}>
         <p>
           In .NET, Dependencies, which allow classes to interact with each
@@ -187,7 +198,7 @@ export default function Dotnetandcsharp() {
           in the constructor.
         </p>
       </Card>
-      <a className={Style.anchor} id={links[4]}/>
+      <a className={Style.anchor} id={links[4]} />
       <Card title={titles[4]} blogpost={true}>
         <p>
           A RESTful (Representational State Transfer) application programming
@@ -299,7 +310,7 @@ export default function Dotnetandcsharp() {
           the employee has been updated successfully.
         </p>
       </Card>
-      <a className={Style.anchor} id={links[5]}/>
+      <a className={Style.anchor} id={links[5]} />
       <Card title={titles[5]} blogpost={true}>
         <p>
           Logging within the context of an API gives multiple benefits.{' '}
@@ -335,8 +346,112 @@ export default function Dotnetandcsharp() {
         <p>And here is the terminal output</p>
         <img src={img2} />
         <p className={Style.caption}>
-          The API terminal view showing log4net in action, complete with
-          colour coded log levelling.
+          The API terminal view showing log4net in action, complete with colour
+          coded log levelling.
+        </p>
+      </Card>
+      <a className={Style.anchor} id={links[6]} />
+      <Card title={titles[6]} blogpost={true}>
+        <p>
+          A Model View Controller is a technology architecture which enables
+          HTML Views to be rendered as desired, from with parent views, letting
+          developers build closely coupled applications with the power of C#
+          baked into the <code className={Style.inlineCode}>.cshtml</code> file
+          format which integrates C# with html, to allow for much greater power
+          over how data in our applications are displayed. Let’s look to see
+          what a <code className={Style.inlineCode}>.cshtml</code> file is
+          capable of.
+        </p>
+        <CodeBox language={'csharp'}>{post6f1()}</CodeBox>
+        <p>
+          The Controller part of the MVC format is much the same as for the
+          ASP.NET API which we looked at earlier, but this time instead of
+          returning HTTP status code, we return our views.
+        </p>
+        <CodeBox language={'csharp'}>{post6f2()}</CodeBox>
+        <p>
+          The Model part of MVC refers to the data models used to initialise the
+          parameters of a view, let us take a look
+        </p>
+        <CodeBox language={'csharp'}>{post6f3()}</CodeBox>
+        <p> </p>
+        <img src={img3} />
+        <p className={Style.caption}>
+          A screenshot of the Pay Calculator MVC site running.
+        </p>
+      </Card>
+      <a className={Style.anchor} id={links[7]} />
+      <Card title={titles[7]} blogpost={true}>
+        <p>
+          Testing in software development is an important part of debugging and
+          proving the functionality of a codebase, in .NET these tests can be
+          written using an extension called{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://nunit.org/"
+            target="_blank"
+            rel="noreferrer"
+            title="What is NUnit?"
+          >
+            NUnit
+          </a>
+          . NUnit provides tools which allow for assertions to be made against a
+          given functions return value, compared to an expected outcome given
+          certain given arguments. It important to use{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://www.telerik.com/products/mocking/unit-testing.aspx#:~:text=What%20is%20mocking%3F,or%20state%20of%20external%20dependencies."
+            target="_blank"
+            rel="noreferrer"
+            title="What is Mocking?"
+          >
+            mocking
+          </a>{' '}
+          when testing an application with multiple dependencies, to ensure the
+          tests aren’t testing the dependencies themselves but only the function
+          under test - for this project{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://www.nuget.org/packages/Moq/"
+            target="_blank"
+            rel="noreferrer"
+            title="Moq"
+          >
+            Moq
+          </a>
+          , which is a{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://www.nuget.org/"
+            target="_blank"
+            rel="noreferrer"
+            title="What is NuGet?"
+          >
+            NuGet
+          </a>{' '}
+          package, was used.
+        </p>
+        <p>Here is an example</p>
+        <CodeBox language={'csharp'}>{post7f1()}</CodeBox>
+        <p>
+          The <code className={Style.inlineCode}>[Test]</code> attribute tells
+          NUnit that this is a test to be executed in the test suite; while the{' '}
+          <code className={Style.inlineCode}>_repo.Setup()</code> function
+          allows for the mocking of the repository dependency in this MVC
+          controller test.
+        </p>
+        <p>
+          This test follows the AAA format, where the{' '}
+          <code className={Style.inlineCode}>Arrange</code> section gathers the
+          needed dependencies, the <code className={Style.inlineCode}>Act</code>{' '}
+          section calls the function under test; the{' '}
+          <code className={Style.inlineCode}>Assert</code> section compares the
+          results to the hardcoded expected results, defined by the developer.
+        </p>
+        <img src={img4} />
+        <p className={Style.caption}>
+          The Visual Studio 2022 test explorer showing all the Pay Calculator
+          NUnit tests passing.
         </p>
       </Card>
     </div>
@@ -578,8 +693,89 @@ public IActionResult DeletePermEmployee(string ID)
 );
 }
 
-const post5f2 = () => {
+const post6f1 = () => {
   return (
-`` 
+`@model PayCal_MVC.Models.HomeViewModel
+@{
+    ViewData["Title"] = "Overview";
+    if (Model.permList is null && Model.tempList is null)
+    {
+        throw new Exception("No data found");
+    }
+    var notnullPermList = Model.permList ?? new List<PayCal.Models.PermEmployeeData>();
+    var notnullTempList = Model.tempList ?? new List<PayCal.Models.TempEmployeeData>();
+}
+
+<h2 class="h2Index">Overview</h2>
+
+<form class="searchbox" role="search" asp-controller="Home" asp-action="Search" asp-route-id="searchString" method="get">
+    <input required name="searchString" type="search" placeholder="Search..."/>
+    <button type="submit" value="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+</form>
+
+<div class="homeCard">
+    <h3>Permanent Employees</h3>
+    @if (Model.permCount == 0)
+    {
+        <p>No Permanent Employees found</p>
+    }
+        
+    @if (Model.permCount > 0)
+    {
+        <div id="outputConsolePerm">
+            @foreach (var item in notnullPermList)
+            {
+                <code>ID: @item.EmployeeID Name: @item.FName @item.LName Salary: @item.Salaryint Bonus: @item.Bonusint</code>
+            }
+        </div>` 
+);
+}
+
+const post6f2 = () => {
+  return (
+`public IActionResult Index()
+{
+    _log.Info($"\nGET: {LogStrings.defaultmsg} {LogStrings.http200}");
+    return View(new HomeViewModel
+    {
+        tempCount = _temp.Count(),
+        permCount = _perm.Count(),
+        tempList = _temp.ReadAll().ToList(),
+        permList = _perm.ReadAll().ToList()
+    });
+}` 
+);
+}
+
+const post6f3 = () => {
+  return (
+`public class HomeViewModel
+{
+    public int? permCount { get; set; }
+    public int? tempCount { get; set; }
+    public List<TempEmployeeData>? tempList { get; set;}
+    public List<PermEmployeeData>? permList { get; set; }
+}` 
+);
+}
+
+const post7f1 = () => {
+  return (
+`[Test]
+public void Return_Employees_When_Employees_Is_Called()
+{
+    // Arrange
+    _repo.Setup(repo => repo.ReadAll())
+        .Returns(new List<PermEmployeeData>() { new PermEmployeeData(), new PermEmployeeData() });
+
+    // Act
+    var response = _sut.GetAllPermEmployees();
+    var contentResponse = response as OkObjectResult;
+    List<PermEmployeeData> responseAsList = contentResponse.Value as List<PermEmployeeData>;
+
+    // Assert
+    Assert.IsInstanceOf<OkObjectResult>(response);
+    Assert.AreEqual(responseAsList.Count, 2);
+}` 
 );
 }
