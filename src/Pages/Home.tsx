@@ -11,7 +11,7 @@ function Home() {
       </h3>
       <div className={Styles.row}>
         <div className={Styles.col1}>
-          <Card title="Overview TEST automation">
+          <Card title="Overview">
             <p>
               This is Single-Page Application (SPA) that I built using React.js and TypeScript. With Visual 
               Studio Code as my IDE, I have built this application from scratch, using the latest React version and 
