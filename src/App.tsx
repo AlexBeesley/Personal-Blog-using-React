@@ -47,9 +47,9 @@ export const App = () => {
             <Route path="/demo" element={<Demo />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
-          <Footer />
         </>
       )}
+      <Footer />
     </BrowserRouter>
   )
 }
