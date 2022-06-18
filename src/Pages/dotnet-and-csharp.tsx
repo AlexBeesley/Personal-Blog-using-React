@@ -21,7 +21,9 @@ export default function Dotnetandcsharp() {
     ]
   return (
     <div>
-      <h1 className={Style.mobileHeading}>.NET and C#</h1>
+      <div className={Style.title}>
+        <h1 className={Style.mobileHeading}>.NET and C#</h1>
+      </div>
       <PageContents titles={titles} links={links} />
       <div className={Style.padding} />
       <a className={Style.anchor} id={links[0]} />

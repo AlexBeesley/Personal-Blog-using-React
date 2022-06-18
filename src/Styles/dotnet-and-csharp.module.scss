@@ -37,6 +37,8 @@ a.anchor {
     visibility: hidden;
 }
 
+
+
 @media only screen and (max-width: 65rem) {
     .mobileHeading {
         display: block;
@@ -45,4 +47,22 @@ a.anchor {
     .padding {
         display: none;
     }
+    
+    .title {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    opacity: 0;
+    animation-name: fadeInDown;
+  }
 }
+
+@keyframes fadeInDown {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+  
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+  }

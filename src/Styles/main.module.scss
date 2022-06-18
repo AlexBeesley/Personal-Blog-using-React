@@ -30,6 +30,13 @@ h2, h3 {
   color: var(--Tertiary);
 }
 
+.title {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  opacity: 0;
+  animation-name: fadeInDown;
+}
+
 .col1 {
   width: 35%;
   float: left;
@@ -80,6 +87,17 @@ h2, h3 {
 @keyframes fadeInUp {
   from {
       transform: translate3d(0,-40px,0)
+  }
+
+  to {
+      transform: translate3d(0,0,0);
+      opacity: 1
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+      transform: translate3d(0,40px,0)
   }
 
   to {

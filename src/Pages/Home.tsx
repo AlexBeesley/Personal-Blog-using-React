@@ -4,11 +4,13 @@ import { Card } from '../Components/Cards/card'
 function Home() {
   return (
     <div>
-      <h1>Alexander Beesley</h1>
-      <h3>
-        I'm a full-stack developer with a passion for learning and a love for
-        the web.
-      </h3>
+      <div className={Styles.title}>
+        <h1>Alexander Beesley</h1>
+        <h3>
+          I'm a full-stack developer with a passion for learning and a love for
+          the web.
+        </h3>
+      </div>
       <div className={Styles.row}>
         <div className={Styles.col1}>
           <Card title="Overview">
