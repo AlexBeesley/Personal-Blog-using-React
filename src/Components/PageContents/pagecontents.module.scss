@@ -1,8 +1,13 @@
 aside.pagecontent{
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    opacity: 0;
+    animation-name: fadeInRight;
     position: fixed;
     top: 11rem;
     left: 0;
     padding: .5%;
+    padding-left: 2%;
     margin-top: -1.5rem;
     background-color: var(--background);
     border-bottom-right-radius: 50px;
@@ -15,8 +20,12 @@ aside.pagecontent{
     padding: .2rem;
 }
 
-@media only screen and (max-width: 100rem) {
+@media only screen and (max-width: 90rem) {
     aside.pagecontent{
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        opacity: 0;
+        animation-name: fadeInUp;
         position: static;
         border-radius: 50px;
         padding: 1.5rem;
@@ -26,5 +35,27 @@ aside.pagecontent{
         margin-top: 1.5rem;
         max-width: 80rem;    
         box-sizing: border-box;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        transform: translate3d(-40px,0,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
     }
 }

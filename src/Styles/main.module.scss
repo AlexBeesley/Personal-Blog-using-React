@@ -10,6 +10,14 @@ body {
   padding-top: 1rem;
 }
 
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
 h1 {
   font-weight: bold;
   position: inline;
@@ -50,6 +58,10 @@ h2, h3 {
 }
 
 .stickyContainer {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  opacity: 0;
+  animation-name: fadeInUp;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -65,8 +77,19 @@ h2, h3 {
   -20px -20px 60px var(--highlight);
 }
 
+@keyframes fadeInUp {
+  from {
+      transform: translate3d(0,-40px,0)
+  }
+
+  to {
+      transform: translate3d(0,0,0);
+      opacity: 1
+  }
+}
+
 /* responsivity */
-@media only screen and (max-width: 100rem) {
+@media only screen and (max-width: 90rem) {
   body {
     overflow-y: unset;
     padding-left: 5%;
