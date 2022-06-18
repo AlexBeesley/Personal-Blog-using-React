@@ -100,11 +100,3 @@ h2, h3 {
     width: 100%;
   }
 }
-
-@media only screen and (max-width: 55rem) {
-  body {
-    overflow-y: unset;
-    padding-left: 2.5%;
-    padding-right: 2.5%;
-  }
-}

@@ -1,8 +1,9 @@
-aside.pagecontent{
+.pagecontent{
     animation-duration: 1s;
     animation-fill-mode: both;
     opacity: 0;
     animation-name: fadeInRight;
+
     position: fixed;
     top: 11rem;
     left: 0;
@@ -20,22 +21,34 @@ aside.pagecontent{
     padding: .2rem;
 }
 
+.toggle{
+    display: none;
+}
+
 @media only screen and (max-width: 90rem) {
-    aside.pagecontent{
-        animation-duration: 1s;
-        animation-fill-mode: both;
-        opacity: 0;
-        animation-name: fadeInUp;
-        position: static;
-        border-radius: 50px;
+    .pagecontent{
+        background: var(--background);
+        position: fixed;
+
+        left: calc(0% - 20rem);
+
+        height: 17rem;
         padding: 1.5rem;
-        margin-left: 0;
-        margin-right: 0;
-        margin-bottom: 1.5rem;
-        margin-top: 1.5rem;
-        max-width: 80rem;    
-        box-sizing: border-box;
+        transition: left 0.4s ease-in-out;
+        z-index: 1;
     }
+
+    .toggle{
+        display: inherit;
+        position: absolute;
+        left: 94%;
+        top: 45%;
+        font-size: 1.5rem;
+    }
+
+    .pagecontent:hover{
+        left: 0px;
+      }
 }
 
 @keyframes fadeInUp {
