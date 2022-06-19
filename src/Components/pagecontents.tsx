@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import Styles from "./pagecontents.module.scss";
+import Styles from "../Styles/pagecontents.module.scss";
 
 type Props = {
     links: Array<string>;

@@ -1,4 +1,4 @@
-import Styles from "./darkmodetoggle.module.scss";
+import Styles from "../Styles/darkmodetoggle.module.scss";
 
 export default function DarkModeToggle () {
   return (

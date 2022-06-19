@@ -1,4 +1,4 @@
-import Styles from "./card.module.scss";
+import Styles from "../Styles/card.module.scss";
 import { FunctionComponent, useState } from "react";
 
 type CardProps = {

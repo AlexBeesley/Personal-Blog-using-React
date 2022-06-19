@@ -1,7 +1,7 @@
 import Style from '../Styles/dotnet-and-csharp.module.scss';
-import { Card } from "../Components/Cards/card";
-import { CodeBox } from "../Components/CodeBox/codebox";
-import { PageContents } from "../Components/PageContents/pagecontents";
+import { Card } from "../Components/card";
+import { CodeBox } from "../Components/codebox";
+import { PageContents } from "../Components/pagecontents";
 import img1 from "../Images/SwaggerExample.png";
 import img2 from "../Images/LogOutput.PNG";
 import img3 from "../Images/MVC.PNG";

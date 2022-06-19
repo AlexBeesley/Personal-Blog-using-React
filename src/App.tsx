@@ -8,9 +8,9 @@ import Htmlandcss from "./Pages/html-and-css";
 import DevOps from "./Pages/devops";
 import Demo from "./Pages/Demo";
 import ErrorPage from "./Pages/ErrorPage";
-import Nav from "./Components/Nav/nav";
-import DarkModeToggle from "./Components/DarkMode/darkmodetoggle";
-import Footer from "./Components/Footer/footer";
+import Nav from "./Components/nav";
+import DarkModeToggle from "./Components/darkmodetoggle";
+import Footer from "./Components/footer";
 import icon from "./Images/icon.png";
 import Loader from "react-spinners/PropagateLoader";
 

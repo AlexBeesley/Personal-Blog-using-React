@@ -1,4 +1,4 @@
-import Styles from "./codebox.module.scss";
+import Styles from "../styles/codebox.module.scss";
 import { FunctionComponent } from "react";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { monoBlue } from "react-syntax-highlighter/dist/esm/styles/hljs";
