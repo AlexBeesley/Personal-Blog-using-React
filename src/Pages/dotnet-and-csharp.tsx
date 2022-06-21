@@ -2,10 +2,10 @@ import Style from '../Styles/dotnet-and-csharp.module.scss';
 import { Card } from "../Components/card";
 import { CodeBox } from "../Components/codebox";
 import { PageContents } from "../Components/pagecontents";
-import img1 from "../Images/SwaggerExample.png";
-import img2 from "../Images/LogOutput.PNG";
-import img3 from "../Images/MVC.PNG";
-import img4 from "../Images/tests.PNG";
+import img1 from '../Images/SwaggerExample.png';
+import img2 from '../Images/LogOutput.PNG';
+import img3 from '../Images/MVC.PNG';
+import img4 from '../Images/PayCaltests.PNG';
 
 export default function Dotnetandcsharp() {
     const links = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8'];
