@@ -1,19 +1,19 @@
+import { useEffect, useState } from "react";
 import Styles from "../Styles/darkmodetoggle.module.scss";
 
 export default function DarkModeToggle () {
-  return (
-    <div className={Styles.darkmodetoggle}>
-      <button className={Styles.button} onClick={toggleDarkMode}>
-        <i className="fa-solid fa-lightbulb"></i>
-      </button>
-    </div>
+  let data = window.localStorage.getItem('DARK_MODE_KEY')
+  if (data !== null) {
+    data = JSON.parse(data);
+  }
+  const [toggle, setToggle] = useState(
+    () => data || false
   );
 
-}
+  useEffect(() => {
+    window.localStorage.setItem('DARK_MODE_KEY', JSON.stringify(toggle));
+  }, [toggle]);
 
-let toggle = true;
-
-export function toggleDarkMode() {
   if (toggle) {
     console.log("toggle dark mode");
     let root = document.documentElement;
@@ -25,7 +25,6 @@ export function toggleDarkMode() {
     root.style.setProperty('--highlight', '#004146');
     root.style.setProperty('--light', '#ffffff5d');
     root.style.setProperty('--light-hover', '#F9F871');
-    toggle = false;
   }
   else {
     console.log("toggle light mode");
@@ -38,6 +37,13 @@ export function toggleDarkMode() {
     root.style.setProperty('--highlight', '#d1cdff');
     root.style.setProperty('--light', '#ffffff');
     root.style.setProperty('--light-hover', '#F9F871');
-    toggle = true;
   }
+
+  return (
+    <div className={Styles.darkmodetoggle}>
+      <button className={Styles.button} onClick={() => setToggle(!toggle)}>
+        <i className="fa-solid fa-lightbulb"></i>
+      </button>
+    </div>
+  );
 }
