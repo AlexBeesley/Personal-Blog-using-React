@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
 export const Page1 = () => <h1>page 1</h1>;
-
 export const Page2 = () => <h1>page 2</h1>;
-
 export const Page3 = () => <h1>page 3</h1>;
 
 export default function Demo() {

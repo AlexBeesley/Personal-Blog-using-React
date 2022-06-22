@@ -8,7 +8,7 @@ type CodeBoxProps = {
   language: string;
 }
 
-export const CodeBox: FunctionComponent<CodeBoxProps> = ({ children, language }) => {
+const CodeBox: FunctionComponent<CodeBoxProps> = ({ children, language }) => {
   return (
     <>
       <div className={Styles.codebox}>
@@ -19,3 +19,5 @@ export const CodeBox: FunctionComponent<CodeBoxProps> = ({ children, language })
     </>
     );
 }
+
+export default CodeBox;

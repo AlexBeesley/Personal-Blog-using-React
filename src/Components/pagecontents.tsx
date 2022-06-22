@@ -6,7 +6,7 @@ type Props = {
     titles: Array<string>;
   }
 
-export const PageContents: FunctionComponent<Props> = ({ links, titles }) => {
+const PageContents: FunctionComponent<Props> = ({ links, titles }) => {
     return (
         <aside className={Styles.pagecontent}>
             <div className={Styles.toggle}><i className="fa-solid fa-angle-right"></i></div>
@@ -21,3 +21,5 @@ export const PageContents: FunctionComponent<Props> = ({ links, titles }) => {
         </aside>
       );
   }
+
+export default PageContents;

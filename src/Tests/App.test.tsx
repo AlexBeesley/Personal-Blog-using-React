@@ -1,14 +1,10 @@
-import { describe, expect, it, vi } from 'vitest';
+import { describe, it, vi } from 'vitest';
+import { render } from '../Utilities/test-utils';
 import { App } from '../App';
-import { render, screen, userEvent } from '../Utilities/test-utils';
 
 describe('App', () => {
   it('is rendered', () => {
     render(<App />);
-  })
-  it('is rendered with title', () => {
-    render(<App />);
-    expect(screen.getByText(/Alexander Beesley/i)).toBeInTheDocument();
   })
 })
 

@@ -1,6 +1,6 @@
 import Style from '../Styles/html-and-css.module.scss';
-import { Card } from "../Components/card";
-import { CodeBox } from "../Components/codebox";
+import Card from "../Components/card";
+import CodeBox from "../Components/codebox";
 
 export default function Htmlandcss() {
   return (

@@ -1,5 +1,5 @@
 import Styles from '../Styles/main.module.scss'
-import { Card } from '../Components/card'
+import Card from '../Components/card'
 
 function Home() {
   return (

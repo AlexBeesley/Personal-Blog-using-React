@@ -7,7 +7,7 @@ type CardProps = {
     children?: React.ReactNode,
   }
 
-export const Card: FunctionComponent<CardProps> = ({ title, blogpost, children }) => {
+const Card: FunctionComponent<CardProps> = ({ title, blogpost, children }) => {
   if (blogpost) {
     return (
       <article className={Styles.blogpost}>
@@ -23,3 +23,5 @@ export const Card: FunctionComponent<CardProps> = ({ title, blogpost, children }
     </article>
     );
 }
+
+export default Card;
