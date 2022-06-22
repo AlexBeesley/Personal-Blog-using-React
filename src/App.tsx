@@ -24,11 +24,13 @@ export const App = () => {
     }, 1500)
   }, [])
 
+  let root = document.documentElement;
+
   return (
     <BrowserRouter>
       {loading ? (
         <div className={Styles.loader}>
-          <Loader color={'#00B1C4'} size={15} />
+          <Loader color={root.style.getPropertyValue('--Accent')} size={15} />
         </div>
       ) : (
         <>
@@ -47,9 +49,10 @@ export const App = () => {
             <Route path="/demo" element={<Demo />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
+          <Footer />
         </>
       )}
-      <Footer />
+      
     </BrowserRouter>
   )
 }
