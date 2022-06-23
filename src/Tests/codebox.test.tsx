@@ -11,6 +11,6 @@ describe('Codebox', () => {
   )
 
   it('CodeBox is rendered', () => {
-    expect(screen.getByText(/Hello World!/i)).toBeInTheDocument()
+    expect(screen.getByText(/Hello !/i)).toBeInTheDocument()
   })
 })
