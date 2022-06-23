@@ -24,3 +24,12 @@ jobs:
       - run: |
           yarn
           yarn test
+  
+  deploy:
+    name: 'Deploy'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - run: |
+          yarn netlify deploy

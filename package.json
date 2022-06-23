@@ -7,7 +7,10 @@
       "build": "webpack --config webpack/webpack.config.js --env env=prod",
       "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
       "test": "vitest",
-      "test:coverage": "vitest --coverage"
+      "test:coverage": "vitest --coverage",
+      "netlify init": "netlify init",
+      "netlify help": "netlify help",
+      "netlify deploy": "netlify deploy"
    },
    "keywords": [
       "React",
@@ -19,6 +22,7 @@
    "author": "Vishwas",
    "license": "MIT",
    "dependencies": {
+      "netlify-cli": "^10.6.2",
       "react": "^17.0.1",
       "react-dom": "^17.0.1",
       "react-helmet": "^6.1.0",
