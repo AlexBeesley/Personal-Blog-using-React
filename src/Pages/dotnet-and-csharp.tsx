@@ -8,7 +8,6 @@ import img3 from '../Images/MVC.PNG';
 import img4 from '../Images/PayCaltests.PNG';
 
 export default function Dotnetandcsharp() {
-    const links = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8'];
     const titles = [
       'Overview',
       'Implementing a Repository Class',
@@ -17,16 +16,17 @@ export default function Dotnetandcsharp() {
       'Adding a RESTful API',
       'Logging using Log4net',
       'Creating a MVC',
-      'Testing with NUnit and Moq'
+      'Testing with NUnit and Moq',
+      'Adding Entity Framework Core'
     ]
   return (
     <div>
       <div className={Style.title}>
         <h1 className={Style.mobileHeading}>.NET and C#</h1>
       </div>
-      <PageContents titles={titles} links={links} />
+      <PageContents titles={titles} links={titles} />
       <div className={Style.padding} />
-      <a className={Style.anchor} id={links[0]} />
+      <a className={Style.anchor} id={titles[0]} />
       <Card title={titles[0]} blogpost={true}>
         <p>
           This blog section covers my{' '}
@@ -86,7 +86,7 @@ export default function Dotnetandcsharp() {
           support for persistent data access, within the same solution.
         </p>
       </Card>
-      <a className={Style.anchor} id={links[1]} />
+      <a className={Style.anchor} id={titles[1]} />
       <Card title={titles[1]} blogpost={true}>
         <p>
           Following the SOLID principles, a Repository Class is used to perform
@@ -149,7 +149,7 @@ export default function Dotnetandcsharp() {
           within the functions as required.
         </p>
       </Card>
-      <a className={Style.anchor} id={links[2]} />
+      <a className={Style.anchor} id={titles[2]} />
       <Card title={titles[2]} blogpost={true}>
         <p>
           Now that we have a basic Repository Class, we need a service, to the
@@ -166,7 +166,7 @@ export default function Dotnetandcsharp() {
           Repository class is called here.
         </p>
       </Card>
-      <a className={Style.anchor} id={links[3]} />
+      <a className={Style.anchor} id={titles[3]} />
       <Card title={titles[3]} blogpost={true}>
         <p>
           In .NET, Dependencies, which allow classes to interact with each
@@ -200,7 +200,7 @@ export default function Dotnetandcsharp() {
           in the constructor.
         </p>
       </Card>
-      <a className={Style.anchor} id={links[4]} />
+      <a className={Style.anchor} id={titles[4]} />
       <Card title={titles[4]} blogpost={true}>
         <p>
           A RESTful (Representational State Transfer) application programming
@@ -312,7 +312,7 @@ export default function Dotnetandcsharp() {
           the employee has been updated successfully.
         </p>
       </Card>
-      <a className={Style.anchor} id={links[5]} />
+      <a className={Style.anchor} id={titles[5]} />
       <Card title={titles[5]} blogpost={true}>
         <p>
           Logging within the context of an API gives multiple benefits.{' '}
@@ -352,7 +352,7 @@ export default function Dotnetandcsharp() {
           coded log levelling.
         </p>
       </Card>
-      <a className={Style.anchor} id={links[6]} />
+      <a className={Style.anchor} id={titles[6]} />
       <Card title={titles[6]} blogpost={true}>
         <p>
           A Model View Controller is a technology architecture which enables
@@ -382,7 +382,7 @@ export default function Dotnetandcsharp() {
           A screenshot of the Pay Calculator MVC site running.
         </p>
       </Card>
-      <a className={Style.anchor} id={links[7]} />
+      <a className={Style.anchor} id={titles[7]} />
       <Card title={titles[7]} blogpost={true}>
         <p>
           Testing in software development is an important part of debugging and
@@ -456,9 +456,60 @@ export default function Dotnetandcsharp() {
           NUnit tests passing.
         </p>
       </Card>
-      <a className={Style.anchor} id={links[8]}/>
+      <a className={Style.anchor} id={titles[8]} />
       <Card title={titles[8]} blogpost={true}>
-
+        <p>
+          Database integration is a popular way to implement a persistent data
+          storage solution within a project of this kind. Microsoft’s solution
+          to this within .NET is{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://docs.microsoft.com/en-us/ef/core/"
+            target="_blank"
+            title="EF Core overview"
+          >
+            Entity Framework Core
+          </a>
+          . It allows developers to initialise a{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://www.techtarget.com/searchdatamanagement/definition/SQL#:~:text=Structured%20Query%20Language%20(SQL)%20is,on%20the%20data%20in%20them."
+            target="_blank"
+            title="What is the Structured Query Language?"
+          >
+            SQL
+          </a>{' '}
+          Database from their code base and handle CRUD operations from a code
+          first perspective, while all the SQL is handle in the background by EF
+          Core; allowing Developers to build database dependant applications
+          without needing to write a single line of SQL.
+        </p>
+        <p>
+          To establish a DB connection a the project must be provided a database
+          connection string via a{' '}
+          <code className={Style.inlineCode}>DBcontext</code> class. Here is
+          that class within the Pay Calculator Application.
+        </p>
+        <CodeBox language={'csharp'}>{post8f1()}</CodeBox>
+        <p>
+          The connection string is passed through a constructor with the model
+          dependencies linked. In Visual Studio, via the Package Manager
+          Console, EF Core CLI commands to generate migration scripts and spin
+          up a database can be run with{' '}
+          <code className={Style.inlineCode}>
+            add-migration [migration name]
+          </code>{' '}
+          and <code className={Style.inlineCode}>update-database</code>.
+        </p>
+        <CodeBox language={'csharp'}>{post8f2()}</CodeBox>
+        <p>
+          To populate the DB, the{' '}
+          <code className={Style.inlineCode}>ReadAll()</code> method in the
+          Repository Class can be passed a{' '}
+          <code className={Style.inlineCode}>.JSON</code> backup file containing
+          the data; using an if statement, this data an be injected if the
+          database is ever empty.
+        </p>
       </Card>
     </div>
   )
@@ -782,6 +833,46 @@ public void Return_Employees_When_Employees_Is_Called()
     // Assert
     Assert.IsInstanceOf<OkObjectResult>(response);
     Assert.AreEqual(responseAsList.Count, 2);
+}` 
+);
+}
+
+const post8f1 = () => {
+  return (
+`public class EmployeeContext : DbContext
+{
+    public EmployeeContext() { }
+
+    private const string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=PayCalDB;Integrated Security=False;";
+
+    public EmployeeContext(DbContextOptions options) : base(options) { }
+    public DbSet<TempEmployeeData>? tempEmployeeDatas { get; set; }
+    public DbSet<PermEmployeeData>? permEmployeeDatas { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseSqlServer(connectionString);
+        }
+    }
+}` 
+);
+}
+
+const post8f2 = () => {
+  return (
+`public IEnumerable<PermEmployeeData> ReadAll()
+{
+    if (_db.permEmployeeDatas.Count() == 0)
+    {
+        string file = System.IO.File.ReadAllText("C:/PermMockData.json");
+        var employeeData = JsonSerializer.Deserialize<List<PermEmployeeData>>(file);
+        _db.permEmployeeDatas.AddRange(employeeData);
+        _db.SaveChanges();
+    }
+    _log.Debug("Real All method accessed.");
+    return _db.permEmployeeDatas;
 }` 
 );
 }
