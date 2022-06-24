@@ -17,7 +17,8 @@ export default function Dotnetandcsharp() {
       'Logging using Log4net',
       'Creating a MVC',
       'Testing with NUnit and Moq',
-      'Adding Entity Framework Core'
+      'Adding Entity Framework Core',
+      'Extension Methods'
     ]
   return (
     <div>
@@ -511,6 +512,36 @@ export default function Dotnetandcsharp() {
           database is ever empty.
         </p>
       </Card>
+      <a className={Style.anchor} id={titles[9]} />
+      <Card title={titles[9]} blogpost={true}>
+        <p>
+          In .NET,{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods"
+            target="_blank"
+            title="What is an extension method?"
+          >
+            extensions
+          </a>{' '}
+          are used extensively by the community to import functionality to a
+          project built by others, but extension methods can also be built
+          internally in the correct use case, Lets look at the{' '}
+          <code className={Style.inlineCode}>FriendlyURLs</code>{' '}
+          extension built for the Pay Calculator MVC.
+        </p>
+        <p>
+          The service provided here is simple, two methods one for converting{' '}
+          <code className={Style.inlineCode}>GUIDs</code> to a shorter format
+          and then another to reverse the conversion.
+        </p>
+        <CodeBox language={'csharp'}>{post9f1()}</CodeBox>
+        <p>
+          Using the <code className={Style.inlineCode}>this</code> syntax lets
+          these functions be called on objects, like this
+        </p>
+        <CodeBox language={'csharp'}>{post9f2()}</CodeBox>
+      </Card>
     </div>
   )
 }
@@ -874,5 +905,36 @@ const post8f2 = () => {
     _log.Debug("Real All method accessed.");
     return _db.permEmployeeDatas;
 }` 
+);
+}
+
+const post9f1 = () => {
+  return (
+`public static class FriendlyURLs
+{
+    public static string ToStringFromGuid(this Guid guid)
+    {
+        return Convert.ToBase64String(guid.ToByteArray())
+            .Replace("/", "-")
+            .Replace("+", "_")
+            .Replace("=", string.Empty);
+    }
+
+    public static string ToGuidFromString(this string Str)
+    {
+        var base64Str = Convert.FromBase64String(Str
+            .Replace("-", "/")
+            .Replace("_", "+") + "==");
+        return new Guid(base64Str);
+    }
+}` 
+);
+}
+
+const post9f2 = () => {
+  return (
+`Guid x = new Guid();
+string y = x.ToStringFromGuid();
+Guid z = y.ToGuidFromString();` 
 );
 }
