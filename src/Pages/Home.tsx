@@ -3,7 +3,7 @@ import Card from '../Components/card'
 
 function Home() {
   return (
-    <div>
+    <>
       <div className={Styles.title}>
         <h1>Alexander Beesley</h1>
         <h3>
@@ -69,7 +69,7 @@ function Home() {
                 title="What is Babel?"
               >
                 Bable
-              </a>
+              </a>{' '}
               and{' '}
               <a
                 className={Styles.inlineLink}
@@ -157,7 +157,7 @@ function Home() {
               </a>
               . I am a self-taught programmer, with a passion for new and
               emerging technologies. My interest in computing stems from the age
-              of 12, when my parents brought me one of the very first editions
+              of 12, when my parents brought me one of the very first editions{' '}
               <a
                 className={Styles.inlineLink}
                 href="https://www.raspberrypi.org/"
@@ -219,12 +219,12 @@ function Home() {
                 title="What is TensorFlow?"
               >
                 Tensorflow
-              </a>
+              </a>{' '}
               and SQL.
             </p>
             <p>
               Before returning for my finally year, I choose to do a year
-              placement with The Pensions Regulator, as a .NET Developer and
+              placement with The Pensions Regulator, as a .NET Developer and{' '}
               <a
                 className={Styles.inlineLink}
                 href="https://about.gitlab.com/topics/devops/"
@@ -280,7 +280,7 @@ function Home() {
         </div>
         <div className={Styles.push}></div>
       </div>
-    </div>
+    </>
   )
 }
 
