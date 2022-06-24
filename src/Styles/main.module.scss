@@ -55,6 +55,9 @@ h2, h3 {
   min-height: calc(100vh - 19rem);
 }
 
+.inlineLink {
+  padding: 0;
+}
 
 .error {
   display: flex;
@@ -86,7 +89,7 @@ h2, h3 {
 
 @keyframes fadeInUp {
   from {
-      transform: translate3d(0,-40px,0)
+      transform: translate3d(0,-50px,0)
   }
 
   to {
@@ -97,7 +100,7 @@ h2, h3 {
 
 @keyframes fadeInDown {
   from {
-      transform: translate3d(0,40px,0)
+      transform: translate3d(0,50px,0)
   }
 
   to {

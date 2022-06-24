@@ -1,6 +1,10 @@
 footer {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  opacity: 0;
+  animation-name: fadeInleft;
   position: relative;
-  }
+}
 
 .iconContainer {
   position: absolute;
@@ -20,11 +24,7 @@ a:hover {
   color: var(--Accent);
 }
 
-@media only screen and (max-width: 40rem) {
-  footer {
-    position: relative;
-  }
-
+@media only screen and (max-width: 40rem) {  
   .iconContainer {
     all: unset;
     position: bottom;
@@ -33,5 +33,16 @@ a:hover {
     align-items: center;
     font-size: 2.5rem;
     font-weight: bold;
+  }
+}
+
+@keyframes fadeInleft {
+  from {
+      transform: translate3d(0,30px,0)
+  }
+
+  to {
+      transform: translate3d(0,0,0);
+      opacity: 1
   }
 }
