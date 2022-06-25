@@ -58,12 +58,13 @@
   }
 
 @media only screen and (max-width: 90rem) {
-    .blogpost {
-        margin-left: 1rem;
-        margin-right: -1rem;
-    }
-    .card {
-      margin-left: 0;
-      margin-right: 0;
+  .blogpost {
+    margin-left: 1rem;
+    margin-right: 0;
+  }  
+  
+  .card {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
