@@ -55,6 +55,10 @@ h2, h3 {
   min-height: calc(100vh - 19rem);
 }
 
+.spacer {
+  height: 80vh;
+}
+
 .inlineLink {
   padding: 0;
 }
@@ -122,6 +126,10 @@ h2, h3 {
   }
 
   .stickyContainer {
-    border-top: solid 1.5rem var(--background);
+    border-top: solid 2rem var(--background);
+  }
+
+  .spacer {
+    height: 70vh;
   }
 }
