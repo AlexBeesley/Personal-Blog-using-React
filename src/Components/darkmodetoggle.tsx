@@ -17,24 +17,24 @@ export default function DarkModeToggle () {
   if (toggle) {
     console.log("toggle dark mode");
     let root = document.documentElement;
-    root.style.setProperty('--Secondary', '#827BAE');
-    root.style.setProperty('--Tertiary', '#2C9676');
+    root.style.setProperty('--Secondary', '#009AFA');
+    root.style.setProperty('--Tertiary', '#8FC3F7');
     root.style.setProperty('--Accent', '#F9F871');
-    root.style.setProperty('--background', '#003236');
-    root.style.setProperty('--shadow', '#002426');
-    root.style.setProperty('--highlight', '#004146');
+    root.style.setProperty('--background', '#00182e');
+    root.style.setProperty('--shadow', '#000d18');
+    root.style.setProperty('--highlight', '#002344');
     root.style.setProperty('--light', '#ffffff5d');
     root.style.setProperty('--light-hover', '#F9F871');
   }
   else {
     console.log("toggle light mode");
     let root = document.documentElement;
-    root.style.setProperty('--Secondary', '#004D54');
-    root.style.setProperty('--Tertiary', '#00B1C4');
-    root.style.setProperty('--Accent', '#67FBD1');
-    root.style.setProperty('--background', '#B6B2F0');
-    root.style.setProperty('--shadow', '#9b97cc');
-    root.style.setProperty('--highlight', '#d1cdff');
+    root.style.setProperty('--Secondary', '#002B53');
+    root.style.setProperty('--Tertiary', '#009AFA');
+    root.style.setProperty('--Accent', '#F9F871');
+    root.style.setProperty('--background', '#8FC3F7');
+    root.style.setProperty('--shadow', '#7aa6d2');
+    root.style.setProperty('--highlight', '#a4e0ff');
     root.style.setProperty('--light', '#ffffff');
     root.style.setProperty('--light-hover', '#F9F871');
   }

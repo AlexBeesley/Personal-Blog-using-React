@@ -30,7 +30,7 @@ export const App = () => {
     <BrowserRouter>
       {loading ? (
         <div className={Styles.loader}>
-          <Loader color={root.style.getPropertyValue('--Accent')} size={15} />
+          <Loader color={root.style.getPropertyValue('--Secondary')} size={15} />
         </div>
       ) : (
         <>
