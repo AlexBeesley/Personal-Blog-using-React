@@ -124,7 +124,23 @@ h2, h3 {
   .col1, .col2 {
     width: 100%;
   }
-  
+
+  .stickyContainer {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    opacity: 0;
+    animation-name: fadeInUp;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 1.5rem;
+    margin-top: -1.5rem;
+    background-color: var(--background);
+    border-top: solid 5vh var(--background);
+  }
+
   .spacer {
     height: 70vh;
   }
