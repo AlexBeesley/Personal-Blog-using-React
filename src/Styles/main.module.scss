@@ -7,7 +7,8 @@ body {
   font-family: var(--font-family);
   padding-left: 10%;
   padding-right: 10%;
-  padding-top: 1rem;
+  padding-top: 1.5rem;
+  min-width: 25rem;
 }
 
 .loader {
@@ -82,7 +83,7 @@ h2, h3 {
   left: 0;
   z-index: 1;
   padding: 1.5rem;
-  margin-top: -1.5rem;
+  margin-top: -2rem;
   background-color: var(--background);
   border-top: solid 1rem var(--background);
   border-bottom-left-radius: 50px;
