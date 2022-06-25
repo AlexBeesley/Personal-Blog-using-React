@@ -49,6 +49,7 @@ nav {
   nav{
     all: unset;
     display: absolute;
+    width: 110%;
   }
   .activelink {
     display: none;
@@ -57,10 +58,10 @@ nav {
     color: var(--Secondary);
     display: inline;
     align-items: center;
-    padding-right: 5%;
+    padding-right: 2.5%;
     width: 100%;
     height: 2rem;
-    font-size: 1.75rem;
+    font-size: 1.50rem;
     font-weight: bold;
   }
 
@@ -71,10 +72,10 @@ nav {
   .navicon {
     display: inline;
     align-items: center;
-    padding-right: 5%;
+    padding-right: 2.5%;
     width: 100%;
     height: 2rem;
-    font-size: 1.75rem;
+    font-size: 1.50rem;
     font-weight: bold;
   }
 }

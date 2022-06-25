@@ -24,3 +24,11 @@ button {
      right: 5%;
    }
  }
+
+ @media only screen and (max-width: 65rem) {
+  button{
+    i{
+      font-size: 1.50rem;
+    }
+  }
+}

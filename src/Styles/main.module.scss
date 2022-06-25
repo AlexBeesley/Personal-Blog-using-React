@@ -120,4 +120,8 @@ h2, h3 {
   .col1, .col2 {
     width: 100%;
   }
+
+  .stickyContainer {
+    border-top: solid 1.5rem var(--background);
+  }
 }
