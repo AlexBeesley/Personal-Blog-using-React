@@ -129,9 +129,3 @@ h2, h3 {
     height: 70vh;
   }
 }
-
-@media only screen and (max-width: 45rem) {
-  .stickyContainer {
-    border-top: solid 5vh var(--background);
-  }
-}
