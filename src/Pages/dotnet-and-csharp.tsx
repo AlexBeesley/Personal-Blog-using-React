@@ -63,7 +63,7 @@ export default function Dotnetandcsharp() {
           >
             Visual Studio 2022
           </a>
-          , the project demonstrates a how a backend service contained within a
+          , the project demonstrates how a backend service contained within a
           class library is accessed from a{' '}
           <a
             className={Style.inlineLink}
@@ -112,7 +112,7 @@ export default function Dotnetandcsharp() {
           the solution during development.
         </p>
         <p>
-          Lets take a look at the Read function from my volatile Repository
+          Let's take a look at the Read function from my volatile Repository
           Class, using inline dummy data for local development, before Entity
           Framework Core integration was added, this solution allowed me as a
           developer to work on the functionality of the Repository Class without
@@ -122,7 +122,7 @@ export default function Dotnetandcsharp() {
         </p>
         <CodeBox language={'csharp'}>{post1f3()}</CodeBox>
         <p>
-          There is a lot going on here, this function takes a string argument
+          A lot is going on here, this function takes a string argument
           for the <code className={Style.inlineCode}>employeeID</code> field and
           using an if statement, the data set is searched, if the{' '}
           <code className={Style.inlineCode}>employeeID</code> exists, it then
@@ -134,8 +134,8 @@ export default function Dotnetandcsharp() {
         <p>
           Next, we need an interface, an interface in .NET is used to manage
           dependencies and allows developers to swap out associated classes
-          without breaking places where they are implemented, this lets
-          developers build different classes performing the same roll, for my
+          without breaking places where they are implemented, this let's
+          developers build different classes performing the same role, for my
           application this was necessary as when EF Core is added, I can keep
           the Repository Classes with EF Core integration for testing and
           development while using EF Core in production.
@@ -161,7 +161,7 @@ export default function Dotnetandcsharp() {
         <p>The code for this is as follows</p>
         <CodeBox language={'csharp'}>{post2f1()}</CodeBox>
         <p>
-          This logic calculates the annual income for both types of employee
+          This logic calculates the annual income for both types of employees
           based on the current British Income Tax rates. Note, the{' '}
           <code className={Style.inlineCode}>Read()</code> function from the
           Repository class is called here.
@@ -172,7 +172,7 @@ export default function Dotnetandcsharp() {
         <p>
           In .NET, Dependencies, which allow classes to interact with each
           other, are managed via using statements, then initialised with either
-          a new instance or through a constructor. Lets take another look at our
+          a new instance or through a constructor. Let's take another look at our
           logic service and learn how it talks to the Repository Class though{' '}
           <a
             className={Style.inlineLink}
@@ -188,7 +188,7 @@ export default function Dotnetandcsharp() {
         <CodeBox language={'csharp'}>{post3f1()}</CodeBox>
         <p>
           The using statements fetch access to the classes needed in this class,
-          from <code className={Style.inlineCode}>.Models</code> which contains
+          from <code className={Style.inlineCode}>.Models</code> which contain
           our data models and{' '}
           <code className={Style.inlineCode}>.Repositories</code> which contain
           our repository classes and the repository interface
@@ -196,7 +196,7 @@ export default function Dotnetandcsharp() {
         <p>
           Within the Calculator class, which extends its own interface, the{' '}
           <code className={Style.inlineCode}>IRepositiry</code> class and its
-          relevant data model is given a variable name, typically starting with
+          relevant data models are given a variable name, typically starting with
           an underscore as is a soft standard among developers, then initialised
           in the constructor.
         </p>
@@ -216,7 +216,7 @@ export default function Dotnetandcsharp() {
           >
             JSON format
           </a>
-          . This is a patter widely used across the web to access data and
+          . This is a pattern widely used across the web to access data and
           provide utilities to dependant services. This .NET 6 API application
           handles requests and returns relevant{' '}
           <a
@@ -233,7 +233,7 @@ export default function Dotnetandcsharp() {
         <p>
           Looking at the API{' '}
           <code className={Style.inlineCode}>Program.cs</code> class, which
-          serves as the entry-point when the application is executed, it handles
+          serves as the entry point when the application is executed, it handles
           scoped dependencies such as the class library, logging (which will be
           covered in the next section) and database connection
         </p>
@@ -241,14 +241,14 @@ export default function Dotnetandcsharp() {
         <p>
           Here, a <code className={Style.inlineCode}>builder</code> object is
           created and configured with the appropriate class library
-          dependencies, database connection string and then app, derived from{' '}
+          dependencies, database connection string and then the app, derived from{' '}
           <code className={Style.inlineCode}>builder.Build()</code>, is
           configured and initialised, booting the API service.
         </p>
         <p>
-          Lets look at the{' '}
+          Let's look at the{' '}
           <code className={Style.inlineCode}>GetTempEmployees()</code> function
-          from the controller for the tempoary employee datatype to see how
+          from the controller for the temporary employee datatype to see how
           requests and handled
         </p>
         <CodeBox language={'csharp'}>{post4f2()}</CodeBox>
@@ -280,7 +280,7 @@ export default function Dotnetandcsharp() {
           employees.
         </p>
         <p>
-          APIs enable more than just read capabilities, to showcase this lets
+          APIs enable more than just read capabilities, to showcase this let's
           look at how to update an employee entry with new data. The function
           for this is as follows
         </p>
@@ -331,7 +331,7 @@ export default function Dotnetandcsharp() {
           configured in the{' '}
           <code className={Style.inlineCode}>log4net.config</code> file, and
           injected in any class using a constructor. Making logging easy to
-          setup, outputting at various log levels including{' '}
+          set up, outputting at various log levels including{' '}
           <code className={Style.inlineCode}>INFO</code>,{' '}
           <code className={Style.inlineCode}>DEBUG</code>,{' '}
           <code className={Style.inlineCode}>WARN</code> and{' '}
@@ -360,7 +360,7 @@ export default function Dotnetandcsharp() {
           HTML Views to be rendered as desired, from with parent views, letting
           developers build closely coupled applications with the power of C#
           baked into the <code className={Style.inlineCode}>.cshtml</code> file
-          format which integrates C# with html, to allow for much greater power
+          format which integrates C# with HTML, to allow for much greater power
           over how data in our applications are displayed. Let’s look to see
           what a <code className={Style.inlineCode}>.cshtml</code> file is
           capable of.
@@ -399,8 +399,8 @@ export default function Dotnetandcsharp() {
             NUnit
           </a>
           . NUnit provides tools which allow for assertions to be made against a
-          given functions return value, compared to an expected outcome given
-          certain given arguments. It important to use{' '}
+          given function's return value, compared to an expected outcome given
+          certain arguments. It is important to use{' '}
           <a
             className={Style.inlineLink}
             href="https://www.telerik.com/products/mocking/unit-testing.aspx#:~:text=What%20is%20mocking%3F,or%20state%20of%20external%20dependencies."
@@ -481,12 +481,12 @@ export default function Dotnetandcsharp() {
             SQL
           </a>{' '}
           Database from their code base and handle CRUD operations from a code
-          first perspective, while all the SQL is handle in the background by EF
-          Core; allowing Developers to build database dependant applications
+          first perspective, while all the SQL is handled in the background by EF
+          Core; allowing Developers to build database dependent applications
           without needing to write a single line of SQL.
         </p>
         <p>
-          To establish a DB connection a the project must be provided a database
+          To establish a DB connection the project must be provided with a database
           connection string via a{' '}
           <code className={Style.inlineCode}>DBcontext</code> class. Here is
           that class within the Pay Calculator Application.
@@ -508,7 +508,7 @@ export default function Dotnetandcsharp() {
           <code className={Style.inlineCode}>ReadAll()</code> method in the
           Repository Class can be passed a{' '}
           <code className={Style.inlineCode}>.JSON</code> backup file containing
-          the data; using an if statement, this data an be injected if the
+          the data; using an if statement, this data can be injected if the
           database is ever empty.
         </p>
       </Card>
@@ -526,7 +526,7 @@ export default function Dotnetandcsharp() {
           </a>{' '}
           are used extensively by the community to import functionality to a
           project built by others, but extension methods can also be built
-          internally in the correct use case, Lets look at the{' '}
+          internally in the correct use case, Let's look at the{' '}
           <code className={Style.inlineCode}>FriendlyURLs</code>{' '}
           extension built for the Pay Calculator MVC.
         </p>
@@ -537,7 +537,7 @@ export default function Dotnetandcsharp() {
         </p>
         <CodeBox language={'csharp'}>{post9f1()}</CodeBox>
         <p>
-          Using the <code className={Style.inlineCode}>this</code> syntax lets
+          Using the <code className={Style.inlineCode}>this</code> syntax let's
           these functions be called on objects, like this
         </p>
         <CodeBox language={'csharp'}>{post9f2()}</CodeBox>

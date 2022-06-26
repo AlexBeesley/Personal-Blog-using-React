@@ -15,7 +15,7 @@ function Home() {
         <div className={Styles.col1}>
           <Card title="Overview">
             <p>
-              This is{' '}
+              This is a{' '}
               <a
                 className={Styles.inlineLink}
                 href="https://www.bloomreach.com/en/blog/2018/what-is-a-single-page-application"
@@ -129,7 +129,7 @@ function Home() {
               variable declarations, it is a powerful tool for building
               large-scale applications. Note, all TypeScript code is transpiled
               to JavaScript before it is then compiled and run, perfect for
-              traditional C# Developers used to working with strong types, which
+              traditional C# Developers used to work with strong types, which
               brings inherent{' '}
               <a
                 className={Styles.inlineLink}
@@ -157,7 +157,7 @@ function Home() {
               </a>
               . I am a self-taught programmer, with a passion for new and
               emerging technologies. My interest in computing stems from the age
-              of 12, when my parents brought me one of the very first editions{' '}
+              of 12, when my parents brought me one of the very first editions of{' '}
               <a
                 className={Styles.inlineLink}
                 href="https://www.raspberrypi.org/"
@@ -169,7 +169,7 @@ function Home() {
               Model B which came out in February 2012, which came in a box
               signed by The Raspberry Pi Foundation’s CEO and founder, David
               Breben. On this early edition there was little support at the time
-              and even getting it to boot off a SD Card preloaded with Raspbian
+              and even getting it to boot off an SD Card preloaded with Raspbian
               (a flavour of{' '}
               <a
                 className={Styles.inlineLink}
@@ -199,7 +199,7 @@ function Home() {
               fully on my passion and took a BTEC in IT, the following year,
               where I developed an interest in Artificial Intelligence and
               Machine Learning. Inspired by this cutting-edge technology with
-              seemingly infinite potential it made sense to me to pursue{' '}
+              the seemingly infinite potential it made sense to me to pursue{' '}
               <a
                 className={Styles.inlineLink}
                 href="https://www.brighton.ac.uk/courses/study/computer-science-with-artificial-intelligence-bsc-hons.aspx"
@@ -223,7 +223,7 @@ function Home() {
               and SQL.
             </p>
             <p>
-              Before returning for my finally year, I choose to do a year
+              Before returning for my final year, I choose to do a year
               placement with The Pensions Regulator, as a .NET Developer and{' '}
               <a
                 className={Styles.inlineLink}
@@ -256,7 +256,7 @@ function Home() {
               </a>
               . While following an Agile workflow within my team, using Azure
               DevOps to track work items using Kanban, covering Git extensively
-              with peer reviewed Pull Requests, touching on{' '}
+              with peer-reviewed Pull Requests, touching on{' '}
               <a
                 className={Styles.inlineLink}
                 href="https://azure.microsoft.com/en-gb/"
