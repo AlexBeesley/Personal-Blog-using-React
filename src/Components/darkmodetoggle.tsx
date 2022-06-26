@@ -17,6 +17,7 @@ export default function DarkModeToggle () {
   if (toggle) {
     console.log("toggle dark mode");
     let root = document.documentElement;
+    root.style.setProperty('--Primary', '#9FACBD');
     root.style.setProperty('--Secondary', '#009AFA');
     root.style.setProperty('--Tertiary', '#8FC3F7');
     root.style.setProperty('--Accent', '#F9F871');
@@ -29,6 +30,7 @@ export default function DarkModeToggle () {
   else {
     console.log("toggle light mode");
     let root = document.documentElement;
+    root.style.setProperty('--Primary', '#004D79');
     root.style.setProperty('--Secondary', '#002B53');
     root.style.setProperty('--Tertiary', '#009AFA');
     root.style.setProperty('--Accent', '#F9F871');
