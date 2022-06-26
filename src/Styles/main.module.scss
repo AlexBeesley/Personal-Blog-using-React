@@ -36,6 +36,7 @@ h2, h3 {
   animation-fill-mode: both;
   opacity: 0;
   animation-name: fadeInDown;
+  padding-top: 1.5rem;
 }
 
 .col1 {
@@ -53,7 +54,7 @@ h2, h3 {
 }
 
 .push {
-  min-height: calc(100vh - 19rem);
+  min-height: calc(100vh - 20rem);
 }
 
 .spacer {
