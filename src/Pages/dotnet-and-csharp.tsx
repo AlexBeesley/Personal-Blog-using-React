@@ -1,4 +1,4 @@
-import Style from '../Styles/dotnet-and-csharp.module.scss';
+import Style from '../Styles/pages.module.scss';
 import Card from "../Components/card";
 import CodeBox from "../Components/codebox";
 import PageContents from "../Components/pagecontents";
