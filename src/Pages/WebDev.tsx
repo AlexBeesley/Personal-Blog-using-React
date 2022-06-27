@@ -73,7 +73,6 @@ export default function WebDev() {
           , and compare them to React.
         </p>
       </Card>
-      <div className={Style.padding} />
       <a className={Style.anchor} id={titles[1]} />
       <Card title={titles[1]} blogpost={true}>
         <p>
@@ -198,7 +197,89 @@ export default function WebDev() {
       </Card>
       <a className={Style.anchor} id={titles[3]} />
       <Card title={titles[3]} blogpost={true}>
-
+        <p>
+          React is a popular JavaScript framework for build front-end user
+          interfaces (UIs), It is a single page application (SPA) which means
+          all the sites data is loaded from the starting index.html file all
+          browsers default to, then the pages are rendered{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://www.toptal.com/front-end/client-side-vs-server-side-pre-rendering#:~:text=Client%2Dside%20rendering%20manages%20the,displays%20a%20blank%20page%20first."
+            target="_blank"
+            rel="noreferrer"
+            title="Client-side vs Server-side rendering"
+          >
+            client-side
+          </a>
+          , this approach gives users fast, responsive web applications, where
+          data is loaded as and when the user requires.
+        </p>
+        <p>
+          React allows developers to implement reusable components. React
+          components can be passed variables known as Props, in React, and given
+          initial values known as State. Starting with Props, Lets look at the
+          <code className={Style.inlineCode}>PageContents</code> component for
+          this site, as it uses Props effectively.
+        </p>
+        <CodeBox language={'javascript'}>{post3f1()}</CodeBox>
+        <p>
+          This is a <code className={Style.inlineCode}>.tsx</code> document
+          which allows for TypeScript and HTML (
+          <code className={Style.inlineCode}>.jsx</code> is used for JavaScript
+          and HTML) to be used in tandem, similar to{' '}
+          <code className={Style.inlineCode}>.cshtml</code>
+          files found in the .NET ecosphere. Props are declared outside the main
+          function and passed down via the function’s constructor, as arguments,
+          these allow the developer to pass in variable when calling the
+          component in other parts of the code base. In this example, a list of
+          titles and internal page links are used, so that the user can jump to
+          each blog post using the page contents menu.
+        </p>
+        <p>
+          Let’s take a look at the{' '}
+          <code className={Style.inlineCode}>DarkModeToggle</code> component for
+          this website as it is a good example of State
+        </p>
+        <CodeBox language={'javascript'}>{post3f2()}</CodeBox>
+        <p>
+          By importing <code className={Style.inlineCode}>useEffect</code> and{' '}
+          <code className={Style.inlineCode}>useState</code>, we can set the
+          toggle state of the dark mode switch, which uses{' '}
+          <code className={Style.inlineCode}>
+            window.localstorage.setItem()
+          </code>{' '}
+          to store the state value locally on the users browser so that the
+          theme persists if the user revisits or refreshes the site. This is
+          considered a cookie, and due to{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://www.cookielaw.org/the-cookie-law/"
+            target="_blank"
+            rel="noreferrer"
+            title="The Cookie Law Explained"
+          >
+            new laws
+          </a>{' '}
+          introduced by the EU, some cookies need express permission to run.
+        </p>
+        <p>
+          We can then target the <code className={Style.inlineCode}>.SCSS</code>{' '}
+          variables contained in a css module to implement the style changes
+          required. Using{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://github.com/css-modules/css-modules"
+            target="_blank"
+            rel="noreferrer"
+            title="CSS Modules documentation"
+          >
+            CSS Modules
+          </a>{' '}
+          In this app allows for a more organized developer environment, as
+          class names are abstracted when complied by webpack, so the developer
+          does not have to worry about unique class names across all modules,
+          only within one.
+        </p>
       </Card>
     </div>
   )
@@ -320,5 +401,90 @@ const post2f1 = () => {
       document.getElementById("indicator").classList.toggle("dark-mode-indicator");
       
       console.log("Dark Mode toggled");
+  }`
+}
+
+const post3f1 = () => {
+  return `import { FunctionComponent } from "react";
+  import Styles from "../Styles/pagecontents.module.scss";
+  
+  type Props = {
+      links: Array<string>;
+      titles: Array<string>;
+    }
+  
+  const PageContents: FunctionComponent<Props> = ({ links, titles }) => {
+      return (
+          <aside className={Styles.pagecontent}>
+              <div className={Styles.toggle}><i className="fa-solid fa-angle-right"></i></div>
+              <h1>Page Contents</h1>
+              <ul className="pagecontent__list">
+                  {titles.map((titles, index) => (
+                      <li className={Styles.list} key={index}>
+                          <a href={'#'+links[index]}>{titles}</a>
+                      </li>
+                  ))}
+              </ul>
+          </aside>
+        );
+    }
+  
+  export default PageContents;`
+}
+
+const post3f2 = () => {
+  return `import { useEffect, useState } from "react";
+  import Styles from "../Styles/darkmodetoggle.module.scss";
+  
+  export default function DarkModeToggle () {
+    let data = window.localStorage.getItem('DARK_MODE_KEY')
+    if (data !== null) {
+      data = JSON.parse(data);
+    }
+    const [toggle, setToggle] = useState(
+      () => data || false
+    );
+    
+    useEffect(() => {
+      window.localStorage.setItem('DARK_MODE_KEY', JSON.stringify(toggle));
+    }, [toggle]);
+    
+    let root = document.documentElement;
+    
+    console.log("dark mode:", toggle);
+  
+    if (toggle) {
+      root.style.setProperty('--Primary', '#9FACBD');
+      root.style.setProperty('--Secondary', '#009AFA');
+      root.style.setProperty('--Tertiary', '#8FC3F7');
+      root.style.setProperty('--Quaternary', '#02629e');
+      root.style.setProperty('--Accent', '#F9F871');
+      root.style.setProperty('--background', '#00182e');
+      root.style.setProperty('--shadow', '#000d18');
+      root.style.setProperty('--highlight', '#002344');
+      root.style.setProperty('--light', '#ffffff5d');
+      root.style.setProperty('--light-hover', '#F9F871');
+    }
+  
+    else {
+      root.style.setProperty('--Primary', '#004D79');
+      root.style.setProperty('--Secondary', '#002B53');
+      root.style.setProperty('--Tertiary', '#009AFA');
+      root.style.setProperty('--Quaternary', '#02629e');
+      root.style.setProperty('--Accent', '#F9F871');
+      root.style.setProperty('--background', '#9ccaf7');
+      root.style.setProperty('--shadow', '#85acd2');
+      root.style.setProperty('--highlight', '#b3e8ff');
+      root.style.setProperty('--light', '#ffffff');
+      root.style.setProperty('--light-hover', '#F9F871');
+    }
+  
+    return (
+      <div className={Styles.darkmodetoggle}>
+        <button className={Styles.button} onClick={() => setToggle(!toggle)}>
+          <i className="fa-solid fa-lightbulb"></i>
+        </button>
+      </div>
+    );
   }`
 }
