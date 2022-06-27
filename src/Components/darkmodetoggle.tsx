@@ -37,9 +37,9 @@ export default function DarkModeToggle () {
     root.style.setProperty('--Tertiary', '#009AFA');
     root.style.setProperty('--Quaternary', '#02629e');
     root.style.setProperty('--Accent', '#F9F871');
-    root.style.setProperty('--background', '#8FC3F7');
-    root.style.setProperty('--shadow', '#7aa6d2');
-    root.style.setProperty('--highlight', '#a4e0ff');
+    root.style.setProperty('--background', '#9ccaf7');
+    root.style.setProperty('--shadow', '#85acd2');
+    root.style.setProperty('--highlight', '#b3e8ff');
     root.style.setProperty('--light', '#ffffff');
     root.style.setProperty('--light-hover', '#F9F871');
   }
