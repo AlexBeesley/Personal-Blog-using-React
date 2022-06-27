@@ -23,7 +23,7 @@ export const App = () => {
       setLoading(false);
     }, 1500)
   }, [])
-
+  
   let root = document.documentElement;
 
   return (
