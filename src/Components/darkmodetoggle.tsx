@@ -35,6 +35,7 @@ export default function DarkModeToggle () {
     root.style.setProperty('--Primary', '#004D79');
     root.style.setProperty('--Secondary', '#002B53');
     root.style.setProperty('--Tertiary', '#009AFA');
+    root.style.setProperty('--Quaternary', '#02629e');
     root.style.setProperty('--Accent', '#F9F871');
     root.style.setProperty('--background', '#8FC3F7');
     root.style.setProperty('--shadow', '#7aa6d2');
