@@ -22,6 +22,7 @@ export default function DarkModeToggle () {
     root.style.setProperty('--Primary', '#9FACBD');
     root.style.setProperty('--Secondary', '#009AFA');
     root.style.setProperty('--Tertiary', '#8FC3F7');
+    root.style.setProperty('--Quaternary', '#02629e');
     root.style.setProperty('--Accent', '#F9F871');
     root.style.setProperty('--background', '#00182e');
     root.style.setProperty('--shadow', '#000d18');
@@ -41,7 +42,7 @@ export default function DarkModeToggle () {
     root.style.setProperty('--light', '#ffffff');
     root.style.setProperty('--light-hover', '#F9F871');
   }
-  
+
   return (
     <div className={Styles.darkmodetoggle}>
       <button className={Styles.button} onClick={() => setToggle(!toggle)}>
