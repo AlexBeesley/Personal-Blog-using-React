@@ -217,7 +217,7 @@ export default function WebDev() {
         <p>
           React allows developers to implement reusable components. React
           components can be passed variables known as Props, in React, and given
-          initial values known as State. Starting with Props, Lets look at the
+          initial values known as State. Starting with Props, Lets look at the{' '}
           <code className={Style.inlineCode}>PageContents</code> component for
           this site, as it uses Props effectively.
         </p>
