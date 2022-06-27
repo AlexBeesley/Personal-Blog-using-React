@@ -547,19 +547,16 @@ export default function Dotnetandcsharp() {
 }
 
 const post1f1 = () => {
-    return (
-`public abstract class EmployeeData
+    return `public abstract class EmployeeData
 {
     public string EmployeeID { get; set; }
     public string FName { get; set; }
     public string LName { get; set; }
-}` 
-  );
+}`
 }
 
 const post1f2 = () => {
-  return (
-`public class PermEmployeeData : EmployeeData
+  return `public class PermEmployeeData : EmployeeData
 {
     public int Salaryint { get; set; }
     public int Bonusint { get; set; }
@@ -569,12 +566,10 @@ const post1f2 = () => {
         return $"ID: {EmployeeID} Name: {FName} {LName} Salary: £{Salaryint} Bonus: £{Bonusint}";
     }
 }`
-  );
 }
 
 const post1f3 = () => {
-  return (
-`public PermEmployeeData Read(string employeeID)
+  return `public PermEmployeeData Read(string employeeID)
 {
     if (myPermEmployeeData.Any(e => e.EmployeeID == employeeID))
     {
@@ -585,12 +580,10 @@ const post1f3 = () => {
         return null;
     }
 }`
-  );
 }
 
 const post1f4 = () => {
-  return (
-`public interface IRepository<T>
+  return `public interface IRepository<T>
 {
     T Create(string fname, string lname, int Salary_or_DayRate, int Bonus_or_WeeksWorked);
     IEnumerable<T> ReadAll();
@@ -600,12 +593,10 @@ const post1f4 = () => {
     T Update(string employeeID, string fname, string lname, int Salary_or_DayRate, int Bonus_or_WeeksWorked);
     bool Delete(string employeeID);
 }`
-  );
 }
 
 const post2f1 = () => {
-  return (
-`public double CalculateEmployeePay(string employeeID)
+  return `public double CalculateEmployeePay(string employeeID)
 {
     var permEmployee = _perm.Read(employeeID);
     
@@ -643,12 +634,10 @@ const post2f1 = () => {
     
     return income - tax;
 }`
-  );
 }
 
 const post3f1 = () => {
-  return (
-`using PayCal.Models;
+  return `using PayCal.Models;
 using PayCal.Repositories;
 
 namespace PayCal.Services
@@ -666,12 +655,10 @@ namespace PayCal.Services
 . . .
     }
 }`
-  );
 }
 
 const post4f1 = () => {
-  return (
-`using Microsoft.EntityFrameworkCore;
+  return `using Microsoft.EntityFrameworkCore;
 using PayCal.DataAccess;
 using PayCal.Models;
 using PayCal.Repositories;
@@ -716,12 +703,10 @@ app.UseAuthorization();
 app.MapControllers();
 app.Run();
 `
-  );
 }
 
 const post4f2 = () => {
-  return (
-`[HttpGet()]
+  return `[HttpGet()]
 public IActionResult GetTempEmployees()
 {
     var response = _temp.ReadAll();
@@ -732,12 +717,10 @@ public IActionResult GetTempEmployees()
         return Ok(response);
     }
 }`
-  );
 }
 
 const post4f3 = () => {
-  return (
-`[HttpPut("{ID}")]
+  return `[HttpPut("{ID}")]
 public IActionResult UpdateTempEmployee(string ID, string? fname, string? lname, int? dayrate, int? weeksworked)
 {
     var read = _temp.Read(ID);
@@ -756,14 +739,11 @@ public IActionResult UpdateTempEmployee(string ID, string? fname, string? lname,
     else {
         return NoContent();
     }
-}
-`
-  );
+}`
 }
 
 const post5f1 = () => {
-  return (
-`[HttpDelete("{ID}")]
+  return `[HttpDelete("{ID}")]
 public IActionResult DeletePermEmployee(string ID)
 {
     var delete = _perm.Delete(ID);
@@ -777,13 +757,11 @@ public IActionResult DeletePermEmployee(string ID)
         _log.Warn($"DELETE: {LogStrings.errormsg}{LogStrings.defaultmsg} {LogStrings.http400}{LogStrings.context400}");
         return NotFound();
     }
-}` 
-);
+}`
 }
 
 const post6f1 = () => {
-  return (
-`@model PayCal_MVC.Models.HomeViewModel
+  return `@model PayCal_MVC.Models.HomeViewModel
 @{
     ViewData["Title"] = "Overview";
     if (Model.permList is null && Model.tempList is null)
@@ -816,12 +794,10 @@ const post6f1 = () => {
                 <code>ID: @item.EmployeeID Name: @item.FName @item.LName Salary: @item.Salaryint Bonus: @item.Bonusint</code>
             }
         </div>` 
-);
 }
 
 const post6f2 = () => {
-  return (
-`public IActionResult Index()
+  return `public IActionResult Index()
 {
     _log.Info($"\nGET: {LogStrings.defaultmsg} {LogStrings.http200}");
     return View(new HomeViewModel
@@ -831,25 +807,21 @@ const post6f2 = () => {
         tempList = _temp.ReadAll().ToList(),
         permList = _perm.ReadAll().ToList()
     });
-}` 
-);
+}`
 }
 
 const post6f3 = () => {
-  return (
-`public class HomeViewModel
+  return `public class HomeViewModel
 {
     public int? permCount { get; set; }
     public int? tempCount { get; set; }
     public List<TempEmployeeData>? tempList { get; set;}
     public List<PermEmployeeData>? permList { get; set; }
-}` 
-);
+}`
 }
 
 const post7f1 = () => {
-  return (
-`[Test]
+  return `[Test]
 public void Return_Employees_When_Employees_Is_Called()
 {
     // Arrange
@@ -864,13 +836,11 @@ public void Return_Employees_When_Employees_Is_Called()
     // Assert
     Assert.IsInstanceOf<OkObjectResult>(response);
     Assert.AreEqual(responseAsList.Count, 2);
-}` 
-);
+}`
 }
 
 const post8f1 = () => {
-  return (
-`public class EmployeeContext : DbContext
+  return `public class EmployeeContext : DbContext
 {
     public EmployeeContext() { }
 
@@ -887,13 +857,11 @@ const post8f1 = () => {
             optionsBuilder.UseSqlServer(connectionString);
         }
     }
-}` 
-);
+}`
 }
 
 const post8f2 = () => {
-  return (
-`public IEnumerable<PermEmployeeData> ReadAll()
+  return `public IEnumerable<PermEmployeeData> ReadAll()
 {
     if (_db.permEmployeeDatas.Count() == 0)
     {
@@ -904,13 +872,11 @@ const post8f2 = () => {
     }
     _log.Debug("Real All method accessed.");
     return _db.permEmployeeDatas;
-}` 
-);
+}`
 }
 
 const post9f1 = () => {
-  return (
-`public static class FriendlyURLs
+  return `public static class FriendlyURLs
 {
     public static string ToStringFromGuid(this Guid guid)
     {
@@ -927,14 +893,11 @@ const post9f1 = () => {
             .Replace("_", "+") + "==");
         return new Guid(base64Str);
     }
-}` 
-);
+}`
 }
 
 const post9f2 = () => {
-  return (
-`Guid x = new Guid();
+  return `Guid x = new Guid();
 string y = x.ToStringFromGuid();
-Guid z = y.ToGuidFromString();` 
-);
+Guid z = y.ToGuidFromString();`
 }
