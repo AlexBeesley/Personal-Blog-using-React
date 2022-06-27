@@ -40,3 +40,19 @@ vi.mock('../Images/PayCaltests.PNG', () => ({
     },
   }),
 }))
+
+vi.mock('../Images/personalWebsite.PNG', () => ({
+  default: new Proxy(new Object(), {
+    get(_, img4) {
+      return img4;
+    },
+  }),
+}))
+
+vi.mock('../Images/darkmode.PNG', () => ({
+  default: new Proxy(new Object(), {
+    get(_, img4) {
+      return img4;
+    },
+  }),
+}))
