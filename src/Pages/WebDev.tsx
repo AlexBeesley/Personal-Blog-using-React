@@ -6,7 +6,7 @@ import img1 from '../Images/personalWebsite.PNG'
 import img2 from '../Images/darkmode.PNG'
 
 export default function WebDev() {
-  const titles = ['Overview', 'Basic HTML and CSS', 'Basic JavaScript', 'An introduction to React']
+  const titles = ['Overview', 'Basic HTML and CSS', 'Basic JavaScript', 'An introduction to React', 'Alternative Frameworks']
   return (
     <div>
       <div className={Style.title}>
@@ -279,6 +279,131 @@ export default function WebDev() {
           class names are abstracted when complied by webpack, so the developer
           does not have to worry about unique class names across all modules,
           only within one.
+        </p>
+      </Card>
+      <a className={Style.anchor} id={titles[4]} />
+      <Card title={titles[4]} blogpost={true}>
+        <p>
+          <a
+            className={Style.inlineLink}
+            href="https://angular.io/guide/what-is-angular"
+            target="_blank"
+            rel="noreferrer"
+            title="What is Angular?"
+          >
+            Angular
+          </a>{' '}
+          – an{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://developer.mozilla.org/en-US/docs/Glossary/MVC"
+            target="_blank"
+            rel="noreferrer"
+            title="What the MVC pattern?"
+          >
+            MVC
+          </a>{' '}
+          framework, where projects are structured into services, components and
+          modules, with each Angular project having one component and one module
+          root. Components are written as classes, where data, such as props and
+          state, is controlled and passed down the component tree.
+        </p>
+        <p>
+          As an MVC, the service layer of an Angular framework focuses on
+          business logic, handling data access and validation, whereas React
+          although it is possible to integrate a service layer – it is not
+          essential, and thus React is not an MVC out-the-box.
+        </p>
+        <p>
+          <a
+            className={Style.inlineLink}
+            href="https://developer.mozilla.org/en-US/docs/Glossary/MVC"
+            target="_blank"
+            rel="noreferrer"
+            title="What the MVC pattern?"
+          >
+            Vue
+          </a>{' '}
+          – follows an{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel"
+            target="_blank"
+            rel="noreferrer"
+            title="What the MVVM pattern?"
+          >
+            MVVM
+          </a>{' '}
+          (Model-View-ViewModel) pattern, meaning its main concern is with
+          rendering full and partial views in the UI, and while React and
+          Angular both do this, Vue is centred around this feature, using{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://vuejs.org/guide/scaling-up/sfc.html"
+            target="_blank"
+            rel="noreferrer"
+            title="What is an SFC?"
+          >
+            SFCs
+          </a>{' '}
+          (Single File Components) with the{' '}
+          <code className={Style.inlineCode}>.vue</code> file extension, which
+          contains JavaScript/TypeScript, HTML and CSS.
+        </p>
+        <p>
+          I do not like the architecture of Vue as it goes against the{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design"
+            target="_blank"
+            rel="noreferrer"
+            title="What are the SOLID principles?"
+          >
+            SOLID
+          </a>{' '}
+          principles, and encourages massive files containing a lot of
+          functionality, the{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://en.wikipedia.org/wiki/Separation_of_concerns"
+            target="_blank"
+            rel="noreferrer"
+            title="What is the 'separation of concerns'?"
+          >
+            separation of concerns
+          </a>{' '}
+          is something I have come to see as an important tenet to adhere to
+          where possible, it makes my workflow more effective, and allows for
+          easier debugging, expandability and readability.
+        </p>
+        <p>
+          During my research for this segment, I came across a JavaScript UI
+          framework which surprised me: Next.js.
+        </p>
+        <p>
+          <a
+            className={Style.inlineLink}
+            href="https://nextjs.org/"
+            target="_blank"
+            rel="noreferrer"
+            title="What is Next.js?"
+          >
+            Next
+          </a>{' '}
+          – Next is built on React, bringing all the power and enabling the use
+          of acquired skills associated with react development to a new
+          framework which addresses many of the drawbacks when using React
+          alone. Next.js allows developers to pick and choose between
+          server-side and client-side rendering, Letting the core react
+          components do what they do best and render in and out views fast and
+          seamlessly on the client-side, while Next allows developers to inject
+          data from the server without requiring page reloads.
+        </p>
+        <p>
+          In reflection, React has been a great starting point for learning
+          JavaScript-based UI Frameworks for front-end development, it has given
+          me the knowledge and skills to feel confident using Next in my final
+          year project.
         </p>
       </Card>
     </div>
