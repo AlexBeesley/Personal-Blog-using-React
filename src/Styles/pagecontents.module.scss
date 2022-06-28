@@ -1,4 +1,4 @@
-.pagecontent{
+.pagecontent {
     animation-duration: 1s;
     animation-fill-mode: both;
     opacity: 0;
@@ -13,32 +13,32 @@
     background-color: var(--background);
     border-bottom-right-radius: 50px;
     border-top-right-radius: 50px;
-    box-shadow:  20px 20px 60px var(--shadow),
-    -20px -20px 60px var(--highlight);
+    box-shadow: 20px 20px 60px var(--shadow),
+        -20px -20px 60px var(--highlight);
 }
 
-.list{
+.list {
     padding: .2rem;
 }
 
-.toggle{
+.toggle {
     display: none;
 }
 
 @media only screen and (max-width: 90rem) {
-    .pagecontent{
+    .pagecontent {
         background: var(--background);
         position: fixed;
 
         left: calc(0% - 20rem);
 
-        
+
         padding: 1.5rem;
         transition: left 0.4s ease-in-out;
         z-index: 1;
     }
 
-    .toggle{
+    .toggle {
         display: inherit;
         position: absolute;
         left: 94%;
@@ -46,29 +46,29 @@
         font-size: 1.5rem;
     }
 
-    .pagecontent:hover{
+    .pagecontent:hover {
         left: 0px;
-      }
+    }
 }
 
 @keyframes fadeInUp {
     from {
-        transform: translate3d(0,40px,0)
+        transform: translate3d(0, 40px, 0)
     }
 
     to {
-        transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
         opacity: 1
     }
 }
 
 @keyframes fadeInRight {
     from {
-        transform: translate3d(-40px,0,0)
+        transform: translate3d(-40px, 0, 0)
     }
 
     to {
-        transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
         opacity: 1
     }
 }

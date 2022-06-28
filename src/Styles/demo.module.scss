@@ -1,0 +1,68 @@
+.title {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.demobuttons {
+    animation-fill-mode: both;
+    opacity: 0;
+    animation-name: fadeInRight;
+
+    margin-top: 1rem;
+    background-color: var(--background);
+    color: var(--Tertiary);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow:  20px 20px 60px var(--shadow),
+    -20px -20px 60px var(--highlight);
+    padding: .8rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#animate1 {
+    animation-duration: 0.8s;
+}
+
+#animate2 {
+    animation-duration: 1s;
+}
+
+#animate3 {
+    animation-duration: 1.2s;
+}
+
+.demobuttons:hover {
+    color: var(--Accent);
+}
+
+.position {
+    position: fixed;
+    top: 10rem;
+    left: -1rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+
+.push {
+    min-height: 1.9rem;
+  }
+
+@keyframes fadeInRight {
+    from {
+        transform: translate3d(-40px, 0, 0)
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1
+    }
+}

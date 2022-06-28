@@ -1,68 +1,71 @@
 .card {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-    opacity: 0;
-    animation-name: fadeInUp;
-    border-radius: 50px;
-    background: var(--background);
-    box-shadow:  20px 20px 60px var(--shadow),
-                 -20px -20px 60px var(--highlight);
-    padding: 1.5rem;
-    margin: 1rem;   
-    margin-bottom: 2rem;
-    box-sizing: border-box;
-    p {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  opacity: 0;
+  animation-name: fadeInUp;
+
+  border-radius: 50px;
+  background: var(--background);
+  box-shadow: 20px 20px 60px var(--shadow),
+    -20px -20px 60px var(--highlight);
+  padding: 1.5rem;
+  margin: 1rem;
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+
+  p {
     white-space: pre-line;
-    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0)
   }
 
-  @keyframes fadeInUp {
-    from {
-        transform: translate3d(0,40px,0)
-    }
-
-    to {
-        transform: translate3d(0,0,0);
-        opacity: 1
-    }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1
+  }
 }
 
 .blogpost {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-    opacity: 0;
-    animation-name: fadeInUp;
-    border-radius: 50px;
-    background: var(--background);
-    box-shadow:  20px 20px 60px var(--shadow),
-                 -20px -20px 60px var(--highlight);
-    padding: 1.5rem;
-    margin-left: 15%;
-    margin-right: 5%;
-    margin-bottom: 2.5rem;
-    max-width: 80rem;    
-    box-sizing: border-box;
-    p {
-    white-space: pre-line;
-    }
-  }
-  
-  .expanded {
-    color: var(--Tertiary);
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  opacity: 0;
+  animation-name: fadeInUp;
+  border-radius: 50px;
+  background: var(--background);
+  box-shadow: 20px 20px 60px var(--shadow),
+    -20px -20px 60px var(--highlight);
+  padding: 1.5rem;
+  margin-left: 15%;
+  margin-right: 5%;
+  margin-bottom: 2.5rem;
+  max-width: 80rem;
+  box-sizing: border-box;
+
+  p {
     white-space: pre-line;
   }
-  
-  .expanded:hover {
-    color: var(--Accent);
-    cursor: pointer;
-  }
+}
+
+.expanded {
+  color: var(--Tertiary);
+  white-space: pre-line;
+}
+
+.expanded:hover {
+  color: var(--Accent);
+  cursor: pointer;
+}
 
 @media only screen and (max-width: 90rem) {
   .blogpost {
     margin-left: 1rem;
     margin-right: 0;
-  }  
-  
+  }
+
   .card {
     margin-left: 0;
     margin-right: 0;

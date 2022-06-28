@@ -4,7 +4,7 @@
 
 .mobileHeading {
     display: none;
-  }
+}
 
 .inlineLink {
     padding: 0;
@@ -49,22 +49,22 @@ a.anchor {
     .padding {
         display: none;
     }
-    
+
     .title {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-    opacity: 0;
-    animation-name: fadeInDown;
-  }
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        opacity: 0;
+        animation-name: fadeInDown;
+    }
 }
 
 @keyframes fadeInDown {
     from {
-        transform: translate3d(0,50px,0)
+        transform: translate3d(0, 50px, 0)
     }
-  
+
     to {
-        transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
         opacity: 1
     }
-  }
+}

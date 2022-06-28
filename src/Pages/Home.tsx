@@ -278,7 +278,7 @@ function Home() {
             </p>
           </Card>
         </div>
-        <div className={Styles.push}></div>
+        <div className={Styles.push} />
       </div>
     </>
   )
