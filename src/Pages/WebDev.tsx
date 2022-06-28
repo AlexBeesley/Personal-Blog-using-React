@@ -6,7 +6,13 @@ import img1 from '../Images/personalWebsite.PNG'
 import img2 from '../Images/darkmode.PNG'
 
 export default function WebDev() {
-  const titles = ['Overview', 'Basic HTML and CSS', 'Basic JavaScript', 'An introduction to React', 'Alternative Frameworks']
+  const titles = [
+    'Overview',
+    'Basic HTML and CSS',
+    'Basic JavaScript',
+    'An introduction to React',
+    'Alternative Frameworks',
+  ]
   return (
     <div>
       <div className={Style.title}>
