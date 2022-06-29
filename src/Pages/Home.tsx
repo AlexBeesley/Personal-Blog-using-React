@@ -146,7 +146,7 @@ function Home() {
         <div className={Styles.col2}>
           <Card title="About me">
             <p>
-              I am a 21-year-old .NET Developer Intern for{' '}
+              I am a 22-year-old .NET Developer Intern for{' '}
               <a
                 className={Styles.inlineLink}
                 href="https://www.thepensionsregulator.gov.uk/"

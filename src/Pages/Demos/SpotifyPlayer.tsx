@@ -6,7 +6,7 @@ export default function SpotifyPlayer () {
             <iframe className={Style.player} 
                 src="https://open.spotify.com/embed/playlist/4P4HlaeexxFDCJtUtZpCmb?utm_source=generator" 
                 width="100%" 
-                height="580" 
+                height="550" 
                 frameBorder="0"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" />
         </>
