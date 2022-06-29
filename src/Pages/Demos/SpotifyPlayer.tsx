@@ -1,4 +1,4 @@
-import Style from '../../Styles/spotifyplayer.module.scss';
+import Style from '../../Styles/demos.module.scss';
 
 export default function SpotifyPlayer () {
     return (
