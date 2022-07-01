@@ -10,6 +10,7 @@ export default function CookieConsent() {
     if (data !== null) {
       data = JSON.parse(data);
     }
+    
     const [cookie, setCookie] = useState(
       () => data || false
     );
@@ -19,6 +20,7 @@ export default function CookieConsent() {
     }, [cookie]);
 
     console.log("cookie:", cookie);
+
     if (!cookie) {
         return (
             <div id={Styles.cookieConsent}>
@@ -35,6 +37,7 @@ export default function CookieConsent() {
             </div>
         )
     }
+
     else {
         body.style.overflow = 'auto';
         return null;
