@@ -36,6 +36,7 @@ export default function CookieConsent() {
         )
     }
     else {
+        body.style.overflow = 'auto';
         return null;
     }
 
