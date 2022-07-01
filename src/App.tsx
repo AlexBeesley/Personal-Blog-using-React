@@ -13,6 +13,7 @@ import DarkModeToggle from "./Components/darkmodetoggle";
 import Footer from "./Components/footer";
 import icon from "./Images/icon.png";
 import Loader from "react-spinners/PropagateLoader";
+import CookieConsent from "./Components/CookieConsent";
 
 export const App = () => {
   const [loading, setLoading] = useState(false);
@@ -49,6 +50,7 @@ export const App = () => {
             <Route path="/demo" element={<Demo />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
+          <CookieConsent />
           <Footer />
         </>
       )}
