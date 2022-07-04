@@ -31,6 +31,10 @@ h2, h3 {
   color: var(--Tertiary);
 }
 
+a {
+  transition: color 0.2s;
+}
+
 .title {
   animation-duration: 1s;
   animation-fill-mode: both;
