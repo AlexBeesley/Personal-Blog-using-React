@@ -10,6 +10,7 @@ export default function CookieConsent() {
     if (data !== null) {
       data = JSON.parse(data);
     }
+
     const [cookie, setCookie] = useState(
       () => data || false
     );
@@ -19,22 +20,22 @@ export default function CookieConsent() {
     }, [cookie]);
 
     console.log("cookie:", cookie);
+
     if (!cookie) {
         return (
             <div id={Styles.cookieConsent}>
                 <div className={Styles.overlay} />
                 <div className={Styles.cookieConsent}>
-                    <div className={Styles.cookieConsent__inner}>
-                        <img src={Img} />
-                        <p className={Styles.text}>This website uses cookies to ensure you get the best experience on this website.{' '}
-                            <a className={Styles.inlineLink} href="https://www.tpr.gov.uk/cookies">Find out more</a>
-                        </p>
-                        <button className={Styles.btn} onClick={() => consented()}>Got it!</button>
-                    </div>
+                    <img className={Styles.image} src={Img} />
+                    <p className={Styles.text}>This website uses cookies to ensure you get the best experience on this website.{' '}
+                        <a className={Styles.inlineLink} href="https://ico.org.uk/for-organisations/guide-to-pecr/cookies-and-similar-technologies/#:~:text=You%20cannot%20show%20consent%20if,user%20has%20consented%20to%20them.">Find out more</a>
+                    </p>
+                    <button className={Styles.btn} onClick={() => consented()}>Got it!</button>
                 </div>
             </div>
         )
     }
+
     else {
         body.style.overflow = 'auto';
         return null;
