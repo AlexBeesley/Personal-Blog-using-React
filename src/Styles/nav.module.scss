@@ -26,10 +26,6 @@ nav {
   display: none;
 }
 
-.navicon:hover {
-  color: var(--Accent);
-}
-
 .navlink {
   color: var(--Tertiary);
   text-decoration: none;
@@ -39,10 +35,9 @@ nav {
   height: 2rem;
   font-size: 1.75rem;
   font-weight: bold;
-}
-
-.navlink:hover {
-  color: var(--Accent);
+  &:hover {
+    color: var(--Accent);
+  }
 }
 
 @media only screen and (max-width: 65rem) {
@@ -63,6 +58,9 @@ nav {
     height: 2rem;
     font-size: 1.5rem;
     font-weight: bold;
+    &:hover {
+      color: var(--Quaternary);
+    }
   }
 
   .navlink {
