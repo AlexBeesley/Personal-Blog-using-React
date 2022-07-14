@@ -50,11 +50,10 @@
 .expanded {
   color: var(--Tertiary);
   white-space: pre-line;
-}
-
-.expanded:hover {
-  color: var(--Accent);
-  cursor: pointer;
+  &:hover {
+    color: var(--Accent);
+    cursor: pointer;
+  }
 }
 
 @media only screen and (max-width: 90rem) {

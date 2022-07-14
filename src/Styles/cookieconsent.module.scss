@@ -43,11 +43,10 @@
   font-weight: bold;
   padding: 0.5rem 1rem;
   cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #9ccaf7;
-  color: #f9f871;
+  &:hover {
+    background-color: #9ccaf7;
+    color: #f9f871;
+  }
 }
 
 .text {

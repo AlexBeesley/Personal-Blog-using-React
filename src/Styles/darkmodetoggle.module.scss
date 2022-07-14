@@ -12,9 +12,9 @@ button {
   i {
     font-size: 1.75rem;
     color: var(--light);
-  }
-  i:hover {
-    color: var(--light-hover);
+    &:hover {
+      color: var(--light-hover);
+    }
   }
 }
 
