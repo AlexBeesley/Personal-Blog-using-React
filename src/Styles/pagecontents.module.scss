@@ -32,8 +32,6 @@
     padding: 1.5rem;
     transition: left 0.4s ease-in-out;
     z-index: 1;
-    box-shadow: none;
-    border: 2px solid var(--Primary);
   }
 
   .toggle {
@@ -46,6 +44,14 @@
 
   .pagecontent:hover {
     left: 0px;
+  }
+}
+
+@media only screen and (max-width: 45rem) {
+  .pagecontent {
+    box-shadow: none;
+    border: 2px solid var(--Primary);
+    border-left: none;
   }
 }
 
