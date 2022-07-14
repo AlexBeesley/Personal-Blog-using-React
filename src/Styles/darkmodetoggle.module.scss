@@ -1,8 +1,8 @@
 .darkmodetoggle {
-    position: absolute;
-    top: 0;
-    padding-top: 2rem;
-    right: 10%;
+  position: absolute;
+  top: 0;
+  padding-top: 2rem;
+  right: 10%;
 }
 
 button {
@@ -16,19 +16,19 @@ button {
   i:hover {
     color: var(--light-hover);
   }
- }
+}
 
- @media only screen and (max-width: 80rem) {
-   .darkmodetoggle {
-     padding-top: 1.5rem;
-     right: 5%;
-   }
- }
+@media only screen and (max-width: 80rem) {
+  .darkmodetoggle {
+    padding-top: 1.5rem;
+    right: 5%;
+  }
+}
 
- @media only screen and (max-width: 65rem) {
-  button{
-    i{
-      font-size: 1.50rem;
+@media only screen and (max-width: 65rem) {
+  button {
+    i {
+      font-size: 1.5rem;
     }
   }
 }

@@ -5,10 +5,10 @@ function Home() {
   return (
     <>
       <div className={Styles.title}>
-        <h1>Alexander Beesley</h1>
+        <h1>Alex Beesley</h1>
         <h3>
-          I'm a full-stack developer with a passion for learning and a love for
-          the web.
+          Full Stack Developer specialising in .NET, Sitecore/Umbraco,
+          JavaScript based frameworks and DevOps.
         </h3>
       </div>
       <div className={Styles.row}>
@@ -157,7 +157,8 @@ function Home() {
               </a>
               . I am a self-taught programmer, with a passion for new and
               emerging technologies. My interest in computing stems from the age
-              of 12, when my parents brought me one of the very first editions of{' '}
+              of 12, when my parents brought me one of the very first editions
+              of{' '}
               <a
                 className={Styles.inlineLink}
                 href="https://www.raspberrypi.org/"

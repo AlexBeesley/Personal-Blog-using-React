@@ -17,14 +17,14 @@ footer {
 a {
   text-decoration: none;
   color: var(--Tertiary);
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 a:hover {
   color: var(--Accent);
 }
 
-@media only screen and (max-width: 40rem) {  
+@media only screen and (max-width: 40rem) {
   .iconContainer {
     all: unset;
     position: bottom;
@@ -38,11 +38,11 @@ a:hover {
 
 @keyframes fadeInleft {
   from {
-      transform: translate3d(0,30px,0)
+    transform: translate3d(0, 30px, 0);
   }
 
   to {
-      transform: translate3d(0,0,0);
-      opacity: 1
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }

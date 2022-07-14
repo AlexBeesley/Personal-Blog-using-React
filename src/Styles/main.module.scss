@@ -25,7 +25,8 @@ h1 {
   color: var(--Secondary);
 }
 
-h2, h3 {
+h2,
+h3 {
   font-weight: bold;
   position: inline;
   color: var(--Tertiary);
@@ -94,29 +95,28 @@ a {
   border-top: solid 1rem var(--background);
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
-  box-shadow:  20px 20px 60px var(--shadow),
-  -20px -20px 60px var(--highlight);
+  box-shadow: 20px 20px 60px var(--shadow), -20px -20px 60px var(--highlight);
 }
 
 @keyframes fadeInUp {
   from {
-      transform: translate3d(0,-50px,0)
+    transform: translate3d(0, -50px, 0);
   }
 
   to {
-      transform: translate3d(0,0,0);
-      opacity: 1
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }
 
 @keyframes fadeInDown {
   from {
-      transform: translate3d(0,50px,0)
+    transform: translate3d(0, 50px, 0);
   }
 
   to {
-      transform: translate3d(0,0,0);
-      opacity: 1
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }
 
@@ -126,14 +126,20 @@ a {
     overflow-y: unset;
     padding-left: 5%;
     padding-right: 5%;
-    font-size: 0.8rem;
   }
 
-  .col1, .col2 {
+  .col1,
+  .col2 {
     width: 100%;
   }
 
   .spacer {
     height: 70vh;
+  }
+}
+
+@media only screen and (max-width: 45rem) {
+  body {
+    font-size: 0.8rem;
   }
 }

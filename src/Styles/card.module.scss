@@ -6,8 +6,7 @@
 
   border-radius: 50px;
   background: var(--background);
-  box-shadow: 20px 20px 60px var(--shadow),
-    -20px -20px 60px var(--highlight);
+  box-shadow: 20px 20px 60px var(--shadow), -20px -20px 60px var(--highlight);
   padding: 1.5rem;
   margin: 1rem;
   margin-bottom: 2rem;
@@ -19,12 +18,12 @@
 
 @keyframes fadeInUp {
   from {
-    transform: translate3d(0, 40px, 0)
+    transform: translate3d(0, 40px, 0);
   }
 
   to {
     transform: translate3d(0, 0, 0);
-    opacity: 1
+    opacity: 1;
   }
 }
 
@@ -35,8 +34,7 @@
   animation-name: fadeInUp;
   border-radius: 50px;
   background: var(--background);
-  box-shadow: 20px 20px 60px var(--shadow),
-    -20px -20px 60px var(--highlight);
+  box-shadow: 20px 20px 60px var(--shadow), -20px -20px 60px var(--highlight);
   padding: 1.5rem;
   margin-left: 15%;
   margin-right: 5%;
