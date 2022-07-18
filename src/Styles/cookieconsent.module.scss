@@ -30,7 +30,7 @@
   float: left;
   box-sizing: border-box;
   padding: 0.5rem;
-  padding-top: 1rem;
+  padding-top: 0.8rem;
 }
 
 .btn {
@@ -72,6 +72,9 @@
     border-radius: unset;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+  }
+  .image {
+    padding-top: 0.5rem;
   }
 }
 

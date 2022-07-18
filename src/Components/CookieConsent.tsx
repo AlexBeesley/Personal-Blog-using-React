@@ -27,7 +27,7 @@ export default function CookieConsent() {
                 <div className={Styles.overlay} />
                 <div className={Styles.cookieConsent}>
                     <img className={Styles.image} src={Img} />
-                    <p className={Styles.text}>This website uses cookies to ensure you get the best experience on this website.{' '}
+                    <p className={Styles.text}>This website uses cookies to ensure you get the best experience.{' '}
                         <a className={Styles.inlineLink} href="https://ico.org.uk/for-organisations/guide-to-pecr/cookies-and-similar-technologies/#:~:text=You%20cannot%20show%20consent%20if,user%20has%20consented%20to%20them.">Find out more</a>
                     </p>
                     <button className={Styles.btn} onClick={() => consented()}>Got it!</button>
