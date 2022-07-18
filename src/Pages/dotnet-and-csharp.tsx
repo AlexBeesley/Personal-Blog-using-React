@@ -1,25 +1,25 @@
-import Style from '../Styles/pages.module.scss';
-import Card from "../Components/card";
-import CodeBox from "../Components/codebox";
-import PageContents from "../Components/pagecontents";
-import img1 from '../Images/SwaggerExample.png';
-import img2 from '../Images/LogOutput.PNG';
-import img3 from '../Images/MVC.PNG';
-import img4 from '../Images/PayCaltests.PNG';
+import Style from '../Styles/pages.module.scss'
+import Card from '../Components/card'
+import CodeBox from '../Components/codebox'
+import PageContents from '../Components/pagecontents'
+import img1 from '../Images/SwaggerExample.png'
+import img2 from '../Images/LogOutput.PNG'
+import img3 from '../Images/MVC.PNG'
+import img4 from '../Images/PayCaltests.PNG'
 
 export default function Dotnetandcsharp() {
-    const titles = [
-      'Overview',
-      'Implementing a Repository Class',
-      'Adding Service Logic',
-      'Dependency Injection',
-      'Adding a RESTful API',
-      'Logging using Log4net',
-      'Creating a MVC',
-      'Testing with NUnit and Moq',
-      'Adding Entity Framework Core',
-      'Extension Methods'
-    ]
+  const titles = [
+    'Overview',
+    'Implementing a Repository Class',
+    'Adding Service Logic',
+    'Dependency Injection',
+    'Adding a RESTful API',
+    'Logging using Log4net',
+    'Creating a MVC',
+    'Testing with NUnit and Moq',
+    'Adding Entity Framework Core',
+    'Extension Methods',
+  ]
   return (
     <div>
       <div className={Style.title}>
@@ -122,9 +122,9 @@ export default function Dotnetandcsharp() {
         </p>
         <CodeBox language={'csharp'}>{post1f3()}</CodeBox>
         <p>
-          A lot is going on here, this function takes a string argument
-          for the <code className={Style.inlineCode}>employeeID</code> field and
-          using an if statement, the data set is searched, if the{' '}
+          A lot is going on here, this function takes a string argument for the{' '}
+          <code className={Style.inlineCode}>employeeID</code> field and using
+          an if statement, the data set is searched, if the{' '}
           <code className={Style.inlineCode}>employeeID</code> exists, it then
           searches for the first instance of that ID, as all IDs are uniquely
           generated GUIDs, this works well and returns the correct employee as a{' '}
@@ -172,8 +172,9 @@ export default function Dotnetandcsharp() {
         <p>
           In .NET, Dependencies, which allow classes to interact with each
           other, are managed via using statements, then initialised with either
-          a new instance or through a constructor. Let's take another look at our
-          logic service and learn how it talks to the Repository Class though{' '}
+          a new instance or through a constructor. Let's take another look at
+          our logic service and learn how it talks to the Repository Class
+          though{' '}
           <a
             className={Style.inlineLink}
             href="https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection"
@@ -196,9 +197,9 @@ export default function Dotnetandcsharp() {
         <p>
           Within the Calculator class, which extends its own interface, the{' '}
           <code className={Style.inlineCode}>IRepositiry</code> class and its
-          relevant data models are given a variable name, typically starting with
-          an underscore as is a soft standard among developers, then initialised
-          in the constructor.
+          relevant data models are given a variable name, typically starting
+          with an underscore as is a soft standard among developers, then
+          initialised in the constructor.
         </p>
       </Card>
       <a className={Style.anchor} id={titles[4]} />
@@ -241,8 +242,8 @@ export default function Dotnetandcsharp() {
         <p>
           Here, a <code className={Style.inlineCode}>builder</code> object is
           created and configured with the appropriate class library
-          dependencies, database connection string and then the app, derived from{' '}
-          <code className={Style.inlineCode}>builder.Build()</code>, is
+          dependencies, database connection string and then the app, derived
+          from <code className={Style.inlineCode}>builder.Build()</code>, is
           configured and initialised, booting the API service.
         </p>
         <p>
@@ -297,11 +298,8 @@ export default function Dotnetandcsharp() {
           >
             GUID
           </a>{' '}
-          in this case, from the request, looking something like{' '}
-          <code className={Style.inlineCode}>
-            https://example/TempEmployee/182cc1bf-e17b-46ff-b08e-0c6ce3083d10
-          </code>
-          , this is then checked for populated fields, checking for{' '}
+          in this case, from the request, looking something like, this is then
+          checked for populated fields, checking for{' '}
           <code className={Style.inlineCode}>null</code>, then updates the
           employee entry in the relevant fields, this approach enables users to
           only change the fields they wish to without having to input all fields
@@ -330,8 +328,8 @@ export default function Dotnetandcsharp() {
           Foundation, can be added via the appropriate using statement,
           configured in the{' '}
           <code className={Style.inlineCode}>log4net.config</code> file, and
-          injected in any class using a constructor. Making logging easy to
-          set up, outputting at various log levels including{' '}
+          injected in any class using a constructor. Making logging easy to set
+          up, outputting at various log levels including{' '}
           <code className={Style.inlineCode}>INFO</code>,{' '}
           <code className={Style.inlineCode}>DEBUG</code>,{' '}
           <code className={Style.inlineCode}>WARN</code> and{' '}
@@ -481,13 +479,13 @@ export default function Dotnetandcsharp() {
             SQL
           </a>{' '}
           Database from their code base and handle CRUD operations from a code
-          first perspective, while all the SQL is handled in the background by EF
-          Core; allowing Developers to build database dependent applications
+          first perspective, while all the SQL is handled in the background by
+          EF Core; allowing Developers to build database dependent applications
           without needing to write a single line of SQL.
         </p>
         <p>
-          To establish a DB connection the project must be provided with a database
-          connection string via a{' '}
+          To establish a DB connection the project must be provided with a
+          database connection string via a{' '}
           <code className={Style.inlineCode}>DBcontext</code> class. Here is
           that class within the Pay Calculator Application.
         </p>
@@ -527,8 +525,8 @@ export default function Dotnetandcsharp() {
           are used extensively by the community to import functionality to a
           project built by others, but extension methods can also be built
           internally in the correct use case, Let's look at the{' '}
-          <code className={Style.inlineCode}>FriendlyURLs</code>{' '}
-          extension built for the Pay Calculator MVC.
+          <code className={Style.inlineCode}>FriendlyURLs</code> extension built
+          for the Pay Calculator MVC.
         </p>
         <p>
           The service provided here is simple, two methods one for converting{' '}
@@ -547,7 +545,7 @@ export default function Dotnetandcsharp() {
 }
 
 const post1f1 = () => {
-    return `public abstract class EmployeeData
+  return `public abstract class EmployeeData
 {
     public string EmployeeID { get; set; }
     public string FName { get; set; }
@@ -793,7 +791,7 @@ const post6f1 = () => {
             {
                 <code>ID: @item.EmployeeID Name: @item.FName @item.LName Salary: @item.Salaryint Bonus: @item.Bonusint</code>
             }
-        </div>` 
+        </div>`
 }
 
 const post6f2 = () => {

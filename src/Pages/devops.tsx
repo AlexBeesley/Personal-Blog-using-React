@@ -213,10 +213,12 @@ export default function DevOps() {
         <CodeBox language={'yaml'}>{post2f1()}</CodeBox>
         <p>
           This YAML document sets out the steps recognized by azure, telling it
-          to run each time a commit is made to the /develop or /feature/*
+          to run each time a commit is made to the{' '}
+          <code className={Style.inlineCode}>/develop</code> or{' '}
+          <code className={Style.inlineCode}>/feature/*</code>{' '}
           branches and the proceeds to build the .NET 6 MVC, run its associated
-          tests, if the tests pass, it proceeds to deploy the MVC via the
-          app-uks-dev-01 app service.
+          tests, if the tests pass, it proceeds to deploy the MVC via the{' '}
+          <code className={Style.inlineCode}>app-uks-dev-01</code> app service.
         </p>
       </Card>
     </div>

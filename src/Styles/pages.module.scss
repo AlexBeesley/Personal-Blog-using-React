@@ -13,8 +13,10 @@
 }
 
 .inlineCode {
+  font-weight: bold;
   color: #0048ab;
   background-color: var(--codebox);
+  padding: 0 0.2rem;
 }
 
 img {
