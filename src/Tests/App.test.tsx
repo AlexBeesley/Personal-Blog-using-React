@@ -56,3 +56,11 @@ vi.mock('../Images/darkmode.PNG', () => ({
     },
   }),
 }))
+
+vi.mock('../Images/agile.png', () => ({
+  default: new Proxy(new Object(), {
+    get(_, img5) {
+      return img5;
+    },
+  }),
+}))

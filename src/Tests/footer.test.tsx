@@ -8,6 +8,6 @@ describe('Footer', () => {
   )
   
   it('Footer is rendered', () => {
-    expect(screen.getByText(/Alexander Beesley/i)).toBeInTheDocument()
+    expect(screen.getByText(/Alex Beesley/i)).toBeInTheDocument()
   })
 })
