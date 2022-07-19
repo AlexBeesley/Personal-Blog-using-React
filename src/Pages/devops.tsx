@@ -212,7 +212,7 @@ export default function DevOps() {
         </p>
         <CodeBox language={'yaml'}>{post2f1()}</CodeBox>
         <p>
-          This YAML document sets out the steps recognized by azure, telling it
+          This YAML document sets out the steps recognised by azure, telling it
           to run each time a commit is made to the{' '}
           <code className={Style.inlineCode}>/develop</code> or{' '}
           <code className={Style.inlineCode}>/feature/*</code>{' '}
