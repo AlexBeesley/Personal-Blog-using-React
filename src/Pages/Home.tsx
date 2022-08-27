@@ -13,7 +13,7 @@ function Home() {
       </div>
       <div className={Styles.row}>
         <div className={Styles.col1}>
-          <Card title="Overview TEST">
+          <Card title="Overview">
             <p>
               This is a{' '}
               <a
