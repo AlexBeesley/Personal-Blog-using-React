@@ -4,10 +4,10 @@ export default function Footer() {
   return (
     <footer className={Styles.footer}>
       <p>
-        &copy; 2022 Alex Beesley; All rights reserved.
+        &copy; 2023 Alex Beesley; All rights reserved.
       </p>
       <div className={Styles.iconContainer}>
-        <a href="mailto:david.beesley@tpr.gov.uk" title="Email">
+        <a href="mailto:david.beesley1234@gmail.com" title="Email">
           <i className="fa-solid fa-envelope"></i>
         </a>
         <a
