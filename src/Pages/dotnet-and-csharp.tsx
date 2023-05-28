@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Style from '../Styles/pages.module.scss'
 import Card from '../Components/card'
 import CodeBox from '../Components/codebox'
@@ -20,6 +21,11 @@ export default function Dotnetandcsharp() {
     'Adding Entity Framework Core',
     'Extension Methods',
   ]
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <div className={Style.title}>

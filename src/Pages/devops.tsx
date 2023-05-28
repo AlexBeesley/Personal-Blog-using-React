@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Style from '../Styles/pages.module.scss'
 import Card from '../Components/card'
 import CodeBox from '../Components/codebox'
@@ -6,6 +7,11 @@ import img1 from '../Images/agile.png'
 
 export default function DevOps() {
   const titles = ['Overview', 'Agile Working', 'Azure']
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <div className={Style.title}>
