@@ -1,7 +1,13 @@
+import { useEffect } from 'react';
 import Styles from '../Styles/main.module.scss'
 import Card from '../Components/card'
 
 function Home() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <div className={Styles.title}>
