@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className={Styles.footer}>
       <p>
-        &copy; 2023 Alex Beesley; All rights reserved.
+        &copy; 2023 Alexander Beesley; All rights reserved.
       </p>
       <div className={Styles.iconContainer}>
         <a href="mailto:david.beesley1234@gmail.com" title="Email">

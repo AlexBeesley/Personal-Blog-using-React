@@ -11,7 +11,7 @@ function Home() {
   return (
     <>
       <div className={Styles.title}>
-        <h1>Alex Beesley</h1>
+        <h1>Alexander Beesley</h1>
         <h3>
           Full Stack Developer specialising in .NET, Sitecore/Umbraco,
           JavaScript based frameworks and DevOps.
