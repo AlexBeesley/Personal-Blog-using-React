@@ -19,28 +19,28 @@ export default function DarkModeToggle () {
   console.log("dark mode:", toggle);
 
   if (toggle) {
-    root.style.setProperty('--Primary', '#9FACBD');
-    root.style.setProperty('--Secondary', '#009AFA');
-    root.style.setProperty('--Tertiary', '#8FC3F7');
-    root.style.setProperty('--Quaternary', '#02629e');
-    root.style.setProperty('--Accent', '#F9F871');
-    root.style.setProperty('--background', '#00182e');
-    root.style.setProperty('--shadow', '#000d18');
-    root.style.setProperty('--highlight', '#002344');
-    root.style.setProperty('--light', '#ffffff5d');
+    root.style.setProperty('--Primary', '#d6d2c4'); 
+    root.style.setProperty('--Secondary', '#63807D');
+    root.style.setProperty('--Tertiary', '#d6d2c4');
+    root.style.setProperty('--Quaternary', '#FBF1CA');
+    root.style.setProperty('--Accent', '#00755F');
+    root.style.setProperty('--background', '#003b49');
+    root.style.setProperty('--shadow', '#001f29'); 
+    root.style.setProperty('--highlight', '#002939');
+    root.style.setProperty('--light', '#d6d2c4');
     root.style.setProperty('--light-hover', '#F9F871');
   }
 
   else {
-    root.style.setProperty('--Primary', '#004D79');
-    root.style.setProperty('--Secondary', '#002B53');
-    root.style.setProperty('--Tertiary', '#009AFA');
-    root.style.setProperty('--Quaternary', '#02629e');
-    root.style.setProperty('--Accent', '#F9F871');
-    root.style.setProperty('--background', '#9ccaf7');
-    root.style.setProperty('--shadow', '#85acd2');
-    root.style.setProperty('--highlight', '#b3e8ff');
-    root.style.setProperty('--light', '#ffffff');
+    root.style.setProperty('--Primary', '#003b49');
+    root.style.setProperty('--Secondary', '#003b49');  
+    root.style.setProperty('--Tertiary', '#003b49');
+    root.style.setProperty('--Quaternary', '#006269');
+    root.style.setProperty('--Accent', '#50B37B');
+    root.style.setProperty('--background', '#d6d2c4');
+    root.style.setProperty('--shadow', '#b6b3a7');
+    root.style.setProperty('--highlight', '#f6f2e1');
+    root.style.setProperty('--light', '#003b49');
     root.style.setProperty('--light-hover', '#F9F871');
   }
 
