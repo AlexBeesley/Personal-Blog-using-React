@@ -6,6 +6,7 @@ import Home from "./Pages/Home";
 import Dotnetandcsharp from "./Pages/dotnet-and-csharp";
 import WebDev from "./Pages/WebDev";
 import DevOps from "./Pages/devops";
+import MachineLearning from "./Pages/machinelearning";
 import ErrorPage from "./Pages/ErrorPage";
 import Nav from "./Components/nav";
 import DarkModeToggle from "./Components/darkmodetoggle";
@@ -46,6 +47,7 @@ export const App = () => {
             <Route path="/dotnet-and-csharp" element={<Dotnetandcsharp />} />
             <Route path="/web-development" element={<WebDev />} />
             <Route path="/devops" element={<DevOps />} />
+            <Route path="/machine-learning" element={<MachineLearning />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
           <CookieConsent />
