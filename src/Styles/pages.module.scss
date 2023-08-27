@@ -13,6 +13,33 @@
   transition: color 0.5s;
 }
 
+.buttonGroup {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+
+  a {  
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+    background: var(--background);
+    box-shadow: 10px 10px 20px var(--shadow), -10px -10px 20px var(--highlight);
+    background-color: var(--background);
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+    &:hover {
+      color: var(--Accent);
+      box-shadow: inset 5px 5px 10px var(--shadow), inset -5px -5px 10px var(--highlight);
+      transform: translateY(1px);
+    }
+  }
+}
+
 .inlineCode {
   font-weight: bold;
   color: #EBDBB2;
