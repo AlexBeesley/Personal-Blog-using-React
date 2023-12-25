@@ -18,10 +18,17 @@
   bottom: 1rem;
   position: fixed;
   max-width: 20rem;
-  background: #ffffff;
+  color: var(--Secondary);
+  background: #fff;
   border-radius: 20px;
   padding: 1rem;
   z-index: 2;
+  a {
+    color: var(--Accent);
+    &:hover {
+      color: var(--background);
+    }
+  }
 }
 
 .image {
@@ -36,7 +43,7 @@
 .btn {
   float: right;
   box-sizing: border-box;
-  background-color: #002b53;
+  background-color: var(--Secondary);
   border-radius: 20px;
   font: inherit;
   color: #fff;
@@ -44,7 +51,7 @@
   padding: 0.5rem 1rem;
   cursor: pointer;
   &:hover {
-    background-color: #9ccaf7;
+    background-color: var(--Accent);
     color: #f9f871;
   }
 }

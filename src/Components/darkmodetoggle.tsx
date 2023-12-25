@@ -7,7 +7,7 @@ export default function DarkModeToggle () {
     data = JSON.parse(data);
   }
   const [toggle, setToggle] = useState(
-    () => data || false
+    () => data || true
   );
   
   useEffect(() => {

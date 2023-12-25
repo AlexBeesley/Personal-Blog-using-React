@@ -37,7 +37,7 @@ export default function MachineLearning() {
                 <p>
                     By adopting Agile principles and DevOps practices, the ExRate suite demonstrates the advantages of following industry software development standards to deliver exchange rate forecasting as a service. This project contributes to the understanding of ML techniques in forecasting exchange rates and provides a framework for future research and practical applications in the field.
                 </p>
-                <div class={Style.buttonGroup}>
+                <div className={Style.buttonGroup}>
                     <a
                         className={Style.linkAsButton}
                         href="https://github.com/AlexBeesley/ExRate"  // replace with actual link to your project repository
@@ -59,7 +59,7 @@ export default function MachineLearning() {
                 </div>
             </Card>
 
-            <a className={Style.anchor} id={titles[2]} />
+            <a className={Style.anchor} id={titles[1]} />
             <Card title={titles[1]} blogpost={true}>
                 <p>
                     The ExRate Service is a sophisticated exchange rate prediction system. It employs machine learning models to forecast future exchange rates based on historical data.{' '}
@@ -139,13 +139,61 @@ export default function MachineLearning() {
                 </p>
             </Card>
 
+            <a className={Style.anchor} id={titles[2]} />
+            <Card title={titles[2]} blogpost={true}>
+                <p>
+                    The ExRate_API project is a .NET 6.0 application that provides an API for forecasting exchange rates. The project is structured using the MVC (Model-View-Controller) pattern and uses the NUnit framework for testing. One of the interesting features of this project is the use of a token to handle the long-running process of building the machine learning model from the service in the background.
+                </p>
+                <p>
+                    The project is divided into several parts:
+                    <ul>
+                        <li><strong>Controllers:</strong> Handles incoming HTTP requests and send responses.</li>
+                        <li><strong>DataFromService:</strong> Contains the logic for fetching and processing exchange rate data.</li>
+                        <li><strong>Tests:</strong> Contains unit tests for the project.</li>
+                        <li><strong>Configs:</strong> Contains configuration settings.</li>
+                    </ul>
+                </p>
+                <p>
+                    The main controller in this project is the <code className={Style.inlineCode}>GetExRateForecastController</code>. This controller handles two main HTTP requests:
+                    <ul>
+                        <li>A <code className={Style.inlineCode}>POST</code> request to start the process of fetching and processing exchange rate data.</li>
+                        <li>A <code className={Style.inlineCode}>GET</code> request to retrieve the result of a previously started process.</li>
+                    </ul>
+                </p>
+                <CodeBox language={'csharp'}>
+                    {post2f1()}
+                </CodeBox>
+                <p>
+                    The <code className={Style.inlineCode}>StartProcess</code> method initiates the process of fetching and processing exchange rate data. It returns a token that can be used to retrieve the result of the process once it's complete. This is a clever way to handle long-running processes, as it allows the client to continue doing other things while the process is running, and then retrieve the result when it's ready. The <code className={Style.inlineCode}>GetResult</code> method takes a token as a parameter and returns the result of the process associated with that token. If the process is not yet complete, it returns a status indicating that the result is not yet ready.
+                </p>
+                <p>
+                    A developer would use this API by first sending a <code className={Style.inlineCode}>POST</code> request to the <code className={Style.inlineCode}>/api/GetExRateForecast</code> endpoint to start the process of fetching and processing exchange rate data. This request would include the base currency, target currency, and model type as query parameters. The API would return a token that the developer could use to retrieve the result of the process.
+                </p>
+                <p>
+                    The <code className={Style.inlineCode}>DataFromService</code> namespace contains classes that implement the <code className={Style.inlineCode}>IGetExRateForecast</code> interface. These classes fetch and process exchange rate data. The <code className={Style.inlineCode}>GetExRateForecastBase</code> class provides a base implementation, and the <code className={Style.inlineCode}>GetExRateForecastLocally</code> and <code className={Style.inlineCode}>GetExRateForecastInContainer</code> classes provide specific implementations for running the service locally or in a container, respectively.
+                </p>
+                <CodeBox language={'csharp'}>
+                    {post2f2()}
+                </CodeBox>
+                <p>
+                    The project uses the <code className={Style.inlineCode}>NUnit</code> framework for testing. The <code className={Style.inlineCode}>GetExRateForecastBaseTests</code> class contains tests for the <code className={Style.inlineCode}>GetExRateForecastBase</code> class, and the <code className={Style.inlineCode}>GetExRateForecastControllerTests</code> class contains tests for the <code className={Style.inlineCode}>GetExRateForecastController</code> class.
+                </p>
+                <CodeBox language={'csharp'}>
+                    {post2f3()}
+                </CodeBox>
+                <p>
+                    The <code className={Style.inlineCode}>SetUp</code> method is run before each test to set up the test environment. The <code className={Style.inlineCode}>RunProcessAsync_ShouldReturnCorrectResult</code> and <code className={Style.inlineCode}>CombineIntoJson_ShouldReturnCorrectResult</code> methods are tests for the <code className={Style.inlineCode}>RunProcessAsync</code> and <code className={Style.inlineCode}>CombineIntoJson</code> methods of the <code className={Style.inlineCode}>GetExRateForecastBase</code> class, respectively.
+                </p>
+            </Card>
+
         </div>
     )
 
 }
 
 const post1f1 = () => {
-    return `from keras import Sequential, regularizers
+    return `
+from keras import Sequential, regularizers
 from keras.layers import LSTM as KerasLSTM, Dense
 from keras.optimizers import RMSprop
 
@@ -166,7 +214,8 @@ class LSTM:
 }
 
 const post1f2 = () => {
-    return `from keras import Sequential, regularizers
+    return `
+from keras import Sequential, regularizers
 from keras.layers import Dense, Flatten, Dropout, BatchNormalization
 from keras.optimizers import RMSprop
 
@@ -191,13 +240,13 @@ class FCNN:
 }
 
 const post1f3 = () => {
-    return `import numpy as np
+    return `
+import numpy as np
 from keras.callbacks import EarlyStopping
 from keras.losses import mean_absolute_error
 from DataPreprocessing.DataNormaliser import DataNormaliser
 from MachineLearning.Models.FCNN import FCNN
 from MachineLearning.Models.LSTM import LSTM
-
 
 class ModelManager:
     def __init__(self, verbosity, model_type, year_rates, year_dates, base, target, lookback):
@@ -261,3 +310,265 @@ class ModelManager:
         mae = self.evaluate(self.year_rates[-7:], forecast)
         return forecast, history, mae`
 }
+
+const post2f1 = () => {
+    return `
+using ExRate_API.DataFromService;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Concurrent;
+
+namespace ExRate_API.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class GetExRateForecastController : ControllerBase
+    {
+        private readonly ILogger<GetExRateForecastController> _logger;
+        private readonly IGetExRateForecast _ExRateForecast;
+
+        public GetExRateForecastController(ILogger<GetExRateForecastController> logger, IGetExRateForecast ExRateForecast)
+        {
+            _logger = logger;
+            _ExRateForecast = ExRateForecast;
+        }
+
+        [HttpPost("")]
+        public async Task<IActionResult> StartProcess([FromQuery] string baseCurrency, [FromQuery] string targetCurrency, [FromQuery] string modelType)
+        {
+            if (string.IsNullOrWhiteSpace(baseCurrency) || string.IsNullOrWhiteSpace(targetCurrency) || string.IsNullOrWhiteSpace(modelType))
+            {
+                _logger.LogError("Invalid input parameters.");
+                return BadRequest("All input parameters (baseCurrency, targetCurrency, and modelType) are required.");
+            }
+
+            var token = Guid.NewGuid().ToString();
+            var task = _ExRateForecast.GetOutputAsync(baseCurrency, targetCurrency, modelType);
+            Task.Run(() => SaveTask(token, task));
+
+            return Ok(new { Token = token });
+        }
+
+        [HttpGet("{token}")]
+        public async Task<IActionResult> GetResult(string token)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(token))
+                {
+                    return BadRequest("Token cannot be null or empty.");
+                }
+
+                var taskExists = Tasks.TryGetValue(token, out var task);
+
+                if (!taskExists)
+                {
+                    return NotFound("Task not found for token.");
+                }
+
+                if (!task.IsCompleted)
+                {
+                    return NotFound("Task not yet completed.");
+                }
+
+                var result = await task;
+
+                if (result == null)
+                {
+                    return NotFound("Result not found.");
+                }
+
+                return Ok(result);
+            }
+            catch (Exception ex) 
+            {
+                return StatusCode(503, $"Data from dependant API not available. Please try again later. \nError: {ex}");
+            }
+        }
+
+
+        private static readonly ConcurrentDictionary<string, Task<string>> Tasks = new ConcurrentDictionary<string, Task<string>>();
+
+        private void SaveTask(string token, Task<string> task)
+        {
+            Tasks[token] = task;
+        }
+
+        private Task<string> RetrieveTask(string token)
+        {
+            Tasks.TryRemove(token, out var task);
+            return task;
+        }
+    }
+}    
+`}
+
+const post2f2 = () => {
+    return `
+using ExRate_API.Controllers;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+
+namespace ExRate_API.DataFromService
+{
+    public class GetExRateForecastBase
+    {
+        protected readonly ILogger<GetExRateForecastController> _logger;
+
+        public GetExRateForecastBase(ILogger<GetExRateForecastController> logger)
+        {
+            _logger = logger;
+        }
+
+        protected virtual async Task<string> RunProcessAsync(string fileName, string scriptPath, string scriptDirectory, string targetCurrency, string baseCurrency, string modelType)
+        {
+            var process = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = fileName,
+                    Arguments = scriptPath + $" -b {baseCurrency} -t {targetCurrency} -m {modelType}",
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    CreateNoWindow = true,
+                    WorkingDirectory = scriptDirectory
+                },
+                EnableRaisingEvents = true
+            };
+
+            StringBuilder outputBuilder = new StringBuilder();
+
+            process.ErrorDataReceived += (sender, e) =>
+            {
+                if (!string.IsNullOrEmpty(e.Data) && !IsTensorRTWarningMessage(e.Data))
+                {
+                    _logger.LogError($"Error from process: {e.Data}");
+                }
+            };
+
+            process.OutputDataReceived += (sender, e) =>
+            {
+                if (!string.IsNullOrEmpty(e.Data))
+                {
+                    outputBuilder.Append(e.Data);
+                }
+            };
+
+            await ProcessSequenceAsync(process);
+
+            return CombineIntoJson(outputBuilder.ToString());
+        }
+
+        private bool IsTensorRTWarningMessage(string message)
+        {
+            return message.Contains("TF-TRT Warning: Could not find TensorRT");
+        }
+
+
+        protected virtual string CombineIntoJson(string output)
+        {
+            int firstBracketIndex = output.IndexOf('{');
+            int secondBracketIndex = output.IndexOf('{', firstBracketIndex + 1);
+
+            if (firstBracketIndex < 0 || secondBracketIndex < 0)
+            {
+                throw new JsonReaderException("Invalid JSON provided.");
+            }
+
+            string combinedJson = output.Substring(firstBracketIndex);
+
+            JObject historicalData = JObject.Parse(combinedJson.Substring(0, secondBracketIndex - firstBracketIndex));
+            JObject forecast = JObject.Parse(combinedJson.Substring(secondBracketIndex - firstBracketIndex));
+
+            if (historicalData != null && forecast != null) {
+                var result = new Dictionary<string, object>
+                {
+                    { "historicalData", historicalData.ToObject<Dictionary<string, object>>() },
+                    { "forecast", forecast.ToObject<Dictionary<string, object>>() }
+                };
+
+                using (var writer = new StringWriter())
+                {
+                    using (var jsonWriter = new JsonTextWriter(writer))
+                    {
+                        jsonWriter.Formatting = Formatting.Indented;
+                        new JsonSerializer().Serialize(jsonWriter, result);
+                    }
+
+                    return writer.ToString();
+                }
+            }
+
+            throw new JsonReaderException("No JSON provided.");
+        }
+
+        private async Task ProcessSequenceAsync(Process process)
+        {
+            process.Start();
+            process.BeginErrorReadLine();
+            process.BeginOutputReadLine();
+            await process.WaitForExitAsync();
+        }
+    }
+}    
+`}
+
+const post2f3 = () => {
+    return `
+using ExRate_API.Controllers;
+using ExRate_API.DataFromService;
+using ExRate_API.Tests.TestHelpers;
+using Microsoft.Extensions.Logging;
+using Moq;
+using Newtonsoft.Json.Linq;
+
+namespace ExRate_API.Tests.DataFromService
+{
+    [TestFixture]
+    public class GetExRateForecastBaseTests
+    {
+        private Mock<ILogger<GetExRateForecastController>> _loggerMock;
+        private TestHelperForGetExRateForecastBase _testHelperForGetExRateForecastBase;
+
+        [SetUp]
+        public void Setup()
+        {
+            _loggerMock = new Mock<ILogger<GetExRateForecastController>>();
+            _testHelperForGetExRateForecastBase = new TestHelperForGetExRateForecastBase(_loggerMock.Object);
+        }
+
+        [Test]
+        public void CombineIntoJson_ShouldThrowJsonReaderException_WhenInvalidJsonProvided()
+        {
+            // Arrange
+            var invalidJson = "invalidJson";
+
+            // Act & Assert
+            Assert.Throws<Newtonsoft.Json.JsonReaderException>(() => _testHelperForGetExRateForecastBase.CallCombineIntoJson(invalidJson));
+        }
+
+        [Test]
+        public void CombineIntoJson_ShouldReturnCombinedJson_WhenValidJsonProvided()
+        {
+            // Arrange
+            var validJson = "{\\\"date\\\": \\\"2023-01-01\\\"}{\\\"date\\\": \\\"2023-02-01\\\"}";
+            var expectedResult = "{\\r\\n  \\\"forecast\\\": {\\r\\n    \\\"date\\\": \\\"2023-02-01\\\"\\r\\n  },\\r\\n  \\\"historicalData\\\": {\\r\\n    \\\"date\\\": \\\"2023-01-01\\\"\\r\\n  }\\r\\n}";
+
+            // Act
+            var result = _testHelperForGetExRateForecastBase.CallCombineIntoJson(validJson);
+
+            // Assert
+            var expectedJson = JObject.Parse(expectedResult);
+            var resultJson = JObject.Parse(result);
+            var expectedJsonSorted = new JObject(expectedJson.Properties().OrderBy(p => p.Name));
+            var resultJsonSorted = new JObject(resultJson.Properties().OrderBy(p => p.Name));
+
+            Assert.AreEqual(expectedJsonSorted.ToString(), resultJsonSorted.ToString());
+        }
+    }
+}    
+`}

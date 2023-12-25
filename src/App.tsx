@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-rou
 import {useState, useEffect} from "react";
 import { Helmet } from "react-helmet";
 import Home from "./Pages/Home";
-import Dotnetandcsharp from "./Pages/dotnet-and-csharp";
+import Dotnetandcsharp from "./Pages/DotNetAndCsharp";
 import WebDev from "./Pages/WebDev";
-import DevOps from "./Pages/devops";
-import MachineLearning from "./Pages/machinelearning";
+import DevOps from "./Pages/DevOps";
+import MachineLearning from "./Pages/MachineLearning";
 import ErrorPage from "./Pages/ErrorPage";
 import Nav from "./Components/nav";
 import DarkModeToggle from "./Components/darkmodetoggle";
