@@ -41,7 +41,7 @@ export default function WebDev() {
           >
             React
           </a>{' '}
-          with TypeScript, looking at the thrid-party{' '}
+          with TypeScript, looking at the third-party{' '}
           <a
             className={Style.inlineLink}
             href="https://www.tutorialsteacher.com/nodejs/nodejs-modules#:~:text=Module%20in%20Node.,modules%20or%20pollute%20global%20scope."
@@ -84,6 +84,22 @@ export default function WebDev() {
           </a>
           , and compare them to React.
         </p>
+        <p>
+          Since I first wrote this the landscape has moved on considerably:{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://react.dev/blog/2024/12/05/react-19"
+            target="_blank"
+            rel="noreferrer"
+            title="React 19"
+          >
+            React 19
+          </a>{' '}
+          now ships with Server Components and Actions, Vite has replaced Webpack
+          as the default build tool, and the ecosystem has consolidated around
+          meta-frameworks. I cover where things stand in 2026 in the final
+          section.
+        </p>
       </Card>
       <a className={Style.anchor} id={titles[1]} />
       <Card title={titles[1]} blogpost={true}>
@@ -119,7 +135,7 @@ export default function WebDev() {
             href="https://github.com/DABeesleyTPR/Personal_Website"
             target="_blank"
             rel="noreferrer"
-            title="My persoanl website demo"
+            title="My personal website demo"
           >
             here
           </a>
@@ -210,7 +226,7 @@ export default function WebDev() {
       <a className={Style.anchor} id={titles[3]} />
       <Card title={titles[3]} blogpost={true}>
         <p>
-          React is a popular JavaScript framework for build front-end user
+          React is a popular JavaScript library for building front-end user
           interfaces (UIs), It is a single page application (SPA) which means
           all the sites data is loaded from the starting index.html file all
           browsers default to, then the pages are rendered{' '}
@@ -288,7 +304,7 @@ export default function WebDev() {
             CSS Modules
           </a>{' '}
           In this app allows for a more organized developer environment, as
-          class names are abstracted when complied by webpack, so the developer
+          class names are abstracted when compiled by webpack, so the developer
           does not have to worry about unique class names across all modules,
           only within one.
         </p>
@@ -389,6 +405,21 @@ export default function WebDev() {
           easier debugging, expandability and readability.
         </p>
         <p>
+          In fairness, Vue 3's{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://vuejs.org/guide/extras/composition-api-faq.html"
+            target="_blank"
+            rel="noreferrer"
+            title="Vue Composition API"
+          >
+            Composition API
+          </a>{' '}
+          and <code className={Style.inlineCode}>&lt;script setup&gt;</code> have
+          gone a long way to addressing these concerns since I first formed that
+          opinion, and it remains a hugely popular and capable framework.
+        </p>
+        <p>
           During my research for this segment, I came across a JavaScript UI
           framework which surprised me: Next.js.
         </p>
@@ -414,8 +445,45 @@ export default function WebDev() {
         <p>
           In reflection, React has been a great starting point for learning
           JavaScript-based UI Frameworks for front-end development, it has given
-          me the knowledge and skills to feel confident using Next in my final
-          year project.
+          me the knowledge and skills to feel confident using Next, which I went
+          on to use in my final-year project.
+        </p>
+        <p>
+          Looking at 2026, Next.js' App Router and React Server Components have
+          become a default way to build React apps, Vite is the standard build
+          tool, and leaner alternatives like{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://astro.build/"
+            target="_blank"
+            rel="noreferrer"
+            title="What is Astro?"
+          >
+            Astro
+          </a>
+          ,{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://kit.svelte.dev/"
+            target="_blank"
+            rel="noreferrer"
+            title="What is SvelteKit?"
+          >
+            SvelteKit
+          </a>{' '}
+          and{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://www.solidjs.com/"
+            target="_blank"
+            rel="noreferrer"
+            title="What is SolidJS?"
+          >
+            SolidJS
+          </a>{' '}
+          have gained real traction. Keeping pace with that churn is part of the
+          job, and staying current with the ecosystem is something I make a point
+          of doing.
         </p>
       </Card>
     </div>

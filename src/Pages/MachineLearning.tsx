@@ -37,10 +37,66 @@ export default function MachineLearning() {
                 <p>
                     By adopting Agile principles and DevOps practices, the ExRate suite demonstrates the advantages of following industry software development standards to deliver exchange rate forecasting as a service. This project contributes to the understanding of ML techniques in forecasting exchange rates and provides a framework for future research and practical applications in the field.
                 </p>
+                <p>
+                    Since completing this dissertation, the machine learning landscape has shifted dramatically. The{' '}
+                    <a
+                        className={Style.inlineLink}
+                        href="https://arxiv.org/abs/1706.03762"
+                        target="_blank"
+                        rel="noreferrer"
+                        title="Attention Is All You Need"
+                    >
+                        Transformer
+                    </a>{' '}
+                    architecture now underpins the{' '}
+                    <a
+                        className={Style.inlineLink}
+                        href="https://en.wikipedia.org/wiki/Large_language_model"
+                        target="_blank"
+                        rel="noreferrer"
+                        title="What is a Large Language Model?"
+                    >
+                        Large Language Models
+                    </a>{' '}
+                    and Generative AI tools that have reshaped the industry,{' '}
+                    <a
+                        className={Style.inlineLink}
+                        href="https://pytorch.org/"
+                        target="_blank"
+                        rel="noreferrer"
+                        title="What is PyTorch?"
+                    >
+                        PyTorch
+                    </a>{' '}
+                    and the{' '}
+                    <a
+                        className={Style.inlineLink}
+                        href="https://huggingface.co/"
+                        target="_blank"
+                        rel="noreferrer"
+                        title="Hugging Face"
+                    >
+                        Hugging Face
+                    </a>{' '}
+                    ecosystem have become the default for modern ML work, and even time-series problems like this one are increasingly tackled with Transformer-based and foundation models.
+                </p>
+                <p>
+                    Building on the foundations laid by this project, I am actively exploring these areas — applying LLMs in practice,{' '}
+                    <a
+                        className={Style.inlineLink}
+                        href="https://aws.amazon.com/what-is/retrieval-augmented-generation/"
+                        target="_blank"
+                        rel="noreferrer"
+                        title="What is Retrieval-Augmented Generation?"
+                    >
+                        Retrieval-Augmented Generation
+                    </a>{' '}
+                    (RAG) for grounding models in trusted data, and the emerging space of AI agents — which together represent where I see the most exciting opportunities for the next stage of my career.
+                </p>
                 <div className={Style.buttonGroup}>
                     <a
                         className={Style.linkAsButton}
-                        href="https://github.com/AlexBeesley/ExRate"  // replace with actual link to your project repository
+                        href="https://github.com/AlexBeesley/ExRate"
                         target="_blank"
                         rel="noreferrer"
                         title="My Exchange Rate Forecast Repository on GitHub"
@@ -49,7 +105,7 @@ export default function MachineLearning() {
                     </a>
                     <a
                         className={Style.linkAsButton}
-                        href="https://exrate-frontend.netlify.app/assets/pdf/CI601-Final_Report-David_Beesley.695b38be.pdf"  // link to the PDF report
+                        href="https://exrate-frontend.netlify.app/assets/pdf/CI601-Final_Report-David_Beesley.695b38be.pdf"
                         target="_blank"
                         rel="noreferrer"
                         title="Final Report on Exchange Rate Forecast Project"
@@ -65,7 +121,7 @@ export default function MachineLearning() {
                     The ExRate Service is a sophisticated exchange rate prediction system. It employs machine learning models to forecast future exchange rates based on historical data.{' '}
                     The data is sourced from an <a
                         className={Style.inlineLink}
-                        href="https://apilayer.com/marketplace/exchangerates_data-api?live_demo=show"  // link to the PDF report
+                        href="https://apilayer.com/marketplace/exchangerates_data-api?live_demo=show"
                         target="_blank"
                         rel="noreferrer"
                         title="API for exchange rate data."
@@ -146,20 +202,20 @@ export default function MachineLearning() {
                 </p>
                 <p>
                     The project is divided into several parts:
-                    <ul>
-                        <li><strong>Controllers:</strong> Handles incoming HTTP requests and send responses.</li>
-                        <li><strong>DataFromService:</strong> Contains the logic for fetching and processing exchange rate data.</li>
-                        <li><strong>Tests:</strong> Contains unit tests for the project.</li>
-                        <li><strong>Configs:</strong> Contains configuration settings.</li>
-                    </ul>
                 </p>
+                <ul>
+                    <li><strong>Controllers:</strong> Handles incoming HTTP requests and send responses.</li>
+                    <li><strong>DataFromService:</strong> Contains the logic for fetching and processing exchange rate data.</li>
+                    <li><strong>Tests:</strong> Contains unit tests for the project.</li>
+                    <li><strong>Configs:</strong> Contains configuration settings.</li>
+                </ul>
                 <p>
                     The main controller in this project is the <code className={Style.inlineCode}>GetExRateForecastController</code>. This controller handles two main HTTP requests:
-                    <ul>
-                        <li>A <code className={Style.inlineCode}>POST</code> request to start the process of fetching and processing exchange rate data.</li>
-                        <li>A <code className={Style.inlineCode}>GET</code> request to retrieve the result of a previously started process.</li>
-                    </ul>
                 </p>
+                <ul>
+                    <li>A <code className={Style.inlineCode}>POST</code> request to start the process of fetching and processing exchange rate data.</li>
+                    <li>A <code className={Style.inlineCode}>GET</code> request to retrieve the result of a previously started process.</li>
+                </ul>
                 <CodeBox language={'csharp'}>
                     {post2f1()}
                 </CodeBox>

@@ -67,6 +67,40 @@ export default function DevOps() {
           </a>{' '}
           (SaaS) model.
         </p>
+        <p>
+          In 2026 the discipline has broadened well beyond CI/CD. Teams now talk
+          about{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://www.gartner.com/en/articles/what-is-platform-engineering"
+            target="_blank"
+            rel="noreferrer"
+            title="What is Platform Engineering?"
+          >
+            platform engineering
+          </a>{' '}
+          (building internal developer platforms),{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://www.redhat.com/en/topics/devops/what-is-devsecops"
+            target="_blank"
+            rel="noreferrer"
+            title="What is DevSecOps?"
+          >
+            DevSecOps
+          </a>{' '}
+          (shifting security left) and measuring delivery performance with the{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://dora.dev/"
+            target="_blank"
+            rel="noreferrer"
+            title="DORA metrics"
+          >
+            DORA metrics
+          </a>
+          . These are areas I actively follow as the field evolves.
+        </p>
       </Card>
       <a className={Style.anchor} id={titles[1]} />
       <Card title={titles[1]} blogpost={true}>
@@ -91,10 +125,10 @@ export default function DevOps() {
           >
             The Agile Manifesto
           </a>
-          , which was produced in 2000 when a group of 17 developers came
-          together, in the US, Oregon, to speed up development times. Since its
-          conception, it has fast become the status quo of software development
-          teams across many industries.
+          , which was produced in 2001 when a group of 17 developers came
+          together at Snowbird, Utah, to find better ways of developing
+          software. Since its conception, it has fast become the status quo of
+          software development teams across many industries.
         </p>
         <p>
           In an agile team,{' '}
@@ -129,9 +163,9 @@ export default function DevOps() {
             sprint
           </a>{' '}
           is a period within agile used to reach short-term goals while working
-          towards long-term aspirations, a sprint typically lasts between three
-          and four weeks depending on the team and will have one overarching
-          focus with clearly defined deliverables.
+          towards long-term aspirations, a sprint typically lasts between one
+          and four weeks — most commonly two — depending on the team and will
+          have one overarching focus with clearly defined deliverables.
         </p>
         <p>
           A sprint typically begins with a{' '}
@@ -225,6 +259,52 @@ export default function DevOps() {
           branches and the proceeds to build the .NET 6 MVC, run its associated
           tests, if the tests pass, it proceeds to deploy the MVC via the{' '}
           <code className={Style.inlineCode}>app-uks-dev-01</code> app service.
+        </p>
+        <p>
+          This example uses Azure DevOps Pipelines, but{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://github.com/features/actions"
+            target="_blank"
+            rel="noreferrer"
+            title="What is GitHub Actions?"
+          >
+            GitHub Actions
+          </a>{' '}
+          has since become the default CI/CD platform for many teams.
+          Infrastructure itself is increasingly defined as code with tools like{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview"
+            target="_blank"
+            rel="noreferrer"
+            title="What is Bicep?"
+          >
+            Bicep
+          </a>{' '}
+          and{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://www.terraform.io/"
+            target="_blank"
+            rel="noreferrer"
+            title="What is Terraform?"
+          >
+            Terraform
+          </a>
+          , while workloads are commonly packaged into containers and
+          orchestrated with{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://kubernetes.io/"
+            target="_blank"
+            rel="noreferrer"
+            title="What is Kubernetes?"
+          >
+            Kubernetes
+          </a>
+          . These cloud-native and Infrastructure as Code practices are a focus
+          of my ongoing learning.
         </p>
       </Card>
     </div>

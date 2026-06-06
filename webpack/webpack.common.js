@@ -18,7 +18,25 @@ module.exports = {
         ],
       },
       {
+        test: /\.module\.(css|scss)$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                namedExport: false,
+                exportLocalsConvention: 'as-is',
+                localIdentName: '[name]__[local]__[hash:base64:5]',
+              },
+            },
+          },
+          'sass-loader',
+        ],
+      },
+      {
         test: /\.(css|scss)$/,
+        exclude: /\.module\.(css|scss)$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {

@@ -1,4 +1,4 @@
-@import 'variables.module.scss';
+@use './variables.scss' as *;
 
 body {
   height: 100%;

@@ -50,9 +50,12 @@
   font-weight: bold;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  &:hover {
+  &:hover,
+  &:focus-visible {
     background-color: var(--Accent);
     color: #f9f871;
+    outline: 2px solid var(--Accent);
+    outline-offset: 2px;
   }
 }
 

@@ -1,53 +1,54 @@
 import { useEffect, useState } from "react";
 import Styles from "../Styles/darkmodetoggle.module.scss";
 
+const darkTheme = {
+  '--Primary': '#d6d2c4',
+  '--Secondary': '#63807D',
+  '--Tertiary': '#d6d2c4',
+  '--Quaternary': '#FBF1CA',
+  '--Accent': '#00755F',
+  '--background': '#003b49',
+  '--shadow': '#001f29',
+  '--highlight': '#002939',
+  '--light': '#d6d2c4',
+  '--light-hover': '#F9F871',
+};
+
+const lightTheme = {
+  '--Primary': '#003b49',
+  '--Secondary': '#003b49',
+  '--Tertiary': '#003b49',
+  '--Quaternary': '#006269',
+  '--Accent': '#50B37B',
+  '--background': '#d6d2c4',
+  '--shadow': '#b6b3a7',
+  '--highlight': '#f6f2e1',
+  '--light': '#003b49',
+  '--light-hover': '#F9F871',
+};
+
 export default function DarkModeToggle () {
-  let data = window.localStorage.getItem('DARK_MODE_KEY')
-  if (data !== null) {
-    data = JSON.parse(data);
-  }
-  const [toggle, setToggle] = useState(
-    () => data || true
-  );
-  
+  const [toggle, setToggle] = useState(() => {
+    const data = window.localStorage.getItem('DARK_MODE_KEY');
+    return data !== null ? JSON.parse(data) : true;
+  });
+
   useEffect(() => {
     window.localStorage.setItem('DARK_MODE_KEY', JSON.stringify(toggle));
   }, [toggle]);
-  
-  let root = document.documentElement;
-  
-  console.log("dark mode:", toggle);
 
-  if (toggle) {
-    root.style.setProperty('--Primary', '#d6d2c4'); 
-    root.style.setProperty('--Secondary', '#63807D');
-    root.style.setProperty('--Tertiary', '#d6d2c4');
-    root.style.setProperty('--Quaternary', '#FBF1CA');
-    root.style.setProperty('--Accent', '#00755F');
-    root.style.setProperty('--background', '#003b49');
-    root.style.setProperty('--shadow', '#001f29'); 
-    root.style.setProperty('--highlight', '#002939');
-    root.style.setProperty('--light', '#d6d2c4');
-    root.style.setProperty('--light-hover', '#F9F871');
-  }
-
-  else {
-    root.style.setProperty('--Primary', '#003b49');
-    root.style.setProperty('--Secondary', '#003b49');  
-    root.style.setProperty('--Tertiary', '#003b49');
-    root.style.setProperty('--Quaternary', '#006269');
-    root.style.setProperty('--Accent', '#50B37B');
-    root.style.setProperty('--background', '#d6d2c4');
-    root.style.setProperty('--shadow', '#b6b3a7');
-    root.style.setProperty('--highlight', '#f6f2e1');
-    root.style.setProperty('--light', '#003b49');
-    root.style.setProperty('--light-hover', '#F9F871');
-  }
+  useEffect(() => {
+    const root = document.documentElement;
+    const theme = toggle ? darkTheme : lightTheme;
+    Object.entries(theme).forEach(([key, value]) => {
+      root.style.setProperty(key, value);
+    });
+  }, [toggle]);
 
   return (
     <div className={Styles.darkmodetoggle}>
-      <button className={Styles.button} onClick={() => setToggle(!toggle)}>
-        <i className="fa-solid fa-lightbulb"></i>
+      <button className={Styles.button} onClick={() => setToggle(!toggle)} aria-label={`Switch to ${toggle ? 'light' : 'dark'} mode`}>
+        <i className="fa-solid fa-lightbulb" aria-hidden="true"></i>
       </button>
     </div>
   );

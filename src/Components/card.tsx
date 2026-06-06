@@ -1,5 +1,4 @@
 import Styles from "../Styles/card.module.scss";
-import { FunctionComponent, useState } from "react";
 
 type CardProps = {
     title: string,
@@ -7,7 +6,7 @@ type CardProps = {
     children?: React.ReactNode,
   }
 
-const Card: FunctionComponent<CardProps> = ({ title, blogpost, children }) => {
+const Card = ({ title, blogpost, children }: CardProps) => {
   if (blogpost) {
     return (
       <article className={Styles.blogpost}>

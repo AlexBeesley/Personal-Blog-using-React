@@ -6,7 +6,7 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   devServer: {
     hot: true,
-    open: true,
+    open: false,
     historyApiFallback: true,
   },
   plugins: [

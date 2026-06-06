@@ -2,13 +2,18 @@
   position: absolute;
   top: 0;
   padding-top: 2rem;
-  right: 10%;
+  right: 0;
 }
 
 button {
   background: transparent;
   border: none;
   cursor: pointer;
+  &:focus-visible {
+    outline: 2px solid var(--light-hover);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
   i {
     font-size: 1.75rem;
     color: var(--light);
@@ -21,7 +26,7 @@ button {
 @media only screen and (max-width: 80rem) {
   .darkmodetoggle {
     padding-top: 1.5rem;
-    right: 5%;
+    right: 0;
   }
 }
 

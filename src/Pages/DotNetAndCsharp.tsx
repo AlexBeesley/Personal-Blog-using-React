@@ -92,6 +92,23 @@ export default function Dotnetandcsharp() {
           </a>{' '}
           support for persistent data access, within the same solution.
         </p>
+        <p>
+          Worth noting in 2026: .NET 6 reached end of support in November 2024,
+          so a fresh build would target the current Long Term Support release,{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://dotnet.microsoft.com/en-us/download/dotnet/10.0"
+            target="_blank"
+            rel="noreferrer"
+            title="Download .NET 10"
+          >
+            .NET 10
+          </a>{' '}
+          (released November 2025). The patterns shown throughout this post —
+          repositories, dependency injection, Web APIs and EF Core — carry across
+          unchanged, and day-to-day workflows now lean heavily on AI-assisted
+          tooling such as GitHub Copilot to move faster.
+        </p>
       </Card>
       <a className={Style.anchor} id={titles[1]} />
       <Card title={titles[1]} blogpost={true}>
@@ -149,7 +166,7 @@ export default function Dotnetandcsharp() {
         <p>Here is the interface for the Repository Classes.</p>
         <CodeBox language={'csharp'}>{post1f4()}</CodeBox>
         <p>
-          The <code className={Style.inlineCode}>IRepoitory</code> interface
+          The <code className={Style.inlineCode}>IRepository</code> interface
           sets out expected functions and their expected arguments and types.
           All Repository Classes need to implement these functions with these
           exact return types but can return different values based on the code
@@ -202,7 +219,7 @@ export default function Dotnetandcsharp() {
         </p>
         <p>
           Within the Calculator class, which extends its own interface, the{' '}
-          <code className={Style.inlineCode}>IRepositiry</code> class and its
+          <code className={Style.inlineCode}>IRepository</code> class and its
           relevant data models are given a variable name, typically starting
           with an underscore as is a soft standard among developers, then
           initialised in the constructor.
@@ -342,7 +359,29 @@ export default function Dotnetandcsharp() {
           <code className={Style.inlineCode}>ERROR</code>. Developers can write
           logs which document events as the code is running. If configured,
           these can be sent to the runtime terminal and even written to a log{' '}
-          <code className={Style.inlineCode}>.txt</code> file.
+          <code className={Style.inlineCode}>.txt</code> file. Today most new
+          .NET services reach for the built-in{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://learn.microsoft.com/en-us/dotnet/core/extensions/logging"
+            target="_blank"
+            rel="noreferrer"
+            title="Logging in .NET"
+          >
+            Microsoft.Extensions.Logging
+          </a>{' '}
+          abstraction, often paired with{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://serilog.net/"
+            target="_blank"
+            rel="noreferrer"
+            title="Structured logging with Serilog"
+          >
+            Serilog
+          </a>{' '}
+          for structured logging, but the principles demonstrated here with
+          Log4net are identical.
         </p>
         <p>
           Here is an example, from the{' '}
@@ -436,7 +475,20 @@ export default function Dotnetandcsharp() {
           >
             NuGet
           </a>{' '}
-          package, was used.
+          package, was used. Since 2023, the brief inclusion of the SponsorLink
+          dependency in Moq prompted many teams to switch to{' '}
+          <a
+            className={Style.inlineLink}
+            href="https://nsubstitute.github.io/"
+            target="_blank"
+            rel="noreferrer"
+            title="NSubstitute mocking library"
+          >
+            NSubstitute
+          </a>{' '}
+          or FakeItEasy, and xUnit is now the default test framework in new
+          .NET templates — though the mocking and assertion concepts are the same
+          whichever you choose.
         </p>
         <p>Here is an example</p>
         <CodeBox language={'csharp'}>{post7f1()}</CodeBox>
