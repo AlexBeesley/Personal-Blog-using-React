@@ -1,0 +1,276 @@
+@layer components {
+
+  .header {
+    position: relative;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: min(100% - 2 * var(--gutter), var(--content-max));
+    margin: max(14px, env(safe-area-inset-top)) auto 0;
+  }
+
+  /* --- Brand ------------------------------------------------------------- */
+
+  .brand {
+    --lg-frost: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 20px 6px 6px;
+    border-radius: 999px;
+    color: var(--ink);
+    animation: global(rise) .9s var(--spring-soft) both;
+  }
+
+  .brand:hover {
+    color: #fff;
+  }
+
+  /* The favicon's orb: lilac light caught in the glass tint. */
+  .orb {
+    flex: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background:
+      linear-gradient(150deg, rgb(255 255 255 / .55), transparent 46%),
+      radial-gradient(circle at 34% 28%, #D9BDF0, var(--accent) 42%, var(--glass-tint) 100%);
+    box-shadow:
+      inset 0 0 0 1px rgb(255 255 255 / .28),
+      0 6px 16px -6px rgba(var(--accent-rgb), .9);
+  }
+
+  .brandText {
+    display: grid;
+    gap: 3px;
+    line-height: 1.1;
+  }
+
+  .name {
+    font-family: var(--font-eyebrow);
+    font-size: 13px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+
+  .role {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: .04em;
+    color: var(--ink-3);
+  }
+
+  /* --- The dock (small screens) ----------------------------------------- */
+
+  .nav {
+    --lg-frost: 14px;
+    --lg-sat: 160%;
+    --lg-skin:
+      linear-gradient(180deg, rgb(255 255 255 / .1), rgb(255 255 255 / .02) 50%, rgb(255 255 255 / .05)),
+      rgb(12 10 26 / .46);
+    position: fixed;
+    z-index: 40;
+    left: 50%;
+    bottom: var(--dock-gap);
+    translate: -50% 0;
+    max-width: calc(100vw - 16px);
+    padding: 6px;
+    border-radius: 999px;
+    animation: dock-in .9s 260ms var(--spring) both;
+  }
+
+  @keyframes dock-in {
+    from {
+      opacity: 0;
+      transform: translateY(70%) scale(.9);
+    }
+  }
+
+  .list {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .link {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    height: 50px;
+    min-width: 50px;
+    padding: 0 14px;
+    border-radius: 999px;
+    color: var(--ink-2);
+    transform-origin: 50% 100%;
+    transition:
+      background .25s,
+      color .25s,
+      box-shadow .25s,
+      gap .55s var(--spring),
+      padding .55s var(--spring),
+      scale .5s var(--spring);
+  }
+
+  .link svg {
+    flex: none;
+  }
+
+  .link:hover {
+    color: #fff;
+    background: rgb(255 255 255 / .08);
+  }
+
+  .link:active {
+    scale: .94;
+  }
+
+  /* The full name is for screen readers here; the dock shows the short one,
+     and only on the current page. */
+  .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .short {
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    white-space: nowrap;
+    font-family: var(--font-eyebrow);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    transition: max-width .55s var(--spring), opacity .3s var(--ease-out);
+  }
+
+  /* The current page opens out — the dashboard dock's active button, with
+     its "running" tint and rim. */
+  .active {
+    gap: 8px;
+    padding: 0 18px 0 14px;
+    color: #fff;
+    background: rgba(var(--accent-rgb), .24);
+    box-shadow: inset 0 0 0 1px rgba(var(--accent-rgb), .45);
+  }
+
+  .active:hover {
+    background: rgba(var(--accent-rgb), .3);
+  }
+
+  .active .short {
+    max-width: 7em;
+    opacity: 1;
+  }
+
+  .thumb {
+    display: none;
+  }
+
+  /* Narrow phones: tighter buttons so five fit with the label open. */
+  @media (max-width: 380px) {
+    .link {
+      min-width: 44px;
+      height: 46px;
+      padding: 0 11px;
+    }
+
+    .active {
+      padding: 0 14px 0 11px;
+    }
+  }
+
+  /* --- The track (desktop) ---------------------------------------------- */
+
+  @media (min-width: 1080px) {
+    .header {
+      position: sticky;
+      top: 16px;
+      margin-top: 16px;
+    }
+
+    .nav {
+      position: relative;
+      left: auto;
+      bottom: auto;
+      translate: none;
+      max-width: none;
+      padding: 5px;
+      animation: global(rise) .9s 120ms var(--spring-soft) both;
+    }
+
+    .link,
+    .active {
+      height: 44px;
+      gap: 0;
+      padding: 0 18px;
+      background: none;
+      box-shadow: none;
+    }
+
+    .link svg,
+    .short {
+      display: none;
+    }
+
+    .label {
+      position: static;
+      width: auto;
+      height: auto;
+      overflow: visible;
+      clip-path: none;
+      font-family: var(--font-eyebrow);
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .link:hover {
+      background: none;
+    }
+
+    .active,
+    .active:hover {
+      color: #fff;
+      background: none;
+    }
+
+    /* One highlight for the row, moved by nav.tsx onto the current item. */
+    .thumb {
+      display: block;
+      position: absolute;
+      top: 5px;
+      bottom: 5px;
+      left: 0;
+      z-index: 0;
+      width: var(--thumb-w, 0);
+      translate: var(--thumb-x, 0) 0;
+      border-radius: 999px;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgb(255 255 255 / .3), rgb(255 255 255 / .1));
+      box-shadow:
+        inset 0 1px 0 rgb(255 255 255 / .35),
+        inset 0 0 0 1px rgb(255 255 255 / .12),
+        0 6px 18px -4px rgb(255 255 255 / .25);
+      transition: opacity .3s var(--ease-out);
+    }
+
+    .thumb[data-ready] {
+      transition:
+        translate .62s var(--spring),
+        width .62s var(--spring),
+        opacity .3s var(--ease-out);
+    }
+  }
+}

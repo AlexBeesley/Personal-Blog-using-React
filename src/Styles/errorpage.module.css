@@ -1,0 +1,38 @@
+@layer components {
+  .panel {
+    width: min(100%, 620px);
+    margin: clamp(40px, 10vh, 120px) auto 0;
+    padding: clamp(28px, 6vw, 56px);
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+    text-align: center;
+    border-radius: 38px;
+    corner-shape: squircle;
+    animation: global(rise) .9s var(--spring-soft) both;
+  }
+
+  .icon {
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 6px;
+    border-radius: 22px;
+    corner-shape: squircle;
+    color: var(--accent-hover);
+    background: rgba(var(--accent-rgb), .16);
+    box-shadow: inset 0 0 0 1px rgba(var(--accent-rgb), .32), inset 0 1px 0 rgb(255 255 255 / .16);
+  }
+
+  .title {
+    font-size: clamp(44px, 8vw + 10px, 84px);
+  }
+
+  .text {
+    max-width: 38ch;
+    margin: 0 0 14px;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+}

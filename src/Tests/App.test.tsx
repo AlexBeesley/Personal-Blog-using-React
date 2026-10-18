@@ -1,66 +1,48 @@
-import { describe, it, vi } from 'vitest';
-import { render } from '../Utilities/test-utils';
-import { App } from '../App';
+import { beforeEach, describe, expect, it } from 'vitest'
+import { createMemoryRouter } from 'react-router'
+import { RouterProvider } from 'react-router/dom'
+import { render, screen } from '../Utilities/test-utils'
+import { routes } from '../App'
+
+const renderAt = (path: string) =>
+  render(
+    <RouterProvider
+      router={createMemoryRouter(routes, { initialEntries: [path] })}
+    />
+  )
 
 describe('App', () => {
-  it('is rendered', () => {
-    render(<App />);
+  beforeEach(() => {
+    window.localStorage.clear()
+  })
+
+  it('renders the home page with its topic shelves', () => {
+    renderAt('/')
+    expect(
+      screen.getByRole('heading', { level: 1, name: 'Alexander Beesley' })
+    ).toBeInTheDocument()
+    const explore = screen.getByRole('region', { name: /explore the log/i })
+    expect(explore.querySelectorAll('li')).toHaveLength(4)
+  })
+
+  it('loads a post on demand, with its page contents', async () => {
+    renderAt('/devops')
+    expect(
+      await screen.findByRole('heading', { level: 1, name: 'DevOps' })
+    ).toBeInTheDocument()
+    const contents = screen.getByRole('navigation', { name: 'On this page' })
+    expect(contents.querySelector('a[href="#agile-working"]')).not.toBeNull()
+    expect(document.getElementById('agile-working')).not.toBeNull()
+  })
+
+  it('shows the 404 page for an unknown route', async () => {
+    renderAt('/nowhere')
+    expect(
+      await screen.findByRole('heading', { name: 'Page not found' })
+    ).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /back home/i })).toHaveAttribute(
+      'href',
+      '/'
+    )
   })
 })
-
-// mock images
-vi.mock('../Images/SwaggerExample.png', () => ({
-  default: new Proxy(new Object(), {
-    get(_, img1) {
-      return img1;
-    },
-  }),
-}))
-
-vi.mock('../Images/LogOutput.PNG', () => ({
-  default: new Proxy(new Object(), {
-    get(_, img2) {
-      return img2;
-    },
-  }),
-}))
-
-vi.mock('../Images/MVC.PNG', () => ({
-  default: new Proxy(new Object(), {
-    get(_, img3) {
-      return img3;
-    },
-  }),
-}))
-
-vi.mock('../Images/PayCaltests.PNG', () => ({
-  default: new Proxy(new Object(), {
-    get(_, img4) {
-      return img4;
-    },
-  }),
-}))
-
-vi.mock('../Images/personalWebsite.PNG', () => ({
-  default: new Proxy(new Object(), {
-    get(_, img4) {
-      return img4;
-    },
-  }),
-}))
-
-vi.mock('../Images/darkmode.PNG', () => ({
-  default: new Proxy(new Object(), {
-    get(_, img4) {
-      return img4;
-    },
-  }),
-}))
-
-vi.mock('../Images/agile.png', () => ({
-  default: new Proxy(new Object(), {
-    get(_, img5) {
-      return img5;
-    },
-  }),
-}))

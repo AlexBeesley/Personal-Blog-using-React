@@ -1,10 +1,9 @@
-import { useEffect } from 'react';
-import Style from '../Styles/pages.module.scss'
 import Card from '../Components/card'
+import Figure from '../Components/Figure'
 import CodeBox from '../Components/codebox'
-import PageContents from '../Components/pagecontents'
-import img1 from '../Images/personalWebsite.PNG'
-import img2 from '../Images/darkmode.PNG'
+import Post from '../Components/Post'
+import img1 from '../Images/personalWebsite.webp'
+import img2 from '../Images/darkmode.webp'
 
 export default function WebDev() {
   const titles = [
@@ -15,25 +14,14 @@ export default function WebDev() {
     'Alternative Frameworks',
   ]
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
   return (
-    <div>
-      <div className={Style.title}>
-        <h1 className={Style.mobileHeading}>Web Development</h1>
-      </div>
-      <PageContents titles={titles} links={titles} />
-      <div className={Style.padding} />
-      <a className={Style.anchor} id={titles[0]} />
+    <Post title="Web Development" sections={titles}>
       <Card title={titles[0]} blogpost={true}>
         <p>
           This section will cover front-end technologies, going over the basics
           of HTML, CSS and JavaScript, then taking a look at how this webapp was
           made using{' '}
           <a
-            className={Style.inlineLink}
             href="https://reactjs.org/"
             target="_blank"
             rel="noreferrer"
@@ -43,7 +31,6 @@ export default function WebDev() {
           </a>{' '}
           with TypeScript, looking at the third-party{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.tutorialsteacher.com/nodejs/nodejs-modules#:~:text=Module%20in%20Node.,modules%20or%20pollute%20global%20scope."
             target="_blank"
             rel="noreferrer"
@@ -54,7 +41,6 @@ export default function WebDev() {
           used, testing and deployment. This section will touch on other
           JavaScript frameworks for web development such as{' '}
           <a
-            className={Style.inlineLink}
             href="https://angular.io/"
             target="_blank"
             rel="noreferrer"
@@ -64,7 +50,6 @@ export default function WebDev() {
           </a>
           ,{' '}
           <a
-            className={Style.inlineLink}
             href="https://vuejs.org/"
             target="_blank"
             rel="noreferrer"
@@ -74,7 +59,6 @@ export default function WebDev() {
           </a>{' '}
           and{' '}
           <a
-            className={Style.inlineLink}
             href="https://nextjs.org/"
             target="_blank"
             rel="noreferrer"
@@ -87,7 +71,6 @@ export default function WebDev() {
         <p>
           Since I first wrote this the landscape has moved on considerably:{' '}
           <a
-            className={Style.inlineLink}
             href="https://react.dev/blog/2024/12/05/react-19"
             target="_blank"
             rel="noreferrer"
@@ -101,21 +84,19 @@ export default function WebDev() {
           section.
         </p>
       </Card>
-      <a className={Style.anchor} id={titles[1]} />
       <Card title={titles[1]} blogpost={true}>
         <p>
           Hyper Text Markup Language (HTML) defines the structure of a website,
           using opening and closing tags to designate sections known as divs,
           some of which have been assigned special tag names with associated
-          elements such as <code className={Style.inlineCode}>&lt;p&gt;</code>{' '}
-          for paragraph, <code className={Style.inlineCode}>&lt;h1&gt;</code>{' '}
-          for headings, <code className={Style.inlineCode}>&lt;body&gt;</code>{' '}
-          and <code className={Style.inlineCode}>&lt;head&gt;</code> to separate
+          elements such as <code>&lt;p&gt;</code>{' '}
+          for paragraph, <code>&lt;h1&gt;</code>{' '}
+          for headings, <code>&lt;body&gt;</code>{' '}
+          and <code>&lt;head&gt;</code> to separate
           content from metadata and even{' '}
-          <code className={Style.inlineCode}>&lt;button&gt;</code> to enable
+          <code>&lt;button&gt;</code> to enable
           user interactions, there is a full list of common HTML tags{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.w3schools.com/TAgs/default.asp"
             target="_blank"
             rel="noreferrer"
@@ -131,7 +112,6 @@ export default function WebDev() {
           closing of tags; let’s like a look at some basic HTML from an example
           website I’ve put together. (Source Code available on GitHub{' '}
           <a
-            className={Style.inlineLink}
             href="https://github.com/DABeesleyTPR/Personal_Website"
             target="_blank"
             rel="noreferrer"
@@ -154,7 +134,6 @@ export default function WebDev() {
           can change dynamically in response to user actions such as hovering.
           Modern CSS also enables{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.w3schools.com/css/css_rwd_intro.asp"
             target="_blank"
             rel="noreferrer"
@@ -170,24 +149,20 @@ export default function WebDev() {
         <p>Here is the CSS for the example used</p>
         <CodeBox language={'css'}>{post1f2()}</CodeBox>
         <p>
-          The <code className={Style.inlineCode}>.</code> prefix denotes classes
-          while the <code className={Style.inlineCode}>#</code> denotes IDs.
+          The <code>.</code> prefix denotes classes
+          while the <code>#</code> denotes IDs.
           Once targeted, values can be assigned to attributes to dictate their
           look and behaviour in the website. Let’s see how this CSS file and the
           HTML above come together
         </p>
-        <img
+        <Figure
           src={img1}
-          alt="personal website"
-          title="personal website"
-          className={Style.image}
+          alt="The demo personal website from this post: a profile header, an About Me card, a photo carousel and a timeline"
+          width={1920}
+          height={1050}
+          caption="A screenshot of the demo site showcasing the HTML and CSS contained in this post."
         />
-        <p className={Style.caption}>
-          A screenshot of the demo site showcasing the HTML and CSS contained in
-          this post.
-        </p>
       </Card>
-      <a className={Style.anchor} id={titles[2]} />
       <Card title={titles[2]} blogpost={true}>
         <p>
           JS is the most popular programming language, heavily used throughout
@@ -200,30 +175,26 @@ export default function WebDev() {
         <p>The following is the JavaScript code for this</p>
         <CodeBox language={'javascript'}>{post2f1()}</CodeBox>
         <p>
-          In the <code className={Style.inlineCode}>toggleDarkMode()</code>{' '}
+          In the <code>toggleDarkMode()</code>{' '}
           function, elements within the document are targeted and their class
           names are changed, this automatically updates their CSS, pulling from
           the new class, containing the dark mode colour values.
         </p>
         <p>
-          <code className={Style.inlineCode}>console.log()</code> is used widely
+          <code>console.log()</code> is used widely
           in front-end development, during development and can be used to help
           debug issues, while in production logs can be used to give users extra
           information, perhaps as to why a certain JS element/function is not
           working as expected.
         </p>
-        <img
+        <Figure
           src={img2}
-          alt="personal website: dark mode"
-          title="personal website: dark mode"
-          className={Style.image}
+          alt="The same demo website with its dark mode switched off, showing a light grey theme"
+          width={1920}
+          height={1050}
+          caption="A screenshot for the same website once dark mode has been toggled via the JavaScript function."
         />
-        <p className={Style.caption}>
-          A screenshot for the same website once dark mode has been toggled via
-          the JavaScript function.
-        </p>
       </Card>
-      <a className={Style.anchor} id={titles[3]} />
       <Card title={titles[3]} blogpost={true}>
         <p>
           React is a popular JavaScript library for building front-end user
@@ -231,7 +202,6 @@ export default function WebDev() {
           all the sites data is loaded from the starting index.html file all
           browsers default to, then the pages are rendered{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.toptal.com/front-end/client-side-vs-server-side-pre-rendering#:~:text=Client%2Dside%20rendering%20manages%20the,displays%20a%20blank%20page%20first."
             target="_blank"
             rel="noreferrer"
@@ -246,16 +216,16 @@ export default function WebDev() {
           React allows developers to implement reusable components. React
           components can be passed variables known as Props, in React, and given
           initial values known as State. Starting with Props, Lets look at the{' '}
-          <code className={Style.inlineCode}>PageContents</code> component for
+          <code>PageContents</code> component for
           this site, as it uses Props effectively.
         </p>
         <CodeBox language={'javascript'}>{post3f1()}</CodeBox>
         <p>
-          This is a <code className={Style.inlineCode}>.tsx</code> document
+          This is a <code>.tsx</code> document
           which allows for TypeScript and HTML (
-          <code className={Style.inlineCode}>.jsx</code> is used for JavaScript
+          <code>.jsx</code> is used for JavaScript
           and HTML) to be used in tandem, similar to{' '}
-          <code className={Style.inlineCode}>.cshtml</code>{' '}
+          <code>.cshtml</code>{' '}
           files found in the .NET ecosphere. Props are declared outside the main
           function and passed down via the function’s constructor, as arguments,
           these allow the developer to pass in variable when calling the
@@ -265,22 +235,21 @@ export default function WebDev() {
         </p>
         <p>
           Let’s take a look at the{' '}
-          <code className={Style.inlineCode}>DarkModeToggle</code> component for
+          <code>DarkModeToggle</code> component for
           this website as it is a good example of State
         </p>
         <CodeBox language={'javascript'}>{post3f2()}</CodeBox>
         <p>
-          By importing <code className={Style.inlineCode}>useEffect</code> and{' '}
-          <code className={Style.inlineCode}>useState</code>, we can set the
+          By importing <code>useEffect</code> and{' '}
+          <code>useState</code>, we can set the
           toggle state of the dark mode switch, which uses{' '}
-          <code className={Style.inlineCode}>
+          <code>
             window.localstorage.setItem()
           </code>{' '}
           to store the state value locally on the users browser so that the
           theme persists if the user revisits or refreshes the site. This is
           considered a cookie, and due to{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.cookielaw.org/the-cookie-law/"
             target="_blank"
             rel="noreferrer"
@@ -291,11 +260,10 @@ export default function WebDev() {
           introduced by the EU, some cookies need express permission to run.
         </p>
         <p>
-          We can then target the <code className={Style.inlineCode}>.SCSS</code>{' '}
+          We can then target the <code>.SCSS</code>{' '}
           variables contained in a css module to implement the style changes
           required. Using{' '}
           <a
-            className={Style.inlineLink}
             href="https://github.com/css-modules/css-modules"
             target="_blank"
             rel="noreferrer"
@@ -309,11 +277,9 @@ export default function WebDev() {
           only within one.
         </p>
       </Card>
-      <a className={Style.anchor} id={titles[4]} />
       <Card title={titles[4]} blogpost={true}>
         <p>
           <a
-            className={Style.inlineLink}
             href="https://angular.io/guide/what-is-angular"
             target="_blank"
             rel="noreferrer"
@@ -323,7 +289,6 @@ export default function WebDev() {
           </a>{' '}
           – an{' '}
           <a
-            className={Style.inlineLink}
             href="https://developer.mozilla.org/en-US/docs/Glossary/MVC"
             target="_blank"
             rel="noreferrer"
@@ -344,7 +309,6 @@ export default function WebDev() {
         </p>
         <p>
           <a
-            className={Style.inlineLink}
             href="https://developer.mozilla.org/en-US/docs/Glossary/MVC"
             target="_blank"
             rel="noreferrer"
@@ -354,7 +318,6 @@ export default function WebDev() {
           </a>{' '}
           – follows an{' '}
           <a
-            className={Style.inlineLink}
             href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel"
             target="_blank"
             rel="noreferrer"
@@ -366,7 +329,6 @@ export default function WebDev() {
           rendering full and partial views in the UI, and while React and
           Angular both do this, Vue is centred around this feature, using{' '}
           <a
-            className={Style.inlineLink}
             href="https://vuejs.org/guide/scaling-up/sfc.html"
             target="_blank"
             rel="noreferrer"
@@ -375,13 +337,12 @@ export default function WebDev() {
             SFCs
           </a>{' '}
           (Single File Components) with the{' '}
-          <code className={Style.inlineCode}>.vue</code> file extension, which
+          <code>.vue</code> file extension, which
           contains JavaScript/TypeScript, HTML and CSS.
         </p>
         <p>
           I do not like the architecture of Vue as it goes against the{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design"
             target="_blank"
             rel="noreferrer"
@@ -392,7 +353,6 @@ export default function WebDev() {
           principles, and encourages massive files containing a lot of
           functionality, the{' '}
           <a
-            className={Style.inlineLink}
             href="https://en.wikipedia.org/wiki/Separation_of_concerns"
             target="_blank"
             rel="noreferrer"
@@ -407,7 +367,6 @@ export default function WebDev() {
         <p>
           In fairness, Vue 3's{' '}
           <a
-            className={Style.inlineLink}
             href="https://vuejs.org/guide/extras/composition-api-faq.html"
             target="_blank"
             rel="noreferrer"
@@ -415,7 +374,7 @@ export default function WebDev() {
           >
             Composition API
           </a>{' '}
-          and <code className={Style.inlineCode}>&lt;script setup&gt;</code> have
+          and <code>&lt;script setup&gt;</code> have
           gone a long way to addressing these concerns since I first formed that
           opinion, and it remains a hugely popular and capable framework.
         </p>
@@ -425,7 +384,6 @@ export default function WebDev() {
         </p>
         <p>
           <a
-            className={Style.inlineLink}
             href="https://nextjs.org/"
             target="_blank"
             rel="noreferrer"
@@ -453,7 +411,6 @@ export default function WebDev() {
           become a default way to build React apps, Vite is the standard build
           tool, and leaner alternatives like{' '}
           <a
-            className={Style.inlineLink}
             href="https://astro.build/"
             target="_blank"
             rel="noreferrer"
@@ -463,7 +420,6 @@ export default function WebDev() {
           </a>
           ,{' '}
           <a
-            className={Style.inlineLink}
             href="https://kit.svelte.dev/"
             target="_blank"
             rel="noreferrer"
@@ -473,7 +429,6 @@ export default function WebDev() {
           </a>{' '}
           and{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.solidjs.com/"
             target="_blank"
             rel="noreferrer"
@@ -486,7 +441,7 @@ export default function WebDev() {
           of doing.
         </p>
       </Card>
-    </div>
+    </Post>
   )
 }
 

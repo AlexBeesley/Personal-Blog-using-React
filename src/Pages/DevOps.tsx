@@ -1,29 +1,17 @@
-import { useEffect } from 'react';
-import Style from '../Styles/pages.module.scss'
 import Card from '../Components/card'
+import Figure from '../Components/Figure'
 import CodeBox from '../Components/codebox'
-import PageContents from '../Components/pagecontents'
-import img1 from '../Images/agile.png'
+import Post from '../Components/Post'
+import img1 from '../Images/agile.webp'
 
 export default function DevOps() {
   const titles = ['Overview', 'Agile Working', 'Azure']
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <div>
-      <div className={Style.title}>
-        <h1 className={Style.mobileHeading}>DevOps</h1>
-      </div>
-      <PageContents titles={titles} links={titles} />
-      <div className={Style.padding} />
-      <a className={Style.anchor} id={titles[0]} />
+    <Post title="DevOps" sections={titles}>
       <Card title={titles[0]} blogpost={true}>
         <p>
           <a
-            className={Style.inlineLink}
             href="https://www.delphix.com/glossary/what-is-dev-ops-model"
             target="_blank"
             rel="noreferrer"
@@ -35,7 +23,6 @@ export default function DevOps() {
           management focused on delivery. It is a wide bracket which encompasses
           and governs{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.ibm.com/uk-en/topics/software-development"
             target="_blank"
             rel="noreferrer"
@@ -45,7 +32,6 @@ export default function DevOps() {
           </a>{' '}
           and{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.sumologic.com/glossary/software-deployment/"
             target="_blank"
             rel="noreferrer"
@@ -57,7 +43,6 @@ export default function DevOps() {
           requirements met with the developer's ability to produce products and
           articles in a{' '}
           <a
-            className={Style.inlineLink}
             href="https://en.wikipedia.org/wiki/Software_as_a_service"
             target="_blank"
             rel="noreferrer"
@@ -71,7 +56,6 @@ export default function DevOps() {
           In 2026 the discipline has broadened well beyond CI/CD. Teams now talk
           about{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.gartner.com/en/articles/what-is-platform-engineering"
             target="_blank"
             rel="noreferrer"
@@ -81,7 +65,6 @@ export default function DevOps() {
           </a>{' '}
           (building internal developer platforms),{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.redhat.com/en/topics/devops/what-is-devsecops"
             target="_blank"
             rel="noreferrer"
@@ -91,7 +74,6 @@ export default function DevOps() {
           </a>{' '}
           (shifting security left) and measuring delivery performance with the{' '}
           <a
-            className={Style.inlineLink}
             href="https://dora.dev/"
             target="_blank"
             rel="noreferrer"
@@ -102,11 +84,9 @@ export default function DevOps() {
           . These are areas I actively follow as the field evolves.
         </p>
       </Card>
-      <a className={Style.anchor} id={titles[1]} />
       <Card title={titles[1]} blogpost={true}>
         <p>
           <a
-            className={Style.inlineLink}
             href="https://www.atlassian.com/agile#:~:text=Agile%20is%20an%20iterative%20approach,small%2C%20but%20consumable%2C%20increments."
             target="_blank"
             rel="noreferrer"
@@ -117,7 +97,6 @@ export default function DevOps() {
           is a project management method, which is focused on delivering value
           often, in time and on or below budget, the philosophe is built on{' '}
           <a
-            className={Style.inlineLink}
             href="https://agilemanifesto.org/"
             target="_blank"
             rel="noreferrer"
@@ -133,7 +112,6 @@ export default function DevOps() {
         <p>
           In an agile team,{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.atlassian.com/agile/kanban/boards#:~:text=A%20kanban%20board%20is%20an,order%20in%20their%20daily%20work."
             target="_blank"
             rel="noreferrer"
@@ -147,14 +125,16 @@ export default function DevOps() {
           development team to stay on top of their work and estimate development
           time.
         </p>
-        <img src={img1} />
-        <p className={Style.caption}>
-          Agile methodologies: user stories drive everything.
-        </p>
+        <Figure
+          src={img1}
+          alt="Diagram of the five-stage agile cycle: requirements, sprint planning, collaborative design, implementation, then review and monitoring"
+          width={1431}
+          height={820}
+          caption="Agile methodologies: user stories drive everything."
+        />
         <p>
           A{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.atlassian.com/agile/scrum/sprints"
             target="_blank"
             rel="noreferrer"
@@ -170,7 +150,6 @@ export default function DevOps() {
         <p>
           A sprint typically begins with a{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.agilealliance.org/glossary/backlog-refinement/#q=~(infinite~false~filters~(postType~(~'page~'post~'aa_book~'aa_event_session~'aa_glossary~'aa_organizations~'aa_research_paper~'aa_video)~tags~(~'backlog*20refinement))~searchTerm~'~sort~false~sortDirection~'asc~page~1)"
             target="_blank"
             rel="noreferrer"
@@ -181,7 +160,6 @@ export default function DevOps() {
           session where the team curate the user stories that will be worked on
           throughout the sprint, at the end of a sprint a team may have a{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.scrum.org/resources/what-is-a-sprint-retrospective"
             target="_blank"
             rel="noreferrer"
@@ -192,12 +170,10 @@ export default function DevOps() {
           to discuss improvement strategies to implement in the next sprint.
         </p>
       </Card>
-      <a className={Style.anchor} id={titles[2]} />
       <Card title={titles[2]} blogpost={true}>
         <p>
           Microsoft’s{' '}
           <a
-            className={Style.inlineLink}
             href="https://azure.microsoft.com/en-gb/resources/cloud-computing-dictionary/what-is-azure/"
             target="_blank"
             rel="noreferrer"
@@ -208,7 +184,6 @@ export default function DevOps() {
           is one of the three big players in the cloud platforming space,
           competing with{' '}
           <a
-            className={Style.inlineLink}
             href="https://aws.amazon.com/what-is-aws/"
             target="_blank"
             rel="noreferrer"
@@ -218,7 +193,6 @@ export default function DevOps() {
           </a>{' '}
           (AWS) and{' '}
           <a
-            className={Style.inlineLink}
             href="https://cloud.google.com/docs/overview"
             target="_blank"
             rel="noreferrer"
@@ -234,9 +208,8 @@ export default function DevOps() {
         </p>
         <p>
           Azure uses pipelines, written as{' '}
-          <code className={Style.inlineCode}>.YAML</code> files, to set up{' '}
+          <code>.YAML</code> files, to set up{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.redhat.com/en/topics/devops/what-is-ci-cd"
             target="_blank"
             rel="noreferrer"
@@ -254,16 +227,15 @@ export default function DevOps() {
         <p>
           This YAML document sets out the steps recognised by azure, telling it
           to run each time a commit is made to the{' '}
-          <code className={Style.inlineCode}>/develop</code> or{' '}
-          <code className={Style.inlineCode}>/feature/*</code>{' '}
+          <code>/develop</code> or{' '}
+          <code>/feature/*</code>{' '}
           branches and the proceeds to build the .NET 6 MVC, run its associated
           tests, if the tests pass, it proceeds to deploy the MVC via the{' '}
-          <code className={Style.inlineCode}>app-uks-dev-01</code> app service.
+          <code>app-uks-dev-01</code> app service.
         </p>
         <p>
           This example uses Azure DevOps Pipelines, but{' '}
           <a
-            className={Style.inlineLink}
             href="https://github.com/features/actions"
             target="_blank"
             rel="noreferrer"
@@ -274,7 +246,6 @@ export default function DevOps() {
           has since become the default CI/CD platform for many teams.
           Infrastructure itself is increasingly defined as code with tools like{' '}
           <a
-            className={Style.inlineLink}
             href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview"
             target="_blank"
             rel="noreferrer"
@@ -284,7 +255,6 @@ export default function DevOps() {
           </a>{' '}
           and{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.terraform.io/"
             target="_blank"
             rel="noreferrer"
@@ -295,7 +265,6 @@ export default function DevOps() {
           , while workloads are commonly packaged into containers and
           orchestrated with{' '}
           <a
-            className={Style.inlineLink}
             href="https://kubernetes.io/"
             target="_blank"
             rel="noreferrer"
@@ -307,7 +276,7 @@ export default function DevOps() {
           of my ongoing learning.
         </p>
       </Card>
-    </div>
+    </Post>
   )
 }
 
@@ -335,9 +304,9 @@ steps:
 - powershell: |
     dotnet tool install --global dotnet-ef
     
-    $content = gc .\appsettings.json -raw | ConvertFrom-Json
+    $content = gc .\\appsettings.json -raw | ConvertFrom-Json
     $content.ConnectionStrings.DefaultConnection=$(SQLDevDbConnString)
-    $content | ConvertTo-Json | Set-Content .\appsettings.json
+    $content | ConvertTo-Json | Set-Content .\\appsettings.json
     
     dotnet ef database update $(Initial_Create)
   workingDirectory: '$(WDir)'
@@ -361,5 +330,5 @@ steps:
       azureSubscription: IT-SBX           
       appType: webApp
       WebAppName: app-uks-dev-01
-      Package: '$(Build.ArtifactStagingDirectory)\WebApp.zip'`
+      Package: '$(Build.ArtifactStagingDirectory)\\WebApp.zip'`
 }

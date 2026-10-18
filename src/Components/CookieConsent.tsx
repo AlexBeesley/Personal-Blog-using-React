@@ -1,36 +1,54 @@
-import { useEffect, useState } from "react";
-import Styles from "../Styles/cookieconsent.module.scss";
-import Img from "../Images/cookie.png";
+import { useState } from 'react'
+import Styles from '../Styles/cookieconsent.module.css'
+import Icon from './Icons'
 
+const KEY = 'COOKIE_KEY'
+
+function readConsent() {
+  try {
+    return JSON.parse(window.localStorage.getItem(KEY) ?? 'false') === true
+  } catch {
+    return false
+  }
+}
+
+/* A glass island over the foot of the page — it no longer locks the page
+   behind an overlay, so the post can be read before it is dismissed. */
 export default function CookieConsent() {
-    const [consentGiven, setConsentGiven] = useState(() => {
-      const data = window.localStorage.getItem('COOKIE_KEY');
-      return data !== null ? JSON.parse(data) : false;
-    });
+  const [consentGiven, setConsentGiven] = useState(readConsent)
 
-    useEffect(() => {
-      window.localStorage.setItem('COOKIE_KEY', JSON.stringify(consentGiven));
-    }, [consentGiven]);
+  if (consentGiven) {
+    return null
+  }
 
-    useEffect(() => {
-      document.body.style.overflow = !consentGiven ? 'hidden' : 'auto';
-      return () => { document.body.style.overflow = 'auto'; };
-    }, [consentGiven]);
-
-    if (consentGiven) {
-        return null;
+  const accept = () => {
+    try {
+      window.localStorage.setItem(KEY, JSON.stringify(true))
+    } catch {
+      // Storage blocked: the island simply returns on the next visit.
     }
+    setConsentGiven(true)
+  }
 
-    return (
-        <div id={Styles.cookieConsent} role="alertdialog" aria-modal="true" aria-label="Cookie consent">
-            <div className={Styles.overlay} aria-hidden="true" />
-            <div className={Styles.cookieConsent}>
-                <img className={Styles.image} src={Img} alt="Cookie icon" />
-                <p className={Styles.text}>This website uses cookies to ensure you get the best experience.{' '}
-                    <a className={Styles.inlineLink} href="https://ico.org.uk/for-organisations/guide-to-pecr/cookies-and-similar-technologies/#:~:text=You%20cannot%20show%20consent%20if,user%20has%20consented%20to%20them.">Find out more</a>
-                </p>
-                <button className={Styles.btn} onClick={() => setConsentGiven(true)}>Got it!</button>
-            </div>
-        </div>
-    );
+  return (
+    <section className={`lg ${Styles.island}`} aria-label="Cookie consent">
+      <span className={Styles.icon} aria-hidden="true">
+        <Icon name="cookie" size={22} />
+      </span>
+      <p className={Styles.text}>
+        This website uses cookies to ensure you get the best experience.{' '}
+        <a
+          className={Styles.link}
+          href="https://ico.org.uk/for-organisations/guide-to-pecr/cookies-and-similar-technologies/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Find out more
+        </a>
+      </p>
+      <button type="button" className={`btn btn--primary ${Styles.ok}`} onClick={accept}>
+        Got it!
+      </button>
+    </section>
+  )
 }

@@ -1,0 +1,33 @@
+@layer components {
+  .loading {
+    display: grid;
+    justify-items: center;
+    gap: 28px;
+    padding-top: clamp(40px, 9vh, 96px);
+  }
+
+  .title {
+    width: min(70%, 420px);
+    height: 56px;
+    border-radius: 999px;
+    background: rgb(255 255 255 / .06);
+    animation: breathe 1.6s ease-in-out infinite alternate;
+  }
+
+  .pane {
+    width: min(100%, 880px);
+    height: 50vh;
+    border-radius: 36px;
+    animation: breathe 1.6s .2s ease-in-out infinite alternate;
+  }
+
+  @keyframes breathe {
+    from {
+      opacity: .45;
+    }
+
+    to {
+      opacity: .9;
+    }
+  }
+}

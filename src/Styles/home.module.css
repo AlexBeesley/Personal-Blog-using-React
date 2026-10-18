@@ -1,0 +1,251 @@
+@layer components {
+
+  /* --- Hero: the dashboard's greeting ----------------------------------- */
+
+  .hero {
+    display: grid;
+    justify-items: center;
+    gap: 4px;
+    padding: clamp(32px, 9vh, 104px) 0 clamp(24px, 5vh, 56px);
+    text-align: center;
+  }
+
+  .hero>* {
+    animation: global(rise) .9s var(--spring-soft) both;
+  }
+
+  .hero>:nth-child(2) {
+    animation-delay: 60ms;
+  }
+
+  .hero>:nth-child(3) {
+    animation-delay: 140ms;
+  }
+
+  .name {
+    padding: 0 .3em .06em;
+    font-size: clamp(50px, 11vw + 8px, 150px);
+    line-height: 1.22;
+  }
+
+  /* On a plate of clear, frosted glass — the dashboard's glance readouts —
+     so the line art behind it softens instead of running through the
+     words. No entrance animation of its own: a fading parent would cut the
+     frost off from the wallpaper, so it rides in with the hero instead. */
+  .lede {
+    max-width: 40ch;
+    margin: 10px 0 0;
+    padding: 12px 22px;
+    border-radius: 24px;
+    corner-shape: squircle;
+    font-size: clamp(16.5px, .6vw + 13.5px, 20px);
+    line-height: 1.55;
+    text-wrap: balance;
+    color: var(--ink);
+    background: var(--skin-panel), rgb(12 10 26 / .28);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+    backdrop-filter: blur(10px) saturate(150%);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / .16),
+      inset 0 0 0 1px rgb(255 255 255 / .1),
+      var(--shadow-lift);
+  }
+
+  /* --- Shelves ------------------------------------------------------------ */
+
+  .explore {
+    margin-bottom: clamp(28px, 5vw, 56px);
+  }
+
+  .exploreTitle {
+    margin: 0 0 14px;
+    padding-left: 6px;
+    font-size: 11px;
+    animation: global(rise) .9s 80ms var(--spring-soft) both;
+  }
+
+  .shelves {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    perspective: 1400px;
+  }
+
+  .shelf {
+    --lg-frost: 6px;
+    --lg-sat: 160%;
+    border-radius: 30px;
+    corner-shape: squircle;
+    transform: rotateX(var(--tx, 0deg)) rotateY(var(--ty, 0deg));
+    scale: var(--sw, 1);
+    animation: shelf-in .95s var(--spring-soft) both;
+    animation-delay: calc(140ms + sibling-index() * 70ms);
+  }
+
+  @keyframes shelf-in {
+    from {
+      opacity: 0;
+      translate: 0 28px;
+      scale: .96;
+    }
+  }
+
+  .shelfLink {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "plate title"
+      "plate summary"
+      "plate go";
+    align-items: center;
+    gap: 2px 16px;
+    height: 100%;
+    padding: 18px 20px 18px 16px;
+    border-radius: inherit;
+    color: var(--ink);
+  }
+
+  .shelfLink:focus-visible {
+    outline-offset: 4px;
+  }
+
+  /* Engraved into the glass rather than sitting on a pane of its own: a
+     dark lip along the top of the cut, a lit one along the bottom. */
+  .plate {
+    grid-area: plate;
+    align-self: start;
+    width: 56px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border-radius: 20px;
+    corner-shape: squircle;
+    color: rgb(255 255 255 / .86);
+    background: rgb(255 255 255 / .05);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / .2), inset 0 0 0 1px rgb(255 255 255 / .08);
+    transition: scale .55s var(--spring), color .3s;
+  }
+
+  .plate svg {
+    filter:
+      drop-shadow(0 -1px 0 rgb(0 0 0 / .55))
+      drop-shadow(0 1px 0 rgb(255 255 255 / .38));
+    transition: filter .35s var(--ease-out);
+  }
+
+  .shelfTitle {
+    grid-area: title;
+    font-family: var(--font-eyebrow);
+    font-size: 14px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+
+  .summary {
+    grid-area: summary;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-2);
+  }
+
+  .go {
+    grid-area: go;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: .04em;
+    color: var(--accent-hover);
+  }
+
+  .go svg {
+    transition: translate .45s var(--spring);
+  }
+
+  .shelf:hover .plate,
+  .shelfLink:focus-visible .plate {
+    scale: 1.06;
+    color: #fff;
+  }
+
+  .shelf:hover .plate svg,
+  .shelfLink:focus-visible .plate svg {
+    filter:
+      drop-shadow(0 -1px 0 rgb(0 0 0 / .45))
+      drop-shadow(0 1px 0 rgb(255 255 255 / .5))
+      drop-shadow(0 0 10px rgb(255 255 255 / .55));
+  }
+
+  .shelf:hover .go svg,
+  .shelfLink:focus-visible .go svg {
+    translate: 4px 0;
+  }
+
+  @media (min-width: 640px) {
+    .shelves {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+  }
+
+  /* Four across: each shelf stands upright, plate over title. */
+  @media (min-width: 1080px) {
+    .shelves {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .shelfLink {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "plate"
+        "title"
+        "summary"
+        "go";
+      align-content: start;
+      gap: 8px;
+      padding: 22px 22px 20px;
+    }
+
+    .plate {
+      margin-bottom: 10px;
+    }
+
+    .go {
+      margin-top: auto;
+      padding-top: 6px;
+    }
+  }
+
+  /* --- Overview and About ----------------------------------------------- */
+
+  .cards {
+    display: grid;
+    gap: clamp(16px, 2.4vw, 28px);
+    align-items: start;
+  }
+
+  @media (min-width: 1080px) {
+    .cards {
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    }
+  }
+}
+
+/* In the states layer, after `.lg--lift`, so the shelves keep the tilt and
+   swell in their transition list. */
+@layer states {
+  .shelf {
+    transition:
+      transform .6s var(--spring-soft),
+      scale .6s var(--spring),
+      translate .5s var(--spring),
+      box-shadow .4s var(--ease-out),
+      --glow .45s var(--ease-out);
+  }
+}

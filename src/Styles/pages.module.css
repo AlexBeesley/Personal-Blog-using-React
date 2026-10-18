@@ -1,0 +1,9 @@
+@layer components {
+  /* A row of link buttons at the foot of a section. */
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1.6em;
+  }
+}

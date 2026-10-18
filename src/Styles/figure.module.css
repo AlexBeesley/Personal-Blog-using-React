@@ -1,0 +1,180 @@
+@layer components {
+
+  .figure {
+    min-width: 0;
+    margin: 1.6em 0;
+  }
+
+  .frame {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: 18px;
+    corner-shape: squircle;
+    overflow: hidden;
+    background: rgb(6 5 16 / .4);
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / .08), 0 14px 34px -16px rgb(0 0 0 / .8);
+    cursor: zoom-in;
+    transition: box-shadow .3s var(--ease-out), translate .5s var(--spring);
+  }
+
+  .frame:hover {
+    translate: 0 -2px;
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / .18), 0 18px 40px -14px rgb(0 0 0 / .85);
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .hint {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    background: rgb(12 10 26 / .6);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+    backdrop-filter: blur(10px) saturate(150%);
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / .2);
+    opacity: .85;
+    transition: opacity .2s, scale .4s var(--spring);
+  }
+
+  .frame:hover .hint {
+    opacity: 1;
+    scale: 1.08;
+  }
+
+  .caption {
+    margin-top: 10px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--ink-3);
+  }
+
+  /* --- The viewer: the dashboard's dialog ------------------------------- */
+
+  .viewer {
+    --lg-frost: 34px;
+    --lg-sat: 170%;
+    --lg-skin:
+      linear-gradient(180deg, rgb(255 255 255 / .09), rgb(255 255 255 / .02) 36%),
+      rgb(14 13 22 / .7);
+    position: fixed;
+    width: min(100vw - 16px, 1600px);
+    max-width: none;
+    max-height: calc(100dvh - 16px);
+    margin: auto;
+    padding: 12px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    overflow: auto;
+    overscroll-behavior: contain;
+    border-radius: 30px;
+    corner-shape: squircle;
+    color: var(--ink);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / .12), var(--shadow-modal);
+    opacity: 0;
+    scale: .94;
+    translate: 0 14px;
+    transition:
+      opacity .25s var(--ease-out),
+      scale .55s var(--spring),
+      translate .55s var(--spring),
+      display .3s allow-discrete,
+      overlay .3s allow-discrete;
+  }
+
+  .viewer[open] {
+    display: flex;
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+  }
+
+  @starting-style {
+    .viewer[open] {
+      opacity: 0;
+      scale: .94;
+      translate: 0 14px;
+    }
+  }
+
+  .viewer::backdrop {
+    background: rgb(10 8 22 / 0);
+    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(0);
+    transition:
+      background .35s var(--ease-out),
+      backdrop-filter .35s var(--ease-out),
+      display .35s allow-discrete,
+      overlay .35s allow-discrete;
+  }
+
+  .viewer[open]::backdrop {
+    background: rgb(10 8 22 / .6);
+    -webkit-backdrop-filter: blur(6px) saturate(120%);
+    backdrop-filter: blur(6px) saturate(120%);
+  }
+
+  @starting-style {
+    .viewer[open]::backdrop {
+      background: rgb(10 8 22 / 0);
+      backdrop-filter: blur(0);
+    }
+  }
+
+  .full {
+    width: auto;
+    max-width: 100%;
+    max-height: calc(100dvh - 96px);
+    border-radius: 18px;
+    corner-shape: squircle;
+  }
+
+  .viewerCaption {
+    margin: 0 48px 4px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    text-align: center;
+    color: var(--ink-2);
+  }
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    color: #fff;
+    background: rgb(12 10 26 / .66);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / .2);
+    cursor: pointer;
+    transition: background .2s, scale .35s var(--spring);
+  }
+
+  .close:hover {
+    background: rgba(var(--accent-rgb), .5);
+  }
+
+  .close:active {
+    scale: .94;
+  }
+}

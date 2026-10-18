@@ -1,4 +1,4 @@
-name: CI/CD
+name: CI
 
 on:
   push:
@@ -9,23 +9,18 @@ on:
   workflow_dispatch:
 
 jobs:
-  test: 
-    name: 'Tests'
+  test:
+    name: 'Lint, type-check, test and build'
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-      - run: |
-          yarn
-          yarn test
-  
-  # deploy:
-  #   name: 'Deploy'
-  #   needs: test
-  #   runs-on: ubuntu-latest
-
-  #   steps:
-  #     - uses: actions/checkout@v1
-  #     - run: |
-  #         yarn
-  #         yarn netlify deploy
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run type-check
+      - run: npm test
+      - run: npm run build

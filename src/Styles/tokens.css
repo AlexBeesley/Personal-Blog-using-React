@@ -1,0 +1,126 @@
+/* ==========================================================================
+   Vantage Glass — design tokens
+   Source of truth: Claude Design project c0a00c (VantageGlassDesignSystem).
+   Values below are copied verbatim from the published system. Do not invent
+   new colours here — extend by composing these.
+
+   Copied from the home-dashboard-glass project. The one deviation: the font
+   files are Latin-subset WOFF2 builds of the same faces, so the URLs differ.
+   ========================================================================== */
+
+/* --- Colour ------------------------------------------------------------- */
+:root {
+  --bg-deep: #181B28;
+  --bg-base: #25293A;
+  --bg-elevated: #2C3145;
+  --bg-elevated-2: #333952;
+
+  --glass-tint: #352775;
+  --glass-tint-rgb: 53, 39, 117;
+  --glass-fill-soft: rgba(53, 39, 117, .22);
+  --glass-fill: rgba(53, 39, 117, .38);
+  --glass-fill-strong: rgba(53, 39, 117, .58);
+  --glass-fill-modal: rgba(45, 34, 95, .72);
+  --glass-border: rgba(255, 255, 255, .16);
+  --glass-border-strong: rgba(255, 255, 255, .28);
+  --glass-highlight: rgba(255, 255, 255, .10);
+
+  --accent: #A074C4;
+  --accent-rgb: 160, 116, 196;
+  --accent-hover: #B48ED4;
+  --accent-active: #8B5CAE;
+  --accent-soft: rgba(160, 116, 196, .18);
+  --accent-soft-strong: rgba(160, 116, 196, .32);
+
+  --text-primary: #F6F3FA;
+  --text-secondary: rgba(246, 243, 250, .70);
+  --text-tertiary: rgba(246, 243, 250, .46);
+  --text-on-accent: #181128;
+  --text-display: var(--accent);
+
+  --success: #6FCF97;
+  --warning: #E8B54A;
+  --danger: #E8748A;
+  --info: #7FB3D9;
+  --overlay-scrim: rgba(15, 13, 26, .55);
+}
+
+/* --- Type --------------------------------------------------------------- */
+@font-face {
+  font-family: 'Holland Gateway';
+  src: url('../fonts/HollandGateway.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Shuttle X';
+  src: url('../fonts/ShuttleX.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Metropolis';
+  src: url('../fonts/Metropolis-Regular.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Metropolis';
+  src: url('../fonts/Metropolis-Italic.woff2') format('woff2');
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'Anonymous Pro';
+  src: url('../fonts/AnonymousPro-Regular.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Anonymous Pro';
+  src: url('../fonts/AnonymousPro-Bold.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+:root {
+  --font-display: 'Holland Gateway', ui-sans-serif, sans-serif;
+  --font-eyebrow: 'Shuttle X', ui-sans-serif, sans-serif;
+  --font-body: 'Metropolis', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Anonymous Pro', ui-monospace, SFMono-Regular, monospace;
+
+  --text-xs: 12px;  --text-sm: 14px;  --text-base: 16px; --text-md: 18px;
+  --text-lg: 22px;  --text-xl: 28px;  --text-2xl: 36px;  --text-3xl: 48px;
+  --text-4xl: 64px; --text-5xl: 88px;
+
+  --lh-tight: 1.08; --lh-snug: 1.25; --lh-normal: 1.5; --lh-relaxed: 1.7;
+
+  --tracking-tight: -0.02em; --tracking-normal: 0;
+  --tracking-wide: .04em;    --tracking-widest: .16em;
+}
+
+/* --- Space & shape ------------------------------------------------------ */
+:root {
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
+  --space-5: 20px;  --space-6: 24px;  --space-8: 32px;  --space-10: 40px;
+  --space-12: 48px; --space-16: 64px; --space-20: 80px; --space-24: 96px;
+
+  --radius-xs: 8px;  --radius-sm: 12px; --radius-md: 16px; --radius-lg: 22px;
+  --radius-xl: 28px; --radius-2xl: 36px; --radius-full: 999px;
+
+  --container-max: 1200px;
+}
+
+/* --- Depth & motion ----------------------------------------------------- */
+:root {
+  --blur-sm: 12px; --blur-md: 24px; --blur-lg: 40px; --blur-xl: 64px;
+
+  --shadow-card: 0 1px 1px rgba(0, 0, 0, .15),
+                 0 8px 24px rgba(8, 6, 20, .38),
+                 inset 0 1px 0 rgba(255, 255, 255, .10);
+  --shadow-raised: 0 16px 48px rgba(8, 6, 20, .5),
+                   inset 0 1px 0 rgba(255, 255, 255, .12);
+  --shadow-modal: 0 24px 80px rgba(5, 4, 14, .6),
+                  inset 0 1px 0 rgba(255, 255, 255, .14);
+  --shadow-inset: inset 0 1px 2px rgba(0, 0, 0, .3),
+                  inset 0 1px 0 rgba(255, 255, 255, .06);
+  --shadow-focus: 0 0 0 3px var(--accent-soft-strong);
+
+  --ease-glass: cubic-bezier(.22, 1, .36, 1);
+  --ease-standard: cubic-bezier(.4, 0, .2, 1);
+  --dur-fast: 120ms; --dur-base: 220ms; --dur-slow: 420ms;
+}

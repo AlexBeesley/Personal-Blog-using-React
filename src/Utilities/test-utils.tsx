@@ -1,12 +1,12 @@
-/* eslint-disable import/export */
-import { cleanup, render } from '@testing-library/react'
+import { cleanup, render, type RenderOptions } from '@testing-library/react'
+import type { ReactElement } from 'react'
 import { afterEach } from 'vitest'
 
 afterEach(() => {
   cleanup()
 })
 
-const customRender = (ui: React.ReactElement, options = {}) =>
+const customRender = (ui: ReactElement, options: RenderOptions = {}) =>
   render(ui, {
     // wrap provider(s) here if needed
     wrapper: ({ children }) => children,

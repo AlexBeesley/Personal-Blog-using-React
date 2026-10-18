@@ -1,0 +1,36 @@
+@layer components {
+  .head {
+    display: grid;
+    justify-items: center;
+    gap: 2px;
+    padding: clamp(28px, 7vh, 72px) 0 clamp(14px, 3vh, 32px);
+    text-align: center;
+    animation: global(rise) .9s var(--spring-soft) both;
+  }
+
+  .title {
+    padding: 0 .3em .06em;
+    font-size: clamp(46px, 9vw + 12px, 120px);
+  }
+
+  .layout {
+    display: grid;
+    gap: clamp(16px, 2.4vw, 28px);
+  }
+
+  .sections {
+    display: grid;
+    gap: clamp(16px, 2.4vw, 28px);
+    min-width: 0;
+  }
+
+  /* Sidebar beside a reading column of comfortable measure. */
+  @media (min-width: 1200px) {
+    .layout {
+      grid-template-columns: 272px minmax(0, 880px);
+      justify-content: center;
+      align-items: start;
+      gap: 32px;
+    }
+  }
+}

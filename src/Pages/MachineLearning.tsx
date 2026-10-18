@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
-import Style from '../Styles/pages.module.scss'
+import Style from '../Styles/pages.module.css'
 import Card from '../Components/card'
 import CodeBox from '../Components/codebox'
-import PageContents from '../Components/pagecontents'
+import Icon from '../Components/Icons'
+import Post from '../Components/Post'
 
 export default function MachineLearning() {
     const titles = [
@@ -11,19 +11,8 @@ export default function MachineLearning() {
         'API',
     ];
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
     return (
-        <div>
-            <div className={Style.title}>
-                <h1 className={Style.mobileHeading}>Machine Learning</h1>
-            </div>
-            <PageContents titles={titles} links={titles} />
-            <div className={Style.padding} />
-
-            <a className={Style.anchor} id={titles[0]} />
+        <Post title="Machine Learning" sections={titles}>
             <Card title={titles[0]} blogpost={true}>
                 <p>
                     In this project, I investigated the potential of Machine Learning (ML) techniques, specifically Long Short-Term Memory (LSTM) and Fully Connected Neural Networks (FCNN), in accurately forecasting exchange rates. Exchange rate forecasting is a complex and highly volatile time-series problem, with socioeconomic and political factors contributing to its difficulty.
@@ -40,7 +29,6 @@ export default function MachineLearning() {
                 <p>
                     Since completing this dissertation, the machine learning landscape has shifted dramatically. The{' '}
                     <a
-                        className={Style.inlineLink}
                         href="https://arxiv.org/abs/1706.03762"
                         target="_blank"
                         rel="noreferrer"
@@ -50,7 +38,6 @@ export default function MachineLearning() {
                     </a>{' '}
                     architecture now underpins the{' '}
                     <a
-                        className={Style.inlineLink}
                         href="https://en.wikipedia.org/wiki/Large_language_model"
                         target="_blank"
                         rel="noreferrer"
@@ -60,7 +47,6 @@ export default function MachineLearning() {
                     </a>{' '}
                     and Generative AI tools that have reshaped the industry,{' '}
                     <a
-                        className={Style.inlineLink}
                         href="https://pytorch.org/"
                         target="_blank"
                         rel="noreferrer"
@@ -70,7 +56,6 @@ export default function MachineLearning() {
                     </a>{' '}
                     and the{' '}
                     <a
-                        className={Style.inlineLink}
                         href="https://huggingface.co/"
                         target="_blank"
                         rel="noreferrer"
@@ -83,7 +68,6 @@ export default function MachineLearning() {
                 <p>
                     Building on the foundations laid by this project, I am actively exploring these areas — applying LLMs in practice,{' '}
                     <a
-                        className={Style.inlineLink}
                         href="https://aws.amazon.com/what-is/retrieval-augmented-generation/"
                         target="_blank"
                         rel="noreferrer"
@@ -93,34 +77,34 @@ export default function MachineLearning() {
                     </a>{' '}
                     (RAG) for grounding models in trusted data, and the emerging space of AI agents — which together represent where I see the most exciting opportunities for the next stage of my career.
                 </p>
-                <div className={Style.buttonGroup}>
+                <div className={Style.actions}>
                     <a
-                        className={Style.linkAsButton}
+                        className="btn btn--secondary"
                         href="https://github.com/AlexBeesley/ExRate"
                         target="_blank"
                         rel="noreferrer"
                         title="My Exchange Rate Forecast Repository on GitHub"
                     >
                         Project Repository
+                        <Icon name="external" size={16} />
                     </a>
                     <a
-                        className={Style.linkAsButton}
+                        className="btn btn--secondary"
                         href="https://exrate-frontend.netlify.app/assets/pdf/CI601-Final_Report-David_Beesley.695b38be.pdf"
                         target="_blank"
                         rel="noreferrer"
                         title="Final Report on Exchange Rate Forecast Project"
                     >
                         Final Report
+                        <Icon name="external" size={16} />
                     </a>
                 </div>
             </Card>
 
-            <a className={Style.anchor} id={titles[1]} />
             <Card title={titles[1]} blogpost={true}>
                 <p>
                     The ExRate Service is a sophisticated exchange rate prediction system. It employs machine learning models to forecast future exchange rates based on historical data.{' '}
                     The data is sourced from an <a
-                        className={Style.inlineLink}
                         href="https://apilayer.com/marketplace/exchangerates_data-api?live_demo=show"
                         target="_blank"
                         rel="noreferrer"
@@ -133,10 +117,10 @@ export default function MachineLearning() {
                     of the ExRate Service.
                 </p>
                 <p>
-                    The entry point of the ExRate Service is the <code className={Style.inlineCode}>program.py</code> file. This script can be executed as a standalone 
+                    The entry point of the ExRate Service is the <code>program.py</code> file. This script can be executed as a standalone 
                     application to predict exchange rates, or it can be integrated into the ExRate API for real-time predictions. When running as a standalone app, you 
-                    can simply execute the script from the command line with the appropriate arguments, such as <code className={Style.inlineCode}>python program.py --base USD --target EUR</code>, 
-                    where <code className={Style.inlineCode}>--base</code> and <code className={Style.inlineCode}>--target</code> specify the base and target currencies for the prediction. When 
+                    can simply execute the script from the command line with the appropriate arguments, such as <code>python program.py --base USD --target EUR</code>, 
+                    where <code>--base</code> and <code>--target</code> specify the base and target currencies for the prediction. When 
                     integrated into the ExRate API, the script's functionality can be accessed via API endpoints, allowing for real-time exchange rate predictions as part of a larger application.
                 </p>
 
@@ -146,8 +130,8 @@ export default function MachineLearning() {
                 <p>
                     The ExRate Service uses a special type of Recurrent Neural Network (RNN) known as the Long Short-Term Memory (LSTM) model for predictions.
                     This model is particularly suitable for time series prediction tasks because it can remember patterns over long sequences. This is made
-                    possible by LSTM's unique cell state, which is represented in code as <code className={Style.inlineCode}>lstm_cell = LSTMCell(num_units)</code>,
-                    where <code className={Style.inlineCode}>num_units</code> specifies the number of units in the LSTM cell. This cell state can carry
+                    possible by LSTM's unique cell state, which is represented in code as <code>lstm_cell = LSTMCell(num_units)</code>,
+                    where <code>num_units</code> specifies the number of units in the LSTM cell. This cell state can carry
                     information throughout the processing of the sequence, making it possible for our LSTM model to learn and remember information over
                     long periods of time, an essential feature for predicting future exchange rates.
                 </p>
@@ -157,8 +141,8 @@ export default function MachineLearning() {
                 <p>
                     The ExRate Service also utilises a Fully Connected Neural Network (FCNN) for exchange rate predictions. FCNNs, also known as dense networks,
                     are a type of neural network where each neuron in one layer is connected to all neurons in the next layer. This is usually achieved using
-                    the <code className={Style.inlineCode}>Dense</code> layer in code, as in <code className={Style.inlineCode}>dense_layer = Dense(units, activation='relu')</code>,
-                    where <code className={Style.inlineCode}>units</code> refers to the dimensionality of the output space and <code className={Style.inlineCode}>activation</code>
+                    the <code>Dense</code> layer in code, as in <code>dense_layer = Dense(units, activation='relu')</code>,
+                    where <code>units</code> refers to the dimensionality of the output space and <code>activation</code>
                     specifies the activation function to use. These networks are known for their capability to learn complex patterns, which makes them suitable for a variety of tasks,
                     including the prediction of exchange rates.
                 </p>
@@ -167,35 +151,34 @@ export default function MachineLearning() {
                 </CodeBox>
                 <p>
                     At the heart of the ExRate Service is the Model Manager, which is responsible for creating, training, and managing the LSTM and FCNN models. The Model Manager is
-                    instantiated with a specific model type and parameters, like so: <code className={Style.inlineCode}>model_manager = ModelManager(model_type, params)</code>.
-                    The <code className={Style.inlineCode}>model_type</code> parameter specifies which model to use (LSTM or FCNN), and the <code className={Style.inlineCode}>params</code>
+                    instantiated with a specific model type and parameters, like so: <code>model_manager = ModelManager(model_type, params)</code>.
+                    The <code>model_type</code> parameter specifies which model to use (LSTM or FCNN), and the <code>params</code>
                     parameter includes the necessary hyperparameters for that model. The Model Manager ensures that the selected model is correctly initialised, trained on the provided data,
                     and subsequently used for prediction, effectively encapsulating the entire machine learning pipeline within a single entity.
                 </p>
                 <p>
-                    The program begins its execution from the <code className={Style.inlineCode}>if __name__ == '__main__':</code> block. It parses command line arguments for base currency, target currency, 
-                    and model type using the <code className={Style.inlineCode}>argparse</code> module. If these arguments are provided, they are processed with the <code className={Style.inlineCode}>process_args(args, has_args=True)</code>
+                    The program begins its execution from the <code>if __name__ == '__main__':</code> block. It parses command line arguments for base currency, target currency, 
+                    and model type using the <code>argparse</code> module. If these arguments are provided, they are processed with the <code>process_args(args, has_args=True)</code>
                     function. If not, the user is greeted with a welcome message and asked to provide the required input interactively.
                 </p>
                 <p>
-                    The <code className={Style.inlineCode}>process_args(args, has_args)</code> function reads in a list of valid currency abbreviations from a CSV file using the <code className={Style.inlineCode}>read_currency_codes()</code> 
+                    The <code>process_args(args, has_args)</code> function reads in a list of valid currency abbreviations from a CSV file using the <code>read_currency_codes()</code> 
                     function. If arguments were provided via command line, they are used as such. Otherwise, the user is prompted to input the base currency, target currency, and model type. The input is then validated against the list of valid
-                    currency abbreviations and the acceptable model types (FCNN or LSTM). If the validation is successful, the <code className={Style.inlineCode}>main()</code> function is called with the provided input.
+                    currency abbreviations and the acceptable model types (FCNN or LSTM). If the validation is successful, the <code>main()</code> function is called with the provided input.
                 </p>
                 <p>
-                    The <code className={Style.inlineCode}>main()</code> function initiates the main processing and prediction pipeline. It creates an instance of the <code className={Style.inlineCode}>ProcessDataFromResponse</code>
-                    class to process the data and obtains weekly and yearly rates and dates. A <code className={Style.inlineCode}>ModelManager</code> instance is then created, passing in the necessary parameters including the model type, 
-                    currency rates and dates, and other information. The <code className={Style.inlineCode}>run()</code> method of the Model Manager is invoked to generate the forecast and the model's history, as well as to calculate the 
-                    Mean Absolute Error (MAE). Subsequently, the <code className={Style.inlineCode}>display_results()</code> function is called to display the results.
+                    The <code>main()</code> function initiates the main processing and prediction pipeline. It creates an instance of the <code>ProcessDataFromResponse</code>
+                    class to process the data and obtains weekly and yearly rates and dates. A <code>ModelManager</code> instance is then created, passing in the necessary parameters including the model type, 
+                    currency rates and dates, and other information. The <code>run()</code> method of the Model Manager is invoked to generate the forecast and the model's history, as well as to calculate the 
+                    Mean Absolute Error (MAE). Subsequently, the <code>display_results()</code> function is called to display the results.
                 </p>
                 <p>
-                    The <code className={Style.inlineCode}>display_results()</code> function prints the historical and forecast data and also calculates and displays the percentage difference between the forecast and actual rates using the
-                    <code className={Style.inlineCode}>PercentageDifferenceCalculator</code> class. If command line arguments were not provided, it also generates evaluation graphs using the <code className={Style.inlineCode}>GenerateGraphsFromData</code>
+                    The <code>display_results()</code> function prints the historical and forecast data and also calculates and displays the percentage difference between the forecast and actual rates using the
+                    <code>PercentageDifferenceCalculator</code> class. If command line arguments were not provided, it also generates evaluation graphs using the <code>GenerateGraphsFromData</code>
                     class.
                 </p>
             </Card>
 
-            <a className={Style.anchor} id={titles[2]} />
             <Card title={titles[2]} blogpost={true}>
                 <p>
                     The ExRate_API project is a .NET 6.0 application that provides an API for forecasting exchange rates. The project is structured using the MVC (Model-View-Controller) pattern and uses the NUnit framework for testing. One of the interesting features of this project is the use of a token to handle the long-running process of building the machine learning model from the service in the background.
@@ -210,39 +193,39 @@ export default function MachineLearning() {
                     <li><strong>Configs:</strong> Contains configuration settings.</li>
                 </ul>
                 <p>
-                    The main controller in this project is the <code className={Style.inlineCode}>GetExRateForecastController</code>. This controller handles two main HTTP requests:
+                    The main controller in this project is the <code>GetExRateForecastController</code>. This controller handles two main HTTP requests:
                 </p>
                 <ul>
-                    <li>A <code className={Style.inlineCode}>POST</code> request to start the process of fetching and processing exchange rate data.</li>
-                    <li>A <code className={Style.inlineCode}>GET</code> request to retrieve the result of a previously started process.</li>
+                    <li>A <code>POST</code> request to start the process of fetching and processing exchange rate data.</li>
+                    <li>A <code>GET</code> request to retrieve the result of a previously started process.</li>
                 </ul>
                 <CodeBox language={'csharp'}>
                     {post2f1()}
                 </CodeBox>
                 <p>
-                    The <code className={Style.inlineCode}>StartProcess</code> method initiates the process of fetching and processing exchange rate data. It returns a token that can be used to retrieve the result of the process once it's complete. This is a clever way to handle long-running processes, as it allows the client to continue doing other things while the process is running, and then retrieve the result when it's ready. The <code className={Style.inlineCode}>GetResult</code> method takes a token as a parameter and returns the result of the process associated with that token. If the process is not yet complete, it returns a status indicating that the result is not yet ready.
+                    The <code>StartProcess</code> method initiates the process of fetching and processing exchange rate data. It returns a token that can be used to retrieve the result of the process once it's complete. This is a clever way to handle long-running processes, as it allows the client to continue doing other things while the process is running, and then retrieve the result when it's ready. The <code>GetResult</code> method takes a token as a parameter and returns the result of the process associated with that token. If the process is not yet complete, it returns a status indicating that the result is not yet ready.
                 </p>
                 <p>
-                    A developer would use this API by first sending a <code className={Style.inlineCode}>POST</code> request to the <code className={Style.inlineCode}>/api/GetExRateForecast</code> endpoint to start the process of fetching and processing exchange rate data. This request would include the base currency, target currency, and model type as query parameters. The API would return a token that the developer could use to retrieve the result of the process.
+                    A developer would use this API by first sending a <code>POST</code> request to the <code>/api/GetExRateForecast</code> endpoint to start the process of fetching and processing exchange rate data. This request would include the base currency, target currency, and model type as query parameters. The API would return a token that the developer could use to retrieve the result of the process.
                 </p>
                 <p>
-                    The <code className={Style.inlineCode}>DataFromService</code> namespace contains classes that implement the <code className={Style.inlineCode}>IGetExRateForecast</code> interface. These classes fetch and process exchange rate data. The <code className={Style.inlineCode}>GetExRateForecastBase</code> class provides a base implementation, and the <code className={Style.inlineCode}>GetExRateForecastLocally</code> and <code className={Style.inlineCode}>GetExRateForecastInContainer</code> classes provide specific implementations for running the service locally or in a container, respectively.
+                    The <code>DataFromService</code> namespace contains classes that implement the <code>IGetExRateForecast</code> interface. These classes fetch and process exchange rate data. The <code>GetExRateForecastBase</code> class provides a base implementation, and the <code>GetExRateForecastLocally</code> and <code>GetExRateForecastInContainer</code> classes provide specific implementations for running the service locally or in a container, respectively.
                 </p>
                 <CodeBox language={'csharp'}>
                     {post2f2()}
                 </CodeBox>
                 <p>
-                    The project uses the <code className={Style.inlineCode}>NUnit</code> framework for testing. The <code className={Style.inlineCode}>GetExRateForecastBaseTests</code> class contains tests for the <code className={Style.inlineCode}>GetExRateForecastBase</code> class, and the <code className={Style.inlineCode}>GetExRateForecastControllerTests</code> class contains tests for the <code className={Style.inlineCode}>GetExRateForecastController</code> class.
+                    The project uses the <code>NUnit</code> framework for testing. The <code>GetExRateForecastBaseTests</code> class contains tests for the <code>GetExRateForecastBase</code> class, and the <code>GetExRateForecastControllerTests</code> class contains tests for the <code>GetExRateForecastController</code> class.
                 </p>
                 <CodeBox language={'csharp'}>
                     {post2f3()}
                 </CodeBox>
                 <p>
-                    The <code className={Style.inlineCode}>SetUp</code> method is run before each test to set up the test environment. The <code className={Style.inlineCode}>RunProcessAsync_ShouldReturnCorrectResult</code> and <code className={Style.inlineCode}>CombineIntoJson_ShouldReturnCorrectResult</code> methods are tests for the <code className={Style.inlineCode}>RunProcessAsync</code> and <code className={Style.inlineCode}>CombineIntoJson</code> methods of the <code className={Style.inlineCode}>GetExRateForecastBase</code> class, respectively.
+                    The <code>SetUp</code> method is run before each test to set up the test environment. The <code>RunProcessAsync_ShouldReturnCorrectResult</code> and <code>CombineIntoJson_ShouldReturnCorrectResult</code> methods are tests for the <code>RunProcessAsync</code> and <code>CombineIntoJson</code> methods of the <code>GetExRateForecastBase</code> class, respectively.
                 </p>
             </Card>
 
-        </div>
+        </Post>
     )
 
 }
@@ -611,8 +594,8 @@ namespace ExRate_API.Tests.DataFromService
         public void CombineIntoJson_ShouldReturnCombinedJson_WhenValidJsonProvided()
         {
             // Arrange
-            var validJson = "{\\\"date\\\": \\\"2023-01-01\\\"}{\\\"date\\\": \\\"2023-02-01\\\"}";
-            var expectedResult = "{\\r\\n  \\\"forecast\\\": {\\r\\n    \\\"date\\\": \\\"2023-02-01\\\"\\r\\n  },\\r\\n  \\\"historicalData\\\": {\\r\\n    \\\"date\\\": \\\"2023-01-01\\\"\\r\\n  }\\r\\n}";
+            var validJson = "{\\"date\\": \\"2023-01-01\\"}{\\"date\\": \\"2023-02-01\\"}";
+            var expectedResult = "{\\r\\n  \\"forecast\\": {\\r\\n    \\"date\\": \\"2023-02-01\\"\\r\\n  },\\r\\n  \\"historicalData\\": {\\r\\n    \\"date\\": \\"2023-01-01\\"\\r\\n  }\\r\\n}";
 
             // Act
             var result = _testHelperForGetExRateForecastBase.CallCombineIntoJson(validJson);

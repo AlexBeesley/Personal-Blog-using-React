@@ -1,12 +1,11 @@
-import { useEffect } from 'react';
-import Style from '../Styles/pages.module.scss'
 import Card from '../Components/card'
+import Figure from '../Components/Figure'
 import CodeBox from '../Components/codebox'
-import PageContents from '../Components/pagecontents'
+import Post from '../Components/Post'
 import img1 from '../Images/SwaggerExample.png'
-import img2 from '../Images/LogOutput.PNG'
-import img3 from '../Images/MVC.PNG'
-import img4 from '../Images/PayCaltests.PNG'
+import img2 from '../Images/LogOutput.png'
+import img3 from '../Images/MVC.webp'
+import img4 from '../Images/PayCaltests.png'
 
 export default function Dotnetandcsharp() {
   const titles = [
@@ -22,23 +21,12 @@ export default function Dotnetandcsharp() {
     'Extension Methods',
   ]
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <div>
-      <div className={Style.title}>
-        <h1 className={Style.mobileHeading}>.NET and C#</h1>
-      </div>
-      <PageContents titles={titles} links={titles} />
-      <div className={Style.padding} />
-      <a className={Style.anchor} id={titles[0]} />
+    <Post title=".NET and C#" sections={titles}>
       <Card title={titles[0]} blogpost={true}>
         <p>
           This blog section covers my{' '}
           <a
-            className={Style.inlineLink}
             href="https://github.com/DABeesleyTPR/PayCal_with_EF_Core"
             target="_blank"
             rel="noreferrer"
@@ -51,7 +39,6 @@ export default function Dotnetandcsharp() {
           with a day rate and the number of weeks worked stored in a database.
           This was built in{' '}
           <a
-            className={Style.inlineLink}
             href="https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-6"
             target="_blank"
             rel="noreferrer"
@@ -61,7 +48,6 @@ export default function Dotnetandcsharp() {
           </a>
           , using{' '}
           <a
-            className={Style.inlineLink}
             href="https://visualstudio.microsoft.com/vs/"
             target="_blank"
             rel="noreferrer"
@@ -72,7 +58,6 @@ export default function Dotnetandcsharp() {
           , the project demonstrates how a backend service contained within a
           class library is accessed from a{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.redhat.com/en/topics/api/what-is-a-rest-api"
             target="_blank"
             rel="noreferrer"
@@ -82,7 +67,6 @@ export default function Dotnetandcsharp() {
           </a>{' '}
           and ASP.NET MVC, with{' '}
           <a
-            className={Style.inlineLink}
             href="https://docs.microsoft.com/en-us/ef/core/"
             target="_blank"
             rel="noreferrer"
@@ -96,7 +80,6 @@ export default function Dotnetandcsharp() {
           Worth noting in 2026: .NET 6 reached end of support in November 2024,
           so a fresh build would target the current Long Term Support release,{' '}
           <a
-            className={Style.inlineLink}
             href="https://dotnet.microsoft.com/en-us/download/dotnet/10.0"
             target="_blank"
             rel="noreferrer"
@@ -110,7 +93,6 @@ export default function Dotnetandcsharp() {
           tooling such as GitHub Copilot to move faster.
         </p>
       </Card>
-      <a className={Style.anchor} id={titles[1]} />
       <Card title={titles[1]} blogpost={true}>
         <p>
           Following the SOLID principles, a Repository Class is used to perform
@@ -129,7 +111,7 @@ export default function Dotnetandcsharp() {
         </p>
         <CodeBox language={'csharp'}>{post1f2()}</CodeBox>
         <p>
-          Note, the <code className={Style.inlineCode}>ToString()</code>{' '}
+          Note, the <code>ToString()</code>{' '}
           function which returns the data in a readable format used in the
           console application and was used in various other places throughout
           the solution during development.
@@ -146,13 +128,13 @@ export default function Dotnetandcsharp() {
         <CodeBox language={'csharp'}>{post1f3()}</CodeBox>
         <p>
           A lot is going on here, this function takes a string argument for the{' '}
-          <code className={Style.inlineCode}>employeeID</code> field and using
+          <code>employeeID</code> field and using
           an if statement, the data set is searched, if the{' '}
-          <code className={Style.inlineCode}>employeeID</code> exists, it then
+          <code>employeeID</code> exists, it then
           searches for the first instance of that ID, as all IDs are uniquely
           generated GUIDs, this works well and returns the correct employee as a{' '}
-          <code className={Style.inlineCode}>PermEmployeeData</code> object,
-          returning <code className={Style.inlineCode}>null</code> otherwise.
+          <code>PermEmployeeData</code> object,
+          returning <code>null</code> otherwise.
         </p>
         <p>
           Next, we need an interface, an interface in .NET is used to manage
@@ -166,14 +148,13 @@ export default function Dotnetandcsharp() {
         <p>Here is the interface for the Repository Classes.</p>
         <CodeBox language={'csharp'}>{post1f4()}</CodeBox>
         <p>
-          The <code className={Style.inlineCode}>IRepository</code> interface
+          The <code>IRepository</code> interface
           sets out expected functions and their expected arguments and types.
           All Repository Classes need to implement these functions with these
           exact return types but can return different values based on the code
           within the functions as required.
         </p>
       </Card>
-      <a className={Style.anchor} id={titles[2]} />
       <Card title={titles[2]} blogpost={true}>
         <p>
           Now that we have a basic Repository Class, we need a service, to the
@@ -186,11 +167,10 @@ export default function Dotnetandcsharp() {
         <p>
           This logic calculates the annual income for both types of employees
           based on the current British Income Tax rates. Note, the{' '}
-          <code className={Style.inlineCode}>Read()</code> function from the
+          <code>Read()</code> function from the
           Repository class is called here.
         </p>
       </Card>
-      <a className={Style.anchor} id={titles[3]} />
       <Card title={titles[3]} blogpost={true}>
         <p>
           In .NET, Dependencies, which allow classes to interact with each
@@ -199,7 +179,6 @@ export default function Dotnetandcsharp() {
           our logic service and learn how it talks to the Repository Class
           though{' '}
           <a
-            className={Style.inlineLink}
             href="https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection"
             target="_blank"
             rel="noreferrer"
@@ -212,27 +191,25 @@ export default function Dotnetandcsharp() {
         <CodeBox language={'csharp'}>{post3f1()}</CodeBox>
         <p>
           The using statements fetch access to the classes needed in this class,
-          from <code className={Style.inlineCode}>.Models</code> which contain
+          from <code>.Models</code> which contain
           our data models and{' '}
-          <code className={Style.inlineCode}>.Repositories</code> which contain
+          <code>.Repositories</code> which contain
           our repository classes and the repository interface
         </p>
         <p>
           Within the Calculator class, which extends its own interface, the{' '}
-          <code className={Style.inlineCode}>IRepository</code> class and its
+          <code>IRepository</code> class and its
           relevant data models are given a variable name, typically starting
           with an underscore as is a soft standard among developers, then
           initialised in the constructor.
         </p>
       </Card>
-      <a className={Style.anchor} id={titles[4]} />
       <Card title={titles[4]} blogpost={true}>
         <p>
           A RESTful (Representational State Transfer) application programming
           interface provides access to the Pay Calculator service to third
           parties via HTTP endpoints in{' '}
           <a
-            className={Style.inlineLink}
             href="https://en.wikipedia.org/wiki/JSON"
             target="_blank"
             rel="noreferrer"
@@ -244,7 +221,6 @@ export default function Dotnetandcsharp() {
           provide utilities to dependant services. This .NET 6 API application
           handles requests and returns relevant{' '}
           <a
-            className={Style.inlineLink}
             href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status"
             target="_blank"
             rel="noreferrer"
@@ -256,32 +232,31 @@ export default function Dotnetandcsharp() {
         </p>
         <p>
           Looking at the API{' '}
-          <code className={Style.inlineCode}>Program.cs</code> class, which
+          <code>Program.cs</code> class, which
           serves as the entry point when the application is executed, it handles
           scoped dependencies such as the class library, logging (which will be
           covered in the next section) and database connection
         </p>
         <CodeBox language={'csharp'}>{post4f1()}</CodeBox>
         <p>
-          Here, a <code className={Style.inlineCode}>builder</code> object is
+          Here, a <code>builder</code> object is
           created and configured with the appropriate class library
           dependencies, database connection string and then the app, derived
-          from <code className={Style.inlineCode}>builder.Build()</code>, is
+          from <code>builder.Build()</code>, is
           configured and initialised, booting the API service.
         </p>
         <p>
           Let's look at the{' '}
-          <code className={Style.inlineCode}>GetTempEmployees()</code> function
+          <code>GetTempEmployees()</code> function
           from the controller for the temporary employee datatype to see how
           requests and handled
         </p>
         <CodeBox language={'csharp'}>{post4f2()}</CodeBox>
         <p>
-          The <code className={Style.inlineCode}>HttpGet()</code> attribute is
+          The <code>HttpGet()</code> attribute is
           assigned to this function, of type IActionResult from ASP.NET, which
           lets{' '}
           <a
-            className={Style.inlineLink}
             href="http://www.asp.net/web-api"
             target="_blank"
             rel="noreferrer"
@@ -291,18 +266,19 @@ export default function Dotnetandcsharp() {
           </a>{' '}
           know that this function is for a HTTP get request, which would look
           something like{' '}
-          <code className={Style.inlineCode}>https://example/TempEmployee</code>
+          <code>https://example/TempEmployee</code>
           , and (provided there is data to return) will return a JSON response
           containing all temporary employees held in the database or class
           library dummy data based on the repository being assigned to the{' '}
-          <code className={Style.inlineCode}>IRepository</code> interface.
+          <code>IRepository</code> interface.
         </p>
-        <img src={img1} />
-        <p className={Style.caption}>
-          A screenshot of the swagger interface, a tool used for local
-          development of ASP.NET APIs, showing the get response for temporary
-          employees.
-        </p>
+        <Figure
+          src={img1}
+          alt="Swagger UI showing a GET request to the temporary employees endpoint and its JSON response"
+          width={745}
+          height={883}
+          caption="A screenshot of the swagger interface, a tool used for local development of ASP.NET APIs, showing the get response for temporary employees."
+        />
         <p>
           APIs enable more than just read capabilities, to showcase this let's
           look at how to update an employee entry with new data. The function
@@ -310,10 +286,9 @@ export default function Dotnetandcsharp() {
         </p>
         <CodeBox language={'csharp'}>{post4f3()}</CodeBox>
         <p>
-          Here the <code className={Style.inlineCode}>HttpPut</code> attribute
+          Here the <code>HttpPut</code> attribute
           is used which takes an ID argument, as a{' '}
           <a
-            className={Style.inlineLink}
             href="techtarget.com/searchwindowsserver/definition/GUID-global-unique-identifier#:~:text=A%20GUID%20(globally%20unique%20identifier,accounts%2C%20documents%20and"
             target="_blank"
             rel="noreferrer"
@@ -323,23 +298,21 @@ export default function Dotnetandcsharp() {
           </a>{' '}
           in this case, from the request, looking something like, this is then
           checked for populated fields, checking for{' '}
-          <code className={Style.inlineCode}>null</code>, then updates the
+          <code>null</code>, then updates the
           employee entry in the relevant fields, this approach enables users to
           only change the fields they wish to without having to input all fields
           each time an update is needed. And again, the ID itself is used to
           check the existence of an employee with that ID, returning a{' '}
-          <code className={Style.inlineCode}>404 Not found</code> response in
+          <code>404 Not found</code> response in
           this event or a{' '}
-          <code className={Style.inlineCode}>204 No Content</code> response if
+          <code>204 No Content</code> response if
           the employee has been updated successfully.
         </p>
       </Card>
-      <a className={Style.anchor} id={titles[5]} />
       <Card title={titles[5]} blogpost={true}>
         <p>
           Logging within the context of an API gives multiple benefits.{' '}
           <a
-            className={Style.inlineLink}
             href="https://logging.apache.org/log4net/index.html"
             target="_blank"
             rel="noreferrer"
@@ -350,19 +323,18 @@ export default function Dotnetandcsharp() {
           , a logging framework for .NET developed by the Apache Software
           Foundation, can be added via the appropriate using statement,
           configured in the{' '}
-          <code className={Style.inlineCode}>log4net.config</code> file, and
+          <code>log4net.config</code> file, and
           injected in any class using a constructor. Making logging easy to set
           up, outputting at various log levels including{' '}
-          <code className={Style.inlineCode}>INFO</code>,{' '}
-          <code className={Style.inlineCode}>DEBUG</code>,{' '}
-          <code className={Style.inlineCode}>WARN</code> and{' '}
-          <code className={Style.inlineCode}>ERROR</code>. Developers can write
+          <code>INFO</code>,{' '}
+          <code>DEBUG</code>,{' '}
+          <code>WARN</code> and{' '}
+          <code>ERROR</code>. Developers can write
           logs which document events as the code is running. If configured,
           these can be sent to the runtime terminal and even written to a log{' '}
-          <code className={Style.inlineCode}>.txt</code> file. Today most new
+          <code>.txt</code> file. Today most new
           .NET services reach for the built-in{' '}
           <a
-            className={Style.inlineLink}
             href="https://learn.microsoft.com/en-us/dotnet/core/extensions/logging"
             target="_blank"
             rel="noreferrer"
@@ -372,7 +344,6 @@ export default function Dotnetandcsharp() {
           </a>{' '}
           abstraction, often paired with{' '}
           <a
-            className={Style.inlineLink}
             href="https://serilog.net/"
             target="_blank"
             rel="noreferrer"
@@ -385,27 +356,28 @@ export default function Dotnetandcsharp() {
         </p>
         <p>
           Here is an example, from the{' '}
-          <code className={Style.inlineCode}>PermEmployeeController.cs</code> in
+          <code>PermEmployeeController.cs</code> in
           the API project, of logging in action
         </p>
         <CodeBox language={'csharp'}>{post5f1()}</CodeBox>
         <p>And here is the terminal output</p>
-        <img src={img2} />
-        <p className={Style.caption}>
-          The API terminal view showing log4net in action, complete with colour
-          coded log levelling.
-        </p>
+        <Figure
+          src={img2}
+          alt="API console output with log4net messages highlighted by log level"
+          width={1307}
+          height={839}
+          caption="The API terminal view showing log4net in action, complete with colour coded log levelling."
+        />
       </Card>
-      <a className={Style.anchor} id={titles[6]} />
       <Card title={titles[6]} blogpost={true}>
         <p>
           A Model View Controller is a technology architecture which enables
           HTML Views to be rendered as desired, from with parent views, letting
           developers build closely coupled applications with the power of C#
-          baked into the <code className={Style.inlineCode}>.cshtml</code> file
+          baked into the <code>.cshtml</code> file
           format which integrates C# with HTML, to allow for much greater power
           over how data in our applications are displayed. Let’s look to see
-          what a <code className={Style.inlineCode}>.cshtml</code> file is
+          what a <code>.cshtml</code> file is
           capable of.
         </p>
         <CodeBox language={'csharp'}>{post6f1()}</CodeBox>
@@ -421,19 +393,20 @@ export default function Dotnetandcsharp() {
         </p>
         <CodeBox language={'csharp'}>{post6f3()}</CodeBox>
         <p> </p>
-        <img src={img3} />
-        <p className={Style.caption}>
-          A screenshot of the Pay Calculator MVC site running.
-        </p>
+        <Figure
+          src={img3}
+          alt="The PayCal MVC demo site listing permanent employees in a table"
+          width={1920}
+          height={1050}
+          caption="A screenshot of the Pay Calculator MVC site running."
+        />
       </Card>
-      <a className={Style.anchor} id={titles[7]} />
       <Card title={titles[7]} blogpost={true}>
         <p>
           Testing in software development is an important part of debugging and
           proving the functionality of a codebase, in .NET these tests can be
           written using an extension called{' '}
           <a
-            className={Style.inlineLink}
             href="https://nunit.org/"
             target="_blank"
             rel="noreferrer"
@@ -445,7 +418,6 @@ export default function Dotnetandcsharp() {
           given function's return value, compared to an expected outcome given
           certain arguments. It is important to use{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.telerik.com/products/mocking/unit-testing.aspx#:~:text=What%20is%20mocking%3F,or%20state%20of%20external%20dependencies."
             target="_blank"
             rel="noreferrer"
@@ -457,7 +429,6 @@ export default function Dotnetandcsharp() {
           tests aren’t testing the dependencies themselves but only the function
           under test - for this project{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.nuget.org/packages/Moq/"
             target="_blank"
             rel="noreferrer"
@@ -467,7 +438,6 @@ export default function Dotnetandcsharp() {
           </a>
           , which is a{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.nuget.org/"
             target="_blank"
             rel="noreferrer"
@@ -478,7 +448,6 @@ export default function Dotnetandcsharp() {
           package, was used. Since 2023, the brief inclusion of the SponsorLink
           dependency in Moq prompted many teams to switch to{' '}
           <a
-            className={Style.inlineLink}
             href="https://nsubstitute.github.io/"
             target="_blank"
             rel="noreferrer"
@@ -493,34 +462,34 @@ export default function Dotnetandcsharp() {
         <p>Here is an example</p>
         <CodeBox language={'csharp'}>{post7f1()}</CodeBox>
         <p>
-          The <code className={Style.inlineCode}>[Test]</code> attribute tells
+          The <code>[Test]</code> attribute tells
           NUnit that this is a test to be executed in the test suite; while the{' '}
-          <code className={Style.inlineCode}>_repo.Setup()</code> function
+          <code>_repo.Setup()</code> function
           allows for the mocking of the repository dependency in this MVC
           controller test.
         </p>
         <p>
           This test follows the AAA format, where the{' '}
-          <code className={Style.inlineCode}>Arrange</code> section gathers the
-          needed dependencies, the <code className={Style.inlineCode}>Act</code>{' '}
+          <code>Arrange</code> section gathers the
+          needed dependencies, the <code>Act</code>{' '}
           section calls the function under test; the{' '}
-          <code className={Style.inlineCode}>Assert</code> section compares the
+          <code>Assert</code> section compares the
           results to the hardcoded expected results, defined by the developer.
         </p>
-        <img src={img4} />
-        <p className={Style.caption}>
-          The Visual Studio 2022 test explorer showing all the Pay Calculator
-          NUnit tests passing.
-        </p>
+        <Figure
+          src={img4}
+          alt="Visual Studio Test Explorer with every PayCal NUnit test passing"
+          width={1043}
+          height={752}
+          caption="The Visual Studio 2022 test explorer showing all the Pay Calculator NUnit tests passing."
+        />
       </Card>
-      <a className={Style.anchor} id={titles[8]} />
       <Card title={titles[8]} blogpost={true}>
         <p>
           Database integration is a popular way to implement a persistent data
           storage solution within a project of this kind. Microsoft’s solution
           to this within .NET is{' '}
           <a
-            className={Style.inlineLink}
             href="https://docs.microsoft.com/en-us/ef/core/"
             target="_blank"
             title="EF Core overview"
@@ -529,7 +498,6 @@ export default function Dotnetandcsharp() {
           </a>
           . It allows developers to initialise a{' '}
           <a
-            className={Style.inlineLink}
             href="https://www.techtarget.com/searchdatamanagement/definition/SQL#:~:text=Structured%20Query%20Language%20(SQL)%20is,on%20the%20data%20in%20them."
             target="_blank"
             title="What is the Structured Query Language?"
@@ -544,7 +512,7 @@ export default function Dotnetandcsharp() {
         <p>
           To establish a DB connection the project must be provided with a
           database connection string via a{' '}
-          <code className={Style.inlineCode}>DBcontext</code> class. Here is
+          <code>DBcontext</code> class. Here is
           that class within the Pay Calculator Application.
         </p>
         <CodeBox language={'csharp'}>{post8f1()}</CodeBox>
@@ -553,27 +521,25 @@ export default function Dotnetandcsharp() {
           dependencies linked. In Visual Studio, via the Package Manager
           Console, EF Core CLI commands to generate migration scripts and spin
           up a database can be run with{' '}
-          <code className={Style.inlineCode}>
+          <code>
             add-migration [migration name]
           </code>{' '}
-          and <code className={Style.inlineCode}>update-database</code>.
+          and <code>update-database</code>.
         </p>
         <CodeBox language={'csharp'}>{post8f2()}</CodeBox>
         <p>
           To populate the DB, the{' '}
-          <code className={Style.inlineCode}>ReadAll()</code> method in the
+          <code>ReadAll()</code> method in the
           Repository Class can be passed a{' '}
-          <code className={Style.inlineCode}>.JSON</code> backup file containing
+          <code>.JSON</code> backup file containing
           the data; using an if statement, this data can be injected if the
           database is ever empty.
         </p>
       </Card>
-      <a className={Style.anchor} id={titles[9]} />
       <Card title={titles[9]} blogpost={true}>
         <p>
           In .NET,{' '}
           <a
-            className={Style.inlineLink}
             href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods"
             target="_blank"
             title="What is an extension method?"
@@ -583,22 +549,22 @@ export default function Dotnetandcsharp() {
           are used extensively by the community to import functionality to a
           project built by others, but extension methods can also be built
           internally in the correct use case, Let's look at the{' '}
-          <code className={Style.inlineCode}>FriendlyURLs</code> extension built
+          <code>FriendlyURLs</code> extension built
           for the Pay Calculator MVC.
         </p>
         <p>
           The service provided here is simple, two methods one for converting{' '}
-          <code className={Style.inlineCode}>GUIDs</code> to a shorter format
+          <code>GUIDs</code> to a shorter format
           and then another to reverse the conversion.
         </p>
         <CodeBox language={'csharp'}>{post9f1()}</CodeBox>
         <p>
-          Using the <code className={Style.inlineCode}>this</code> syntax let's
+          Using the <code>this</code> syntax let's
           these functions be called on objects, like this
         </p>
         <CodeBox language={'csharp'}>{post9f2()}</CodeBox>
       </Card>
-    </div>
+    </Post>
   )
 }
 

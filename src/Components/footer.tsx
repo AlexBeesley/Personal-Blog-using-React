@@ -1,42 +1,38 @@
-import Styles from '../Styles/footer.module.scss'
+import { useRef } from 'react'
+import Styles from '../Styles/footer.module.css'
+import { useLiquidGlass } from '../Utilities/liquidGlass'
+import { author, socials } from '../Utilities/site'
+import Icon from './Icons'
+
+const year = new Date().getFullYear()
 
 export default function Footer() {
+  const barRef = useRef<HTMLDivElement>(null)
+  // Nothing scrolls under the footer, so it can refract the wallpaper.
+  useLiquidGlass(barRef, 'dock')
+
   return (
     <footer className={Styles.footer}>
-      <p>
-        &copy; {new Date().getFullYear()} Alexander Beesley; All rights reserved.
-      </p>
-      <div className={Styles.iconContainer}>
-        <a href="mailto:david.beesley1234@gmail.com" aria-label="Send email" title="Email">
-          <i className="fa-solid fa-envelope" aria-hidden="true"></i>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/alexander-beesley-bb1814206/"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="LinkedIn profile"
-          title="LinkedIn"
-        >
-          <i className="fa-brands fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a
-          href="https://www.instagram.com/brighton_by_the_sea/"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Instagram profile"
-          title="Instagram"
-        >
-          <i className="fa-brands fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a
-          href="https://github.com/AlexBeesley"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="GitHub profile"
-          title="GitHub"
-        >
-          <i className="fa-brands fa-github" aria-hidden="true"></i>
-        </a>
+      <div ref={barRef} className={`lg ${Styles.bar}`}>
+        <p className={Styles.copy}>
+          &copy; {year} {author}
+          <span className={Styles.rights}> · All rights reserved</span>
+        </p>
+        <ul className={Styles.socials}>
+          {socials.map(({ href, label, title, icon, external }) => (
+            <li key={href}>
+              <a
+                className={Styles.social}
+                href={href}
+                aria-label={label}
+                title={title}
+                {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}
+              >
+                <Icon name={icon} size={19} />
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </footer>
   )

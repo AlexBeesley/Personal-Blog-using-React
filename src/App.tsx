@@ -1,35 +1,31 @@
-import Styles from "./Styles/main.module.scss";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
-import Dotnetandcsharp from "./Pages/DotNetAndCsharp";
-import WebDev from "./Pages/WebDev";
-import DevOps from "./Pages/DevOps";
-import MachineLearning from "./Pages/MachineLearning";
-import ErrorPage from "./Pages/ErrorPage";
-import Nav from "./Components/nav";
-import DarkModeToggle from "./Components/darkmodetoggle";
-import Footer from "./Components/footer";
-import icon from "./Images/icon.png";
-import CookieConsent from "./Components/CookieConsent";
+import type { ComponentType } from 'react'
+import { createBrowserRouter, type RouteObject } from 'react-router'
+import Layout from './Components/Layout'
+import PageLoading from './Components/PageLoading'
+import Home from './Pages/Home'
 
-export const App = () => {
-  return (
-    <BrowserRouter>
-      <link rel="icon" href={icon} />
-      <div className={Styles.stickyContainer}>
-        <Nav />
-        <DarkModeToggle />
-      </div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/dotnet-and-csharp" element={<Dotnetandcsharp />} />
-        <Route path="/web-development" element={<WebDev />} />
-        <Route path="/devops" element={<DevOps />} />
-        <Route path="/machine-learning" element={<MachineLearning />} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-      <CookieConsent />
-      <Footer />
-    </BrowserRouter>
-  )
-}
+/* Home is in the main bundle; each post is its own chunk, fetched by the
+   router before it navigates, so a view transition never waits on a
+   suspended page. On a cold load straight onto a post, the layout renders
+   at once and PageLoading holds the content area. */
+const post = (load: () => Promise<{ default: ComponentType }>) => ({
+  lazy: async () => ({ Component: (await load()).default }),
+  HydrateFallback: PageLoading,
+})
+
+export const routes: RouteObject[] = [
+  {
+    path: '/',
+    Component: Layout,
+    children: [
+      { index: true, Component: Home },
+      { path: 'dotnet-and-csharp', ...post(() => import('./Pages/DotNetAndCsharp')) },
+      { path: 'web-development', ...post(() => import('./Pages/WebDev')) },
+      { path: 'devops', ...post(() => import('./Pages/DevOps')) },
+      { path: 'machine-learning', ...post(() => import('./Pages/MachineLearning')) },
+      { path: '*', ...post(() => import('./Pages/ErrorPage')) },
+    ],
+  },
+]
+
+export const router = createBrowserRouter(routes)
