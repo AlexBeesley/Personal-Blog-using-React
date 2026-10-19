@@ -8,9 +8,15 @@
     animation: global(rise) .9s var(--spring-soft) both;
   }
 
+  /* On posts the page title takes Shuttle X and the sections take the
+     script (card.module.css) — the dashboard's pairing, swapped. It keeps
+     the display face's glow and its written-in reveal. */
   .title {
-    padding: 0 .3em .06em;
-    font-size: clamp(46px, 9vw + 12px, 120px);
+    padding: 0 .2em;
+    font-family: var(--font-eyebrow);
+    font-size: clamp(30px, 4.4vw + 14px, 72px);
+    line-height: 1.15;
+    letter-spacing: .06em;
   }
 
   .layout {

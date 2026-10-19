@@ -25,6 +25,21 @@
     color: var(--accent-hover);
   }
 
+  /* Post sections take Holland Gateway, sized up as a script needs to be,
+     with the greeting's glow. */
+  .post .title {
+    margin-bottom: .45em;
+    font-family: var(--font-display);
+    font-synthesis: none;
+    font-size: clamp(42px, 3vw + 30px, 62px);
+    line-height: 1.3;
+    letter-spacing: normal;
+    color: #fff;
+    text-shadow:
+      0 2px 14px rgba(var(--accent-rgb), .75),
+      0 1px 3px rgba(var(--accent-rgb), .8);
+  }
+
   /* --- Prose ------------------------------------------------------------- */
 
   .prose {
