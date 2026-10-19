@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef } from 'react'
 import { Link, NavLink, useLocation } from 'react-router'
+import avatar from '../Images/avatar.webp'
 import Styles from '../Styles/nav.module.css'
 import { useLiquidGlass } from '../Utilities/liquidGlass'
 import { author, navItems } from '../Utilities/site'
@@ -56,7 +57,9 @@ export default function Nav() {
         className={`lg lg--lift ${Styles.brand}`}
         aria-label={`${author} — home`}
       >
-        <span className={Styles.orb} aria-hidden="true" />
+        <span className={Styles.avatar}>
+          <img src={avatar} alt="" width={38} height={38} />
+        </span>
         <span className={Styles.brandText}>
           <span className={Styles.name}>{author}</span>
           <span className={Styles.role}>Full stack developer</span>

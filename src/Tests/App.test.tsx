@@ -21,6 +21,9 @@ describe('App', () => {
     expect(
       screen.getByRole('heading', { level: 1, name: 'Alexander Beesley' })
     ).toBeInTheDocument()
+    expect(
+      screen.getByRole('img', { name: /self-portrait of alexander beesley/i })
+    ).toBeInTheDocument()
     const explore = screen.getByRole('region', { name: /explore the log/i })
     expect(explore.querySelectorAll('li')).toHaveLength(5)
     expect(

@@ -2,12 +2,19 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router'
 import Card from '../Components/card'
 import Icon from '../Components/Icons'
+import avatar from '../Images/avatar.webp'
 import Styles from '../Styles/home.module.css'
 import { attachPointerLight } from '../Utilities/ambient'
+import { useLiquidGlass } from '../Utilities/liquidGlass'
 import { author, topics } from '../Utilities/site'
 
 function Home() {
   const shelvesRef = useRef<HTMLUListElement>(null)
+  const portraitRef = useRef<HTMLSpanElement>(null)
+
+  // The portrait's ring sits over nothing but the wallpaper, so it can
+  // refract it.
+  useLiquidGlass(portraitRef, 'capsule')
 
   useEffect(() => {
     if (shelvesRef.current) return attachPointerLight(shelvesRef.current)
@@ -17,6 +24,14 @@ function Home() {
     <>
       <title>{`${author} · Full Stack Developer`}</title>
       <header className={Styles.hero}>
+        <span ref={portraitRef} className={`lg ${Styles.portrait}`}>
+          <img
+            src={avatar}
+            alt="Self-portrait of Alexander Beesley, reflected in a window with a camera"
+            width={200}
+            height={200}
+          />
+        </span>
         <p className="eyebrow">Hello, I&rsquo;m</p>
         <h1 className={`display is-writing ${Styles.name}`}>{author}</h1>
         <p className={Styles.lede}>
