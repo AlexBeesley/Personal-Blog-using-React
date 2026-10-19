@@ -2,12 +2,12 @@ import { useLayoutEffect, useRef } from 'react'
 import { Link, NavLink, useLocation } from 'react-router'
 import Styles from '../Styles/nav.module.css'
 import { useLiquidGlass } from '../Utilities/liquidGlass'
-import { navItems, siteName } from '../Utilities/site'
+import { author, navItems } from '../Utilities/site'
 import Icon from './Icons'
 
 /* One nav, two shapes. On phones and tablets it is the dashboard's dock: a
    glass pill fixed under the thumb, icons only, the current page opening
-   out to show its name. From 1080px it moves up beside the brand as a
+   out to show its name. From 1200px it moves up beside the brand as a
    labelled track — the dashboard's search-engine switcher — with one
    highlight that springs between items. */
 export default function Nav() {
@@ -18,7 +18,7 @@ export default function Nav() {
 
   // The brand refracts the wallpaper while it scrolls with the page; once
   // it is sticky (desktop), posts pass under it and it needs its frost.
-  useLiquidGlass(brandRef, 'capsule', '(max-width: 1079px)')
+  useLiquidGlass(brandRef, 'capsule', '(max-width: 1199px)')
 
   // Move the track's highlight onto the current item. It only animates
   // once it has been placed, so it does not fly in from the left on load.
@@ -54,11 +54,11 @@ export default function Nav() {
         ref={brandRef}
         to="/"
         className={`lg lg--lift ${Styles.brand}`}
-        aria-label={`${siteName} — home`}
+        aria-label={`${author} — home`}
       >
         <span className={Styles.orb} aria-hidden="true" />
         <span className={Styles.brandText}>
-          <span className={Styles.name}>{siteName}</span>
+          <span className={Styles.name}>{author}</span>
           <span className={Styles.role}>Full stack developer</span>
         </span>
       </Link>

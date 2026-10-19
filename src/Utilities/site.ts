@@ -9,6 +9,8 @@ export type Topic = {
   icon: IconName
   /** One line for the home page's shelf. */
   summary: string
+  /** Shown first and full width on the home page, marked as recent work. */
+  featured?: boolean
 }
 
 export const home: Topic = {
@@ -20,6 +22,15 @@ export const home: Topic = {
 }
 
 export const topics: Topic[] = [
+  {
+    path: '/umbraco',
+    label: 'Umbraco',
+    short: 'Umbraco',
+    icon: 'umbraco',
+    summary:
+      'Umbraco 10 to 17: Block Grid, GOV.UK Frontend for Umbraco, load balancing on Azure, and letting AI agents edit a site safely through MCP.',
+    featured: true,
+  },
   {
     path: '/dotnet-and-csharp',
     label: '.NET and C#',
@@ -57,7 +68,6 @@ export const topics: Topic[] = [
 export const navItems: Topic[] = [home, ...topics]
 
 export const author = 'Alexander Beesley'
-export const siteName = 'Alex Beesley'
 
 export const socials = [
   {

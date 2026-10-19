@@ -87,7 +87,7 @@
     }
   }
 
-  @media (min-width: 1080px) {
+  @media (min-width: 1200px) {
     .island {
       left: auto;
       right: 24px;

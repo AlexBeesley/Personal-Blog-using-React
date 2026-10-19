@@ -19,6 +19,7 @@ describe('Nav', () => {
     const nav = screen.getByRole('navigation', { name: 'Main' })
     for (const name of [
       'Home',
+      'Umbraco',
       '.NET and C#',
       'Web Development',
       'DevOps',
@@ -42,7 +43,7 @@ describe('Nav', () => {
   it('links the brand back home', () => {
     renderAt('/devops')
     expect(
-      screen.getByRole('link', { name: 'Alex Beesley — home' })
+      screen.getByRole('link', { name: 'Alexander Beesley — home' })
     ).toHaveAttribute('href', '/')
   })
 })

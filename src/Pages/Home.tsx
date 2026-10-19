@@ -4,7 +4,7 @@ import Card from '../Components/card'
 import Icon from '../Components/Icons'
 import Styles from '../Styles/home.module.css'
 import { attachPointerLight } from '../Utilities/ambient'
-import { author, siteName, topics } from '../Utilities/site'
+import { author, topics } from '../Utilities/site'
 
 function Home() {
   const shelvesRef = useRef<HTMLUListElement>(null)
@@ -15,7 +15,7 @@ function Home() {
 
   return (
     <>
-      <title>{`${siteName} · Full Stack Developer`}</title>
+      <title>{`${author} · Full Stack Developer`}</title>
       <header className={Styles.hero}>
         <p className="eyebrow">Hello, I&rsquo;m</p>
         <h1 className={`display is-writing ${Styles.name}`}>{author}</h1>
@@ -32,12 +32,16 @@ function Home() {
         {/* The dashboard's shelves: one glass pane per topic, rims lit and
             tipped toward the pointer. */}
         <ul ref={shelvesRef} className={Styles.shelves}>
-          {topics.map(({ path, label, icon, summary }) => (
-            <li key={path} className={`lg lg--lift ${Styles.shelf}`}>
+          {topics.map(({ path, label, icon, summary, featured }) => (
+            <li
+              key={path}
+              className={`lg lg--lift ${Styles.shelf} ${featured ? Styles.featured : ''}`}
+            >
               <Link to={path} className={Styles.shelfLink}>
                 <span className={Styles.plate} aria-hidden="true">
-                  <Icon name={icon} size={26} />
+                  <Icon name={icon} size={featured ? 30 : 26} />
                 </span>
+                {featured && <span className={Styles.badge}>Recent work</span>}
                 <span className={Styles.shelfTitle}>{label}</span>
                 <span className={Styles.summary}>{summary}</span>
                 <span className={Styles.go} aria-hidden="true">

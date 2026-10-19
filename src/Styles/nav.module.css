@@ -97,6 +97,8 @@
     list-style: none;
   }
 
+  /* Smallest phones first: six icons and no label, the current page marked
+     by its tint and the dock's "running" dot. */
   .link {
     position: relative;
     z-index: 1;
@@ -104,9 +106,9 @@
     align-items: center;
     justify-content: center;
     gap: 0;
-    height: 50px;
-    min-width: 50px;
-    padding: 0 14px;
+    height: 48px;
+    min-width: 46px;
+    padding: 0 12px;
     border-radius: 999px;
     color: var(--ink-2);
     transform-origin: 50% 100%;
@@ -155,11 +157,8 @@
     transition: max-width .55s var(--spring), opacity .3s var(--ease-out);
   }
 
-  /* The current page opens out — the dashboard dock's active button, with
-     its "running" tint and rim. */
+  /* The dashboard dock's active button: its tint, rim and running dot. */
   .active {
-    gap: 8px;
-    padding: 0 18px 0 14px;
     color: #fff;
     background: rgba(var(--accent-rgb), .24);
     box-shadow: inset 0 0 0 1px rgba(var(--accent-rgb), .45);
@@ -169,31 +168,59 @@
     background: rgba(var(--accent-rgb), .3);
   }
 
-  .active .short {
-    max-width: 7em;
-    opacity: 1;
+  .active::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    margin-left: -2px;
+    border-radius: 50%;
+    background: var(--accent-hover);
+    box-shadow: 0 0 8px var(--accent);
   }
 
   .thumb {
     display: none;
   }
 
-  /* Narrow phones: tighter buttons so five fit with the label open. */
-  @media (max-width: 380px) {
+  /* Room for the current page to open out and show its name. */
+  @media (min-width: 400px) {
     .link {
       min-width: 44px;
-      height: 46px;
-      padding: 0 11px;
+      height: 50px;
     }
 
     .active {
+      gap: 8px;
       padding: 0 14px 0 11px;
+    }
+
+    .active::after {
+      content: none;
+    }
+
+    .active .short {
+      max-width: 7em;
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: 440px) {
+    .link {
+      min-width: 50px;
+      padding: 0 14px;
+    }
+
+    .active {
+      padding: 0 18px 0 14px;
     }
   }
 
   /* --- The track (desktop) ---------------------------------------------- */
 
-  @media (min-width: 1080px) {
+  @media (min-width: 1200px) {
     .header {
       position: sticky;
       top: 16px;
@@ -220,7 +247,8 @@
     }
 
     .link svg,
-    .short {
+    .short,
+    .active::after {
       display: none;
     }
 

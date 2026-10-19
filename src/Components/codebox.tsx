@@ -3,6 +3,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/light'
 import csharp from 'react-syntax-highlighter/dist/esm/languages/hljs/csharp'
 import css from 'react-syntax-highlighter/dist/esm/languages/hljs/css'
 import javascript from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript'
+import json from 'react-syntax-highlighter/dist/esm/languages/hljs/json'
 import python from 'react-syntax-highlighter/dist/esm/languages/hljs/python'
 import xml from 'react-syntax-highlighter/dist/esm/languages/hljs/xml'
 import yaml from 'react-syntax-highlighter/dist/esm/languages/hljs/yaml'
@@ -15,7 +16,10 @@ SyntaxHighlighter.registerLanguage('csharp', csharp)
 SyntaxHighlighter.registerLanguage('css', css)
 SyntaxHighlighter.registerLanguage('html', xml)
 SyntaxHighlighter.registerLanguage('javascript', javascript)
+SyntaxHighlighter.registerLanguage('json', json)
 SyntaxHighlighter.registerLanguage('python', python)
+// Razor is markup with C# inside; the markup grammar keeps its tags legible.
+SyntaxHighlighter.registerLanguage('razor', xml)
 SyntaxHighlighter.registerLanguage('yaml', yaml)
 
 const LABELS: Record<string, string> = {
@@ -23,7 +27,9 @@ const LABELS: Record<string, string> = {
   css: 'CSS',
   html: 'HTML',
   javascript: 'JavaScript',
+  json: 'JSON',
   python: 'Python',
+  razor: 'Razor',
   yaml: 'YAML',
 }
 

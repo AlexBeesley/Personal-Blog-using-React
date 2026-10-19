@@ -41,6 +41,13 @@ const paths = {
       <path d="M18.6 15.6c.2 1.7 1 2.5 2.6 2.7-1.6.2-2.4 1-2.6 2.7-.2-1.7-1-2.5-2.6-2.7 1.6-.2 2.4-1 2.6-2.7Z" strokeLinejoin="round" />
     </>
   ),
+  // A U in a ring, after Umbraco's mark, drawn in the set's own line.
+  umbraco: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M8.6 7.6v4.6a3.4 3.4 0 0 0 6.8 0V7.6" />
+    </>
+  ),
   mail: (
     <>
       <rect x="3.2" y="5.2" width="17.6" height="13.6" rx="2.6" />

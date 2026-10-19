@@ -19,6 +19,7 @@ export const routes: RouteObject[] = [
     Component: Layout,
     children: [
       { index: true, Component: Home },
+      { path: 'umbraco', ...post(() => import('./Pages/Umbraco')) },
       { path: 'dotnet-and-csharp', ...post(() => import('./Pages/DotNetAndCsharp')) },
       { path: 'web-development', ...post(() => import('./Pages/WebDev')) },
       { path: 'devops', ...post(() => import('./Pages/DevOps')) },

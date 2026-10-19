@@ -1,7 +1,7 @@
 import { useEffect, type ReactNode } from 'react'
 import Styles from '../Styles/post.module.css'
 import { jumpTo } from '../Utilities/jump'
-import { siteName, slugify } from '../Utilities/site'
+import { author, slugify } from '../Utilities/site'
 import PageContents from './pagecontents'
 
 type PostProps = {
@@ -26,7 +26,7 @@ export default function Post({ title, sections, children }: PostProps) {
 
   return (
     <>
-      <title>{`${title} · ${siteName}`}</title>
+      <title>{`${title} · ${author}`}</title>
       <header className={Styles.head}>
         <p className="eyebrow">
           Learning log · {sections.length} sections

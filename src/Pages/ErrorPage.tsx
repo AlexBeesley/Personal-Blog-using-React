@@ -1,12 +1,12 @@
 import { Link } from 'react-router'
 import Icon from '../Components/Icons'
 import Styles from '../Styles/errorpage.module.css'
-import { siteName } from '../Utilities/site'
+import { author } from '../Utilities/site'
 
 function ErrorPage() {
   return (
     <section className={`lg lg--read ${Styles.panel}`} aria-labelledby="not-found">
-      <title>{`Page not found · ${siteName}`}</title>
+      <title>{`Page not found · ${author}`}</title>
       <span className={Styles.icon} aria-hidden="true">
         <Icon name="compass" size={28} />
       </span>

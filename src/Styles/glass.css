@@ -80,7 +80,7 @@
   --chrome-top: 76px;
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 1200px) {
   :root {
     --dock-h: 0px;
     --chrome-top: 104px;
